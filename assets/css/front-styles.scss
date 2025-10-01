@@ -1,0 +1,55 @@
+.orderbox-order-follow-up-main-container {
+
+  max-width: 768px;
+
+  margin: 50px auto;
+
+  .orderbox-order-follow-up-report-item {
+
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    align-items: center;
+    min-height: 50px;
+    padding: 20px 0;
+
+    .orderbox-order-follow-up-report-item-title {
+
+      margin-right: 20px;
+      font-weight: bold;
+      min-width: 150px;
+
+    }
+
+    .orderbox-order-follow-up-report-value {
+
+      line-height: 1.5em;
+
+    }
+
+  }
+
+  @media (max-width: 800px){
+
+    max-width: 95%;
+
+    margin: 0 auto;
+
+
+    .orderbox-order-follow-up-report-item {
+
+        flex-direction: column;
+
+        align-items: baseline;
+
+        line-height: 3em;
+    }
+
+
+
+  }
+
+
+
+
+
+}

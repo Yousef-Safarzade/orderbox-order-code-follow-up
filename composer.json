@@ -1,0 +1,15 @@
+{
+    "name": "joseph/orderbox-order-code-follow-up",
+    "autoload": {
+        "psr-4": {
+            "OrderboxOrderCodeFollowUp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yousef Safarzade",
+            "email": "Jo.safarzade@gmail.com"
+        }
+    ],
+    "require": {}
+}
