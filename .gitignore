@@ -1,0 +1,6 @@
+.idea/
+.idea/*
+*.pot~
+*.po~
+vendor/
+composer.lock
