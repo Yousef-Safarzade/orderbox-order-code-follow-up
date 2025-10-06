@@ -10,10 +10,10 @@
 }
 .post-type-orderbox_order .acf-postbox .acf-field .acf-label {
   float: right !important;
-  max-width: 150px;
+  max-width: 250px;
 }
 .post-type-orderbox_order .acf-postbox .acf-field .acf-label label {
-  font-size: 14px;
+  font-size: 13px;
 }
 .post-type-orderbox_order .acf-postbox .acf-field .acf-input {
   float: right !important;

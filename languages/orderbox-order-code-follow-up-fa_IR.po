@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-01 07:59+0000\n"
-"PO-Revision-Date: 2025-10-01 08:10+0000\n"
+"POT-Creation-Date: 2025-10-04 08:19+0000\n"
+"PO-Revision-Date: 2025-10-05 07:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -15,195 +15,242 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/custom_post_types.php:23
-msgid "Add New"
-msgstr "اضافه کردن کد جدید"
+#: src/single_template.php:147
+msgid ""
+"<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
+"Code</a>"
+msgstr ""
+"<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">پیگیری کد</a>"
 
-#: src/custom_post_types.php:22
+#: src/custom_post_types.php:30
+msgid "Add New"
+msgstr "اضافه کردن کد ارسال"
+
+#: src/custom_post_types.php:29
 msgctxt "Add New on Toolbar"
 msgid "Orderbox Orders"
-msgstr "کد های سفارش"
+msgstr "کد ارسال"
 
-#: src/custom_post_types.php:24
+#: src/custom_post_types.php:31
 msgid "Add New Orderbox Orders"
-msgstr "اضافه کردن کد جدید"
-
-#: src/custom_post_types.php:21
-msgctxt "Admin Menu text"
-msgid "Orderbox Orders"
-msgstr "کد های سفارش"
+msgstr "اضافه کردن کد ارسال"
 
 #: src/custom_post_types.php:28
+msgctxt "Admin Menu text"
+msgid "Orderbox Orders"
+msgstr "کد ارسال"
+
+#: src/custom_post_types.php:35
 msgid "All Orderbox Orders"
-msgstr "تمام کدهای سفارش"
+msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/single_template.php:43
+#: src/single_template.php:108
 msgid "Customer Name"
-msgstr "نام سفارش دهنده"
+msgstr "نام مشتری"
 
-#: src/single_template.php:57
+#: templates/single-orderbox-order-follow-up-progress-bar.php:12
+msgid "DELIVERED"
+msgstr "دریافت توسط مشتری"
+
+#: src/single_template.php:187
 msgid "Description"
 msgstr "توضیحات"
 
-#: src/custom_post_types.php:26
+#: templates/single-orderbox-order-follow-up-progress-bar.php:7
+msgid "DUBAI / PACKING"
+msgstr "دریافت در دفتر دوبی"
+
+#: src/custom_post_types.php:33
 msgid "Edit Orderbox Orders"
-msgstr "ویراش اطلاعات کد سفارش"
+msgstr "ویرایش کد ارسال"
 
 #. Author URI of the plugin
 msgid "https://github.com/Yousef-Safarzade/"
-msgstr "https://github.com/Yousef-Safarzade/"
+msgstr ""
 
-#: src/custom_post_types.php:25
-msgid "New Orderbox Orders"
-msgstr "ایجاد کد سفارش جدید"
+#: templates/single-orderbox-order-follow-up-progress-bar.php:9
+msgid "IRAN PORT"
+msgstr "دریافت در بندر ایران"
+
+#: src/single_template.php:96
+msgid "KG"
+msgstr "کیلوگرم"
 
 #: src/custom_post_types.php:32
+msgid "New Orderbox Orders"
+msgstr "ثبت کد ارسال جدید"
+
+#: src/custom_post_types.php:39
 msgid "No Orderbox Orders  found in Trash."
-msgstr "هیچ کد سفارشی در سطل زباله وجود ندارد"
+msgstr "کد ارسالی در سطل زباله یافت نشد"
 
-#: src/custom_post_types.php:31
+#: src/custom_post_types.php:38
 msgid "No Orderbox Orders found."
-msgstr "کد سفارشی پیدا نشد"
+msgstr "سفارشی با این کد یافت نشد"
 
-#: src/single_template.php:41
+#: src/single_template.php:102
 msgid "Order Code"
-msgstr "کد سفارش"
+msgstr "کد ارسال"
 
-#: src/single_template.php:45
+#: src/single_template.php:115
 msgid "Order Date"
-msgstr "تاریخ سفارش"
+msgstr "تاریخ ارسال"
 
-#: src/single_template.php:47
+#: src/single_template.php:122
 msgid "Order Status"
-msgstr "وضغیت سفارش"
+msgstr "وضعیت ارسال"
+
+#: src/single_template.php:128
+msgid "Order Weight"
+msgstr "وزن محصول"
 
 #. Name of the plugin
 msgid "Orderbox Order Code Follow Up"
-msgstr "پیگیری کد سفارش"
+msgstr "پیگیری کد ارسال"
 
-#: templates/single-orderbox-order-follow-up.php:11
-msgid "Orderbox Order Follow Up"
-msgstr "پیگیری کد سفارش"
-
-#: src/custom_post_types.php:33
+#: src/custom_post_types.php:40
 msgctxt ""
 "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
 msgid "Orderbox Orders Cover Image"
-msgstr "عکس اصلی کد سفارش"
+msgstr "تصویر اصلی کد ارسال"
 
-#: src/custom_post_types.php:38
+#: src/custom_post_types.php:45
 msgctxt ""
 "Overrides the “Insert into post”/”Insert into page” phrase (used when "
 "inserting media into a post). Added in 4.4"
 msgid "Insert into Orderbox Orders"
 msgstr ""
 
-#: src/custom_post_types.php:35
+#: src/custom_post_types.php:42
 msgctxt ""
 "Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
 msgid "Remove cover image"
 msgstr "حذف تصویر اصلی"
 
-#: src/custom_post_types.php:34
+#: src/custom_post_types.php:41
 msgctxt ""
 "Overrides the “Set featured image” phrase for this post type. Added in 4.3"
 msgid "Set cover image"
 msgstr "انتخاب تصویر اصلی"
 
-#: src/custom_post_types.php:39
+#: src/custom_post_types.php:46
 msgctxt ""
 "Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
 "when viewing media attached to a post). Added in 4.4"
 msgid "Uploaded to this Orderbox Orders"
 msgstr ""
 
-#: src/custom_post_types.php:36
+#: src/custom_post_types.php:43
 msgctxt ""
 "Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
 msgid "Use as cover image"
 msgstr "استفاده از تصویر اصلی"
 
-#: src/custom_post_types.php:30
+#: src/custom_post_types.php:37
 msgid "Parent Orderbox Orders:"
-msgstr "کد سفارش اصلی"
+msgstr "کد ارسالی مادر"
 
-#: src/custom_post_types.php:19
+#: src/custom_post_types.php:26
 msgctxt "Post type general name"
 msgid "Orderbox Orders"
-msgstr "کد های سفارش"
+msgstr "کد ارسال"
 
-#: src/custom_post_types.php:20
+#: src/custom_post_types.php:27
 msgctxt "Post type singular name"
 msgid "Orderbox Order"
-msgstr "کد های سفارش"
+msgstr "کد ارسال"
 
-#: src/single_template.php:49
+#: src/single_template.php:156
 msgid "Product Name 1"
-msgstr "نام کالا ۱ "
+msgstr "محصول شماره ۱"
 
-#: src/single_template.php:51
+#: src/single_template.php:162
 msgid "Product Name 2"
-msgstr "نام کالا ۲ "
+msgstr "محصول شماره ۲"
 
-#: src/single_template.php:53
+#: src/single_template.php:168
 msgid "Product Name 3"
-msgstr "نام کالا ۳ "
+msgstr "محصول شماره ۳"
 
-#: src/single_template.php:55
+#: src/single_template.php:174
 msgid "Product Name 4"
-msgstr "نام کالا ۴ "
+msgstr "محصول شماره ۴"
 
-#: src/custom_post_types.php:40
+#: src/single_template.php:180
+msgid "Product Name 5"
+msgstr "محصول شماره ۵"
+
+#: src/custom_post_types.php:47
 msgctxt ""
 "Screen reader text for the filter links heading on the post type listing "
 "screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
 msgid "Filter boOrderbox Ordersoks list"
 msgstr ""
 
-#: src/custom_post_types.php:42
+#: src/custom_post_types.php:49
 msgctxt ""
 "Screen reader text for the items list heading on the post type listing "
 "screen. Default “Posts list”/”Pages list”. Added in 4.4"
 msgid "Orderbox Orders list"
 msgstr ""
 
-#: src/custom_post_types.php:41
+#: src/custom_post_types.php:48
 msgctxt ""
 "Screen reader text for the pagination heading on the post type listing "
 "screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
 msgid "Orderbox Orders list navigation"
 msgstr ""
 
-#: src/custom_post_types.php:29
+#: src/custom_post_types.php:36
 msgid "Search Orderbox Orders"
-msgstr "جست و جو کد سفارش"
+msgstr "جست و جو کد ارسال"
+
+#: templates/single-orderbox-order-follow-up-progress-bar.php:8
+msgid "SHIPPED"
+msgstr "ارسال به ایران"
+
+#: templates/single-orderbox-order-follow-up-progress-bar.php:10
+msgid "SHIRAZ"
+msgstr "دریافت در دفتر شیراز"
+
+#: templates/single-orderbox-order-follow-up-not-found.php:11
+msgid "Sorry But Provided Code Is Not Available"
+msgstr "متاسفانه کد مورد نظر شما یافت نشد"
 
 #. Description of the plugin
 msgid ""
 "Store users offline orders code and give the ability to follow the order "
 "status"
 msgstr ""
-"افزونه سفارشی برای ذخیره سازی کدهای سفارش مشتریان و اضافه کردن اطلاعات مورد "
-"نیاز که قابل پیگیری توسط مشتری نیز می باشد"
+"این افزونه کدهای ارسال که توسط مدیر سایت اضافه شده اند را ذخیره و به کاربران "
+"نمایش می دهد."
 
-#: src/custom_post_types.php:37
+#: src/custom_post_types.php:44
 msgctxt ""
 "The post type archive label used in nav menus. Default “Post Archives”. "
 "Added in 4.4"
 msgid "Orderbox Orders archives"
-msgstr "آرشیو کدهای سفارش"
+msgstr "آرشیو کدهای ارسال"
 
 #: src/acf_helper.php:28
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"
 msgstr ""
-"این افزونه برای شروع کار به یک افزونه دیگر به نام <strong>Advance Custom "
-"Field</strong> نیازمند است"
+"این افزونه برای شروع به کار نیاز دارد افزونه Advance Custom Field نصب شده "
+"باشد"
 
-#: src/custom_post_types.php:27
+#: templates/single-orderbox-order-follow-up-progress-bar.php:11
+msgid "TIPAX"
+msgstr "ارسال با تیپاکس"
+
+#: src/single_template.php:145
+msgid "Tipax Code"
+msgstr "کد تیپاکس"
+
+#: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
-msgstr "مشاهده تمامی کدهای سفارش"
+msgstr "نمایش کد های ارسال"
 
 #. Author of the plugin
 msgid "Yousef Safarzade"

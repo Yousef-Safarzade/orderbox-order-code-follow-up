@@ -1,34 +1,107 @@
-.orderbox-order-follow-up-main-container {
+.single-orderbox_order{
 
-  max-width: 768px;
 
-  margin: 50px auto;
 
-  .orderbox-order-follow-up-report-item {
+  .order-box-order-follow-up-container{
+    width: 900px;
+    margin: 50px auto;
 
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    align-items: center;
-    min-height: 50px;
-    padding: 20px 0;
+    @media(max-width:900px){
 
-    .orderbox-order-follow-up-report-item-title {
-
-      margin-right: 20px;
-      font-weight: bold;
-      min-width: 150px;
-
-    }
-
-    .orderbox-order-follow-up-report-value {
-
-      line-height: 1.5em;
+      max-width: 90%;
 
     }
 
   }
 
+
+  .orderbox-order-follow-up-main-container {
+
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-column-gap: 20px;
+
+    .orderbox-order-follow-up-report-item {
+
+      display: flex;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      align-items: center;
+      min-height: 50px;
+      padding: 20px 0;
+
+      .orderbox-order-follow-up-report-item-title {
+
+        margin-right: 20px;
+        font-weight: bold;
+        min-width: 150px;
+
+      }
+
+      .orderbox-order-follow-up-report-value {
+
+        line-height: 1.5em;
+
+      }
+
+      a{
+
+        text-decoration: none;
+      }
+
+    }
+
+
+
+    .orderbox-order-follow-up-qr-code-container{
+
+      max-width: 250px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+
+  }
+
+
+
   @media (max-width: 800px){
+
+    .order-box-order-follow-up-title-container{
+      text-align: center;
+    }
+
+    .orderbox-order-follow-up-main-container {
+
+      max-width: 90%;
+      display: grid;
+      margin: 50px auto;
+      grid-template-columns: 1fr;
+      grid-column-gap: 20px;
+
+      .orderbox-order-follow-up-qr-code-container{
+
+        margin: 0 auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+
+
+      .orderbox-order-follow-up-report-item{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        .orderbox-order-follow-up-report-item-title{
+          margin-right: 0;
+        }
+      }
+
+    }
+
 
     max-width: 95%;
 
@@ -37,11 +110,12 @@
 
     .orderbox-order-follow-up-report-item {
 
-        flex-direction: column;
+      flex-direction: column;
 
-        align-items: baseline;
+      align-items: baseline;
 
-        line-height: 3em;
+      line-height: 3em;
+
     }
 
 
@@ -51,5 +125,118 @@
 
 
 
+}
+
+
+
+
+
+.error404{
+
+  .order-box-order-follow-up-title-container {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    line-height: 2em;
+  }
+
+
+}
+
+
+
+
+.orderbox-order-follow-up-progress-bar{
+
+  margin:40px 0;
+
+  ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+
+    li.orderbox-order-follow-up-progress-bar-item{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+
+      .orderbox-order-follow-up-progress-bar-item-indicator{
+
+        width: 40px;
+        height: 40px;
+
+        img{
+
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+      .orderbox-order-follow-up-progress-bar-item-label{
+
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+
+      }
+
+
+      &.not-activated{
+
+        pointer-events: none;
+        opacity: 0.5;
+        .activated-icon{
+          display: none;
+        }
+
+        .not-activated-icon{
+          display: block
+        }
+
+      }
+
+
+      &.activated{
+
+
+        .not-activated-icon{
+          display: none;
+        }
+
+        .activated-icon{
+          display: block
+        }
+
+
+      }
+
+    }
+
+
+    @media(max-width:768px){
+
+      grid-template-columns: repeat(3, 1fr);
+
+      grid-row-gap: 50px;
+
+      .orderbox-order-follow-up-progress-bar-item-label{
+
+        font-size: 11px !important;
+
+      }
+
+    }
+
+  }
 
 }

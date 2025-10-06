@@ -24,8 +24,29 @@
             "append": ""
         },
         {
+            "key": "field_68e22d62403ad",
+            "label": "شماره تماس مشتری",
+            "name": "customer_phone_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68dbfe70f6dd1",
-            "label": "کد سفارش",
+            "label": "کد ارسال",
             "name": "order_code",
             "aria-label": "",
             "type": "text",
@@ -46,7 +67,7 @@
         },
         {
             "key": "field_68dbfe89f6dd2",
-            "label": "تاریخ ثبت سفارش",
+            "label": "تاریخ ارسال",
             "name": "order_date",
             "aria-label": "",
             "type": "text",
@@ -66,6 +87,29 @@
             "append": ""
         },
         {
+            "key": "field_68e0c868b7c2f",
+            "label": "وزن محصول ( کیلوگرم )",
+            "name": "order_weight",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68dbfe98f6dd3",
             "label": "وضعیت سفارش",
             "name": "order_status",
@@ -79,7 +123,14 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "1": "تحویل دبی",
+                "2": "ارسال به ایران",
+                "3": "دریافت در بندر ایران",
+                "4": "دریافت در دفتر شیراز",
+                "5": "ارسال با تیپاکس",
+                "6": "دریافت توسط مشتری"
+            },
             "default_value": false,
             "return_format": "value",
             "multiple": 0,
@@ -90,6 +141,27 @@
             "placeholder": "",
             "create_options": 0,
             "save_options": 0
+        },
+        {
+            "key": "field_68e0e9d6117fa",
+            "label": "کد رهگیری تیپاکس",
+            "name": "tipax_code",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "tipax-code"
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_68dbfeefa4853",
@@ -216,6 +288,74 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_68e0c7e6e9af2",
+            "label": "تصویر کد  QR",
+            "name": "qr_code_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_68e2339f0274f",
+            "label": "ارسال پیامک اطلاع رسانی اولیه",
+            "name": "send_first_sms",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_68e233d302750",
+            "label": "آیا اولین پیامک ارسال شده است ؟",
+            "name": "first_sms_sent",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -236,5 +376,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759248264
+    "modified": 1759654932
 }

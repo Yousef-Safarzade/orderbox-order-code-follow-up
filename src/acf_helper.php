@@ -15,6 +15,9 @@ class acf_helper
 
         add_filter( 'acf/settings/load_json', array(__CLASS__ ,'custom_acf_json_load_point')  );
 
+        add_action( 'acf/save_post', array(__CLASS__ ,'should_send_initial_sms')  );
+
+
 
 
 
@@ -65,6 +68,31 @@ class acf_helper
         $paths[] = WP_OOFU_PLUGIN_FOLDER_PATH . 'acf-json';
 
         return $paths;
+
+    }
+
+
+
+    public static function should_send_initial_sms($post_id){
+
+        if( get_post_type($post_id) != 'orderbox_order'){
+
+            return;
+
+        }
+
+        $values = get_fields( $post_id );
+
+        if( $values['send_first_sms'] === true && $values['first_sms_sent'] === false ){
+
+            //SENDING SMS PROCEDURE
+
+            update_post_meta($post_id , 'first_sms_sent' , true);
+
+        }
+
+
+
 
     }
 

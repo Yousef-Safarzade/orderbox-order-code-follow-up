@@ -2,45 +2,118 @@
 
 <?php $report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post(); ?>
 
+<?php $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url(); ?>
+
 <?php load_template($current_theme_path . '/header.php'); ?>
 
-<div class="orderbox-order-follow-up-main-container">
 
-    <h1 class="orderbox-order-follow-up-main-title">
 
-        <?php _e('Orderbox Order Follow Up','orderbox-order-code-follow-up'); ?>
 
-    </h1>
+<div class="order-box-order-follow-up-container">
 
-    <div class="orderbox-order-follow-up-report-container">
+   <!-- <div class="order-box-order-follow-up-title-container">
 
-            <?php foreach ($report_items as $report_item_title => $report_item_value ) { ?>
+        <h1 class="orderbox-order-follow-up-main-title">
 
-                <?php if(empty($report_item_value)){
+            <?php /*_e('Orderbox Order Follow Up','orderbox-order-code-follow-up'); */?>
 
-                    continue;
+        </h1>
 
-                } ?>
+    </div>-->
 
-                <div class="orderbox-order-follow-up-report-item">
 
-                    <div class="orderbox-order-follow-up-report-item-title">
 
-                        <?php echo $report_item_title ?>
+
+
+
+
+    <?php require_once (WP_OOFU_PLUGIN_FOLDER_PATH . "/templates/single-orderbox-order-follow-up-progress-bar.php"); ?>
+
+
+
+
+
+
+    <div class="orderbox-order-follow-up-main-container">
+
+
+
+        <?php if($image_url){ ?>
+
+            <div class="orderbox-order-follow-up-qr-code-container">
+
+                <img src="<?php echo esc_url($image_url); ?>">
+
+            </div>
+
+
+        <?php } ?>
+
+
+        <div class="orderbox-order-follow-up-report-container">
+
+
+            <div class="orderbox-order-follow-up-report-container">
+
+                <?php foreach ($report_items as $report_item_title => $report_item_value ) { ?>
+
+                    <?php if(empty($report_item_value['value'])){
+
+                        continue;
+
+                    } ?>
+
+                    <div class="orderbox-order-follow-up-report-item">
+
+                        <div class="orderbox-order-follow-up-report-item-title">
+
+                            <?php echo $report_item_value['label'] ?>
+
+                        </div>
+
+                        <div class="orderbox-order-follow-up-report-value">
+
+                            <?php echo $report_item_value['value'] ?>
+
+                            <?php if(!empty($report_item_value['description'])){ ?>
+
+                                <br />
+
+                                <span class="orderbox-order-follow-up-report-value-description">
+
+                                <?php echo $report_item_value['description'] ?>
+
+                            </span>
+
+                            <?php } ?>
+
+                        </div>
 
                     </div>
 
-                    <div class="orderbox-order-follow-up-report-value">
+                <?php } ?>
+            </div>
 
-                        <?php echo $report_item_value ?>
 
-                    </div>
+        </div>
 
-                </div>
 
-            <?php } ?>
+
     </div>
 
+
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
 
 <?php load_template($current_theme_path . '/footer.php'); ?>
