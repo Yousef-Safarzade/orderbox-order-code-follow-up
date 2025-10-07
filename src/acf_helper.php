@@ -83,9 +83,13 @@ class acf_helper
 
         $values = get_fields( $post_id );
 
-        if( $values['send_first_sms'] === true && $values['first_sms_sent'] === false ){
+        if(
+            $values['send_first_sms'] === true &&
+            $values['first_sms_sent'] === false &&
+            !empty($values['customer_phone_number'])
+        ){
 
-            //SENDING SMS PROCEDURE
+            melipayamak::send_orderbox_order_follow_up_sms($values);
 
             update_post_meta($post_id , 'first_sms_sent' , true);
 

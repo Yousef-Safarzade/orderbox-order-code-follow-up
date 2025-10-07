@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-10-05 07:58+0000\n"
+"PO-Revision-Date: 2025-10-07 06:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -75,6 +75,21 @@ msgstr "دریافت در بندر ایران"
 #: src/single_template.php:96
 msgid "KG"
 msgstr "کیلوگرم"
+
+#. field ID
+#: src/settings.php:52
+msgid "Melipayamak Password"
+msgstr "رمز عبور در ملی پیامک"
+
+#. field ID
+#: src/settings.php:36
+msgid "Melipayamak Phone Number"
+msgstr "شماره ارسال پیام در ملی پیامک"
+
+#. field ID
+#: src/settings.php:44
+msgid "Melipayamak Username"
+msgstr "نام کاربری در ملی پیامک"
 
 #: src/custom_post_types.php:32
 msgid "New Orderbox Orders"
@@ -232,7 +247,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr "آرشیو کدهای ارسال"
 
-#: src/acf_helper.php:28
+#: src/acf_helper.php:31
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"

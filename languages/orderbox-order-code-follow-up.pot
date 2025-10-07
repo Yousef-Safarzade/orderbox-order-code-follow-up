@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-05 07:56+0000\n"
+"POT-Creation-Date: 2025-10-07 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -74,6 +74,21 @@ msgstr ""
 
 #: src/single_template.php:96
 msgid "KG"
+msgstr ""
+
+#. field ID
+#: src/settings.php:52
+msgid "Melipayamak Password"
+msgstr ""
+
+#. field ID
+#: src/settings.php:36
+msgid "Melipayamak Phone Number"
+msgstr ""
+
+#. field ID
+#: src/settings.php:44
+msgid "Melipayamak Username"
 msgstr ""
 
 #: src/custom_post_types.php:32
@@ -230,7 +245,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr ""
 
-#: src/acf_helper.php:28
+#: src/acf_helper.php:31
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"

@@ -44,3 +44,5 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 \OrderboxOrderCodeFollowUp\single_template::define_hooks();
 
 \OrderboxOrderCodeFollowUp\acf_helper::define_hooks();
+
+\OrderboxOrderCodeFollowUp\settings::define_hooks();
