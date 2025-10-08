@@ -82,6 +82,24 @@
   justify-content: center;
   min-height: 500px;
   line-height: 2em;
+  flex-direction: column;
+}
+.error404 .order-box-order-follow-up-title-container svg {
+  max-width: 150px;
+  height: auto;
+  overflow: visible;
+}
+.error404 .order-box-order-follow-up-title-container svg path {
+  stroke: #000000;
+}
+.error404 .order-box-order-follow-up-title-container svg ellipse {
+  fill: #000000;
+}
+@media (max-width: 900px) {
+  .error404 .order-box-order-follow-up-title-container {
+    max-width: 90%;
+    margin: 50px auto;
+  }
 }
 
 .orderbox-order-follow-up-progress-bar {

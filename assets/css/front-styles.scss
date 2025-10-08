@@ -133,6 +133,7 @@
 
 .error404{
 
+
   .order-box-order-follow-up-title-container {
     max-width: 100%;
     text-align: center;
@@ -141,6 +142,28 @@
     justify-content: center;
     min-height: 500px;
     line-height: 2em;
+    flex-direction: column;
+    svg {
+
+      max-width: 150px;
+      height: auto;
+      overflow: visible;
+      path {
+        stroke: #000000;
+      }
+
+      ellipse{
+        fill:#000000;
+      }
+
+    }
+
+    @media (max-width: 900px) {
+
+      max-width: 90%;
+      margin: 50px auto;
+      
+    }
   }
 
 

@@ -1,42 +1,21 @@
-<?php $current_theme_path = get_template_directory(); ?>
+<?php
 
-<?php $report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post(); ?>
+$report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post();
 
-<?php $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url(); ?>
+\OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
 
-<?php load_template($current_theme_path . '/header.php'); ?>
+$image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url();
 
+?>
 
-
+<?php load_template(WP_OOFU_ACTIVE_THEME_DIRECTORY_PATH . '/header.php'); ?>
 
 <div class="order-box-order-follow-up-container">
-
-   <!-- <div class="order-box-order-follow-up-title-container">
-
-        <h1 class="orderbox-order-follow-up-main-title">
-
-            <?php /*_e('Orderbox Order Follow Up','orderbox-order-code-follow-up'); */?>
-
-        </h1>
-
-    </div>-->
-
-
-
-
-
-
 
     <?php require_once (WP_OOFU_PLUGIN_FOLDER_PATH . "/templates/single-orderbox-order-follow-up-progress-bar.php"); ?>
 
 
-
-
-
-
     <div class="orderbox-order-follow-up-main-container">
-
-
 
         <?php if($image_url){ ?>
 
@@ -51,7 +30,6 @@
 
 
         <div class="orderbox-order-follow-up-report-container">
-
 
             <div class="orderbox-order-follow-up-report-container">
 
@@ -94,26 +72,10 @@
                 <?php } ?>
             </div>
 
-
         </div>
-
-
 
     </div>
 
-
-
-
-
-
 </div>
 
-
-
-
-
-
-
-
-
-<?php load_template($current_theme_path . '/footer.php'); ?>
+<?php load_template(WP_OOFU_ACTIVE_THEME_DIRECTORY_PATH . '/footer.php'); ?>

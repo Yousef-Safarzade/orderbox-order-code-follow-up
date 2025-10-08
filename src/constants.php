@@ -23,6 +23,7 @@ class constants
 
         define('WP_OOFU_PLUGIN_MEDIA_FOLDER_URL', WP_OOFU_PLUGIN_ASSETS_FOLDER_URL . "/media/");
 
+        define('WP_OOFU_ACTIVE_THEME_DIRECTORY_PATH',get_template_directory());
 
     }
 

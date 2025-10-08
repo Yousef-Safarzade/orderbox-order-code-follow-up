@@ -21,11 +21,44 @@ class single_template
 
     public static function check_for_order_code(){
 
-        if(!empty($_GET['orderbox-order-code'])){
+        if(!empty($_GET['order-code']) && !empty($_GET['order-pass'])){
 
-            $base_url = get_post_type_archive_link('orderbox_order');
+            $order_hash_pass = md5($_GET['order-pass']);
 
-            $full_url = $base_url . "/" . strtolower($_GET['orderbox-order-code']);
+            $meta_query = array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'order_code',
+                    'value' => $_GET['order-code']
+                ),
+                array(
+                    'key' => 'order_password',
+                    'value' => $_GET['order-pass']
+                )
+            );
+
+
+            $order_code_post_id = get_posts(
+                array(
+                    'post_type' => 'orderbox_order',
+                    'meta_query' => $meta_query,
+                    'fields' => 'ids'
+                )
+            );
+
+
+           if( empty($order_code_post_id) ){
+
+               $base_url = get_post_type_archive_link('orderbox_order');
+
+               $full_url = $base_url . "/not-found";
+
+           } else {
+
+               $full_url = get_the_permalink( $order_code_post_id[0] ) . "?order-pass=" . $order_hash_pass;
+
+           }
+
 
             wp_redirect($full_url);
 
@@ -189,10 +222,7 @@ class single_template
         );
 
 
-
-
         return $result;
-
 
     }
 
@@ -206,6 +236,29 @@ class single_template
         return !empty( $url ) ? $url : false;
 
     }
+
+
+    public static function can_user_access_this_order_code_detail_page(){
+
+        $post_pass = get_field('order_password' , get_the_ID() );
+
+        if ( md5($post_pass) !== $_GET['order-pass'] ) {
+
+            $base_url = get_post_type_archive_link('orderbox_order');
+
+            $full_url = $base_url . "/not-found";
+
+            wp_redirect($full_url);
+
+            exit();
+
+        }
+
+
+    }
+
+
+
 
 
 
