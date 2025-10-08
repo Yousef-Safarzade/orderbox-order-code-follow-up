@@ -35,7 +35,7 @@ $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url()
 
                 <?php foreach ($report_items as $report_item_title => $report_item_value ) { ?>
 
-                    <?php if(empty($report_item_value['value'])){
+                    <?php if($report_item_title == 'order_status' || empty($report_item_value['value'])){
 
                         continue;
 
