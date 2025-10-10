@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 06:03+0000\n"
+"POT-Creation-Date: 2025-10-10 18:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:147
+#: src/single_template.php:180
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
@@ -44,15 +44,26 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:108
+#: src/single_template.php:141
 msgid "Customer Name"
+msgstr ""
+
+#: src/melipayamak.php:14
+#, php-format
+msgid ""
+"Dear Customer : %s \n"
+"Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+"Date : %s \n"
+"Code :  %s \n"
+" Password : %s \n"
+"Please Visit OrderBox Website For More Information"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:12
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:187
+#: src/single_template.php:220
 msgid "Description"
 msgstr ""
 
@@ -72,7 +83,7 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr ""
 
-#: src/single_template.php:96
+#: src/single_template.php:129
 msgid "KG"
 msgstr ""
 
@@ -103,19 +114,19 @@ msgstr ""
 msgid "No Orderbox Orders found."
 msgstr ""
 
-#: src/single_template.php:102
+#: src/single_template.php:135
 msgid "Order Code"
 msgstr ""
 
-#: src/single_template.php:115
+#: src/single_template.php:148
 msgid "Order Date"
 msgstr ""
 
-#: src/single_template.php:122
+#: src/single_template.php:155
 msgid "Order Status"
 msgstr ""
 
-#: src/single_template.php:128
+#: src/single_template.php:161
 msgid "Order Weight"
 msgstr ""
 
@@ -175,23 +186,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:156
+#: src/single_template.php:189
 msgid "Product Name 1"
 msgstr ""
 
-#: src/single_template.php:162
+#: src/single_template.php:195
 msgid "Product Name 2"
 msgstr ""
 
-#: src/single_template.php:168
+#: src/single_template.php:201
 msgid "Product Name 3"
 msgstr ""
 
-#: src/single_template.php:174
+#: src/single_template.php:207
 msgid "Product Name 4"
 msgstr ""
 
-#: src/single_template.php:180
+#: src/single_template.php:213
 msgid "Product Name 5"
 msgstr ""
 
@@ -228,7 +239,7 @@ msgstr ""
 msgid "SHIRAZ"
 msgstr ""
 
-#: templates/single-orderbox-order-follow-up-not-found.php:11
+#: templates/single-orderbox-order-follow-up-not-found.php:14
 msgid "Sorry But Provided Code Is Not Available"
 msgstr ""
 
@@ -245,7 +256,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr ""
 
-#: src/acf_helper.php:31
+#: src/acf_helper.php:35
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"
@@ -255,7 +266,7 @@ msgstr ""
 msgid "TIPAX"
 msgstr ""
 
-#: src/single_template.php:145
+#: src/single_template.php:178
 msgid "Tipax Code"
 msgstr ""
 

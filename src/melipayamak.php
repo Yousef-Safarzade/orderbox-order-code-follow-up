@@ -9,14 +9,16 @@ class melipayamak
 
         $curl = curl_init();
 
+
         $message = sprintf(
-            "Dear Customer : %s \nYour Order Follow Up Code Has Been Added to Orderbox Website \nDate : %s \nCode :  %s \nPlease Visit %s For More Information" ,
+            __("Dear Customer : %s \nYour Order Follow Up Code Has Been Added to Orderbox Website \nDate : %s \nCode :  %s \n Password : %s \nPlease Visit OrderBox Website For More Information" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
             $values['order_date'],
             $values['order_code'],
-            'Orderbox Website'
-
+            $values['order_password']
         );
+
+
 
         $phone_number = get_option("wp_oofu_melipayamak_phone_number");
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-10-07 06:04+0000\n"
+"PO-Revision-Date: 2025-10-10 18:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:147
+#: src/single_template.php:180
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
@@ -44,15 +44,39 @@ msgstr "کد ارسال"
 msgid "All Orderbox Orders"
 msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/single_template.php:108
+#: src/single_template.php:141
 msgid "Customer Name"
 msgstr "نام مشتری"
+
+#: src/melipayamak.php:14
+#, php-format
+#| msgid ""
+#| "Dear Customer : %s \n"
+#| "Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+#| "Date : %s \n"
+#| "Code :  %s \n"
+#| " Password : %s \n"
+#| "Please Visit %s For More Information"
+msgid ""
+"Dear Customer : %s \n"
+"Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+"Date : %s \n"
+"Code :  %s \n"
+" Password : %s \n"
+"Please Visit OrderBox Website For More Information"
+msgstr ""
+"مشتری گرامی :‌ %s\n"
+"کد پیگیری ارسال شما در وب سایت OrderBox ثبت گردید\n"
+"تاریخ ثبت : %s\n"
+"کد ارسال :‌ %s\n"
+"رمز عبور :‌ %s\n"
+"برای مشاهده اطلاعات بیشتر به سایت OrderBox مراجعه بفرمایید"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:12
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:187
+#: src/single_template.php:220
 msgid "Description"
 msgstr "توضیحات"
 
@@ -72,7 +96,7 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr "دریافت در بندر ایران"
 
-#: src/single_template.php:96
+#: src/single_template.php:129
 msgid "KG"
 msgstr "کیلوگرم"
 
@@ -103,19 +127,19 @@ msgstr "کد ارسالی در سطل زباله یافت نشد"
 msgid "No Orderbox Orders found."
 msgstr "سفارشی با این کد یافت نشد"
 
-#: src/single_template.php:102
+#: src/single_template.php:135
 msgid "Order Code"
 msgstr "کد ارسال"
 
-#: src/single_template.php:115
+#: src/single_template.php:148
 msgid "Order Date"
 msgstr "تاریخ ارسال"
 
-#: src/single_template.php:122
+#: src/single_template.php:155
 msgid "Order Status"
 msgstr "وضعیت ارسال"
 
-#: src/single_template.php:128
+#: src/single_template.php:161
 msgid "Order Weight"
 msgstr "وزن محصول"
 
@@ -175,23 +199,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:156
+#: src/single_template.php:189
 msgid "Product Name 1"
 msgstr "محصول شماره ۱"
 
-#: src/single_template.php:162
+#: src/single_template.php:195
 msgid "Product Name 2"
 msgstr "محصول شماره ۲"
 
-#: src/single_template.php:168
+#: src/single_template.php:201
 msgid "Product Name 3"
 msgstr "محصول شماره ۳"
 
-#: src/single_template.php:174
+#: src/single_template.php:207
 msgid "Product Name 4"
 msgstr "محصول شماره ۴"
 
-#: src/single_template.php:180
+#: src/single_template.php:213
 msgid "Product Name 5"
 msgstr "محصول شماره ۵"
 
@@ -228,7 +252,7 @@ msgstr "ارسال به ایران"
 msgid "SHIRAZ"
 msgstr "دریافت در دفتر شیراز"
 
-#: templates/single-orderbox-order-follow-up-not-found.php:11
+#: templates/single-orderbox-order-follow-up-not-found.php:14
 msgid "Sorry But Provided Code Is Not Available"
 msgstr "متاسفانه کد مورد نظر شما یافت نشد"
 
@@ -247,7 +271,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr "آرشیو کدهای ارسال"
 
-#: src/acf_helper.php:31
+#: src/acf_helper.php:35
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"
@@ -259,7 +283,7 @@ msgstr ""
 msgid "TIPAX"
 msgstr "ارسال با تیپاکس"
 
-#: src/single_template.php:145
+#: src/single_template.php:178
 msgid "Tipax Code"
 msgstr "کد تیپاکس"
 

@@ -15,19 +15,17 @@ class acf_helper
 
         add_filter( 'acf/settings/load_json', array(__CLASS__ ,'custom_acf_json_load_point')  );
 
-        add_action( 'acf/save_post', array(__CLASS__ ,'should_send_initial_sms')  );
+        add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_sms')  );
 
-        add_action( 'acf/save_post', array(__CLASS__ ,'should_send_initial_sms')  );
-
+        add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_sms')  );
 
         add_filter('acf/prepare_field', array(__CLASS__ ,'generate_random_password')  );
 
-
-
-
-
-
     }
+
+
+
+
 
 
     public static function check_if_acf_is_active(){
@@ -40,10 +38,12 @@ class acf_helper
 
          }
 
-
     }
 
 
+
+
+    
     public static function acf_json_load_point( $paths ) {
 
         // Append the new path and return it.
@@ -79,7 +79,7 @@ class acf_helper
 
 
 
-    public static function should_send_initial_sms($post_id){
+    public static function send_initial_sms($post_id){
 
         if( get_post_type($post_id) != 'orderbox_order'){
 
@@ -106,10 +106,29 @@ class acf_helper
 
 
 
-    public static function generate_random_password( $field){
 
-        if( $field['_name'] == 'order_password' && empty($field['value']) ) {
 
+
+    /**
+     * Auto-generates a secure random password for the 'order_password' field if empty.
+     *
+     * @param array $field The ACF field array.
+     * @return array The modified field array.
+     */
+    public static function generate_random_password( $field ){
+
+        if (
+            !is_array($field) ||
+            !isset($field['_name']) ||
+            $field['_name'] != 'order_password'
+        ) {
+
+            return $field;
+
+        }
+
+
+        if( empty($field['value']) ) {
 
             $field['value'] = rand(10000,99999);
 
