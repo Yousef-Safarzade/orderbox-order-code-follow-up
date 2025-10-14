@@ -20,7 +20,7 @@ class melipayamak
         $message = sprintf(
             __("Dear Customer : %s \nYour Order Follow Up Code Has Been Added to Orderbox Website \nDate : %s \nCode :  %s \n Password : %s \nPlease Visit OrderBox Website For More Information" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
-            $values['order_date'],
+            $values['order_status']['order_received'],
             $values['order_code'],
             $values['order_password']
         );
@@ -85,7 +85,7 @@ class melipayamak
             ),
         ));
 
-        curl_exec($curl);
+        $response = curl_exec($curl);
 
         curl_close($curl);
 

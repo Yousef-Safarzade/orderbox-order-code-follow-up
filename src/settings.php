@@ -29,6 +29,11 @@ class settings
             'wp_oofu_melipayamak_password' // option name (stored in wp_options)
         );
 
+        register_setting(
+            'general',              // settings group (use 'general' for General Settings page)
+            'wp_oofu_whatsiplus_api_key' // option name (stored in wp_options)
+        );
+
 
 
         add_settings_field(
@@ -51,6 +56,15 @@ class settings
             'wp_oofu_melipayamak_password',                   // field ID
             __('Melipayamak Password', 'orderbox-order-code-follow-up'),         // field title (label)
             array(__CLASS__,'render_wp_oofu_melipayamak_password_plugin_field'),            // callback to render field HTML
+            'general'                                  // settings page slug (general page)
+        );
+
+
+
+        add_settings_field(
+            'wp_oofu_whatsiplus_api_key',                   // field ID
+            __('whatsiplus API Key', 'orderbox-order-code-follow-up'),         // field title (label)
+            array(__CLASS__,'render_wp_oofu_whatsiplus_api_key_plugin_field'),            // callback to render field HTML
             'general'                                  // settings page slug (general page)
         );
 
@@ -102,4 +116,23 @@ class settings
         <p class="description"></p>
         <?php
     }
+
+
+
+    public static function render_wp_oofu_whatsiplus_api_key_plugin_field(){
+
+        $value = get_option('wp_oofu_whatsiplus_api_key', '');
+        ?>
+        <input type="text"
+               id="wp_oofu_whatsiplus_api_key"
+               name="wp_oofu_whatsiplus_api_key"
+               value="<?php echo esc_attr($value); ?>"
+               class="regular-text" />
+        <p class="description"></p>
+        <?php
+
+
+    }
+
+
 }

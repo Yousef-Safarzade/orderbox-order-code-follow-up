@@ -15,7 +15,7 @@ class acf_helper
 
         add_filter( 'acf/settings/load_json', array(__CLASS__ ,'custom_acf_json_load_point')  );
 
-        add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_sms')  );
+        add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_notifications')  );
 
         add_filter('acf/prepare_field', array(__CLASS__ ,'generate_random_password')  );
 
@@ -77,7 +77,7 @@ class acf_helper
 
 
 
-    public static function send_initial_sms($post_id){
+    public static function send_initial_notifications($post_id){
 
         if( get_post_type($post_id) != 'orderbox_order'){
 
@@ -93,7 +93,11 @@ class acf_helper
             !empty($values['customer_phone_number'])
         ){
 
+
+
             melipayamak::send_orderbox_order_follow_up_sms($values);
+
+            whatsappHelper::send_whatsapp_message($values);
 
             update_post_meta($post_id , 'first_sms_sent' , true);
 
@@ -142,6 +146,11 @@ class acf_helper
         return $field;
 
     }
+
+
+
+
+
 
 
 

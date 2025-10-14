@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-14 10:53+0000\n"
+"POT-Creation-Date: 2025-10-14 21:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -48,6 +48,24 @@ msgstr ""
 msgid "Customer Name"
 msgstr ""
 
+#: src/whatsappHelper.php:40
+#, php-format
+msgid ""
+"Dear Customer : %s \n"
+"\n"
+"Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+"\n"
+"Date : %s \n"
+"\n"
+"Code :  %s \n"
+"\n"
+"Password : %s \n"
+"\n"
+"Please Visit Website For More Information \n"
+"\n"
+"https://OrderBox.ae"
+msgstr ""
+
 #: src/melipayamak.php:21
 #, php-format
 msgid ""
@@ -88,17 +106,17 @@ msgid "KG"
 msgstr ""
 
 #. field ID
-#: src/settings.php:52
+#: src/settings.php:57
 msgid "Melipayamak Password"
 msgstr ""
 
 #. field ID
-#: src/settings.php:36
+#: src/settings.php:41
 msgid "Melipayamak Phone Number"
 msgstr ""
 
 #. field ID
-#: src/settings.php:44
+#: src/settings.php:49
 msgid "Melipayamak Username"
 msgstr ""
 
@@ -272,6 +290,11 @@ msgstr ""
 
 #: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
+msgstr ""
+
+#. field ID
+#: src/settings.php:66
+msgid "whatsiplus API Key"
 msgstr ""
 
 #. Author of the plugin
