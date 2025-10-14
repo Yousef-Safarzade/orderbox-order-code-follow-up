@@ -2,7 +2,7 @@
 
 $report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post();
 
-//\OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
+\OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
 
 $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url();
 

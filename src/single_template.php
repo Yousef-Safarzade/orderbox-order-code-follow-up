@@ -261,6 +261,15 @@ class single_template
 
     public static function can_user_access_this_order_code_detail_page(){
 
+        $user = wp_get_current_user();
+
+        if(in_array('administrator' , (array) $user->roles) || in_array('shop_manager' , (array) $user->roles) ){
+
+            return true;
+
+        }
+        
+
         $post_pass = get_field('order_password' , get_the_ID() );
 
         if ( md5($post_pass) !== $_GET['order-pass'] ) {
