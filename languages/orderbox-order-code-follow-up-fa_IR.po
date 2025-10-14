@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-10-10 18:04+0000\n"
+"PO-Revision-Date: 2025-10-14 10:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:180
+#: src/single_template.php:173
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
@@ -48,7 +48,7 @@ msgstr "نمایش تمامی کدهای ارسال"
 msgid "Customer Name"
 msgstr "نام مشتری"
 
-#: src/melipayamak.php:14
+#: src/melipayamak.php:21
 #, php-format
 #| msgid ""
 #| "Dear Customer : %s \n"
@@ -76,7 +76,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:220
+#: src/single_template.php:213
 msgid "Description"
 msgstr "توضیحات"
 
@@ -131,15 +131,15 @@ msgstr "سفارشی با این کد یافت نشد"
 msgid "Order Code"
 msgstr "کد ارسال"
 
-#: src/single_template.php:148
-msgid "Order Date"
-msgstr "تاریخ ارسال"
+#: templates/single-orderbox-order-follow-up-progress-bar.php:6
+msgid "ORDER RECEIVED"
+msgstr "دریافت سفارش"
 
-#: src/single_template.php:155
+#: src/single_template.php:148
 msgid "Order Status"
 msgstr "وضعیت ارسال"
 
-#: src/single_template.php:161
+#: src/single_template.php:154
 msgid "Order Weight"
 msgstr "وزن محصول"
 
@@ -199,23 +199,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:189
+#: src/single_template.php:182
 msgid "Product Name 1"
 msgstr "محصول شماره ۱"
 
-#: src/single_template.php:195
+#: src/single_template.php:188
 msgid "Product Name 2"
 msgstr "محصول شماره ۲"
 
-#: src/single_template.php:201
+#: src/single_template.php:194
 msgid "Product Name 3"
 msgstr "محصول شماره ۳"
 
-#: src/single_template.php:207
+#: src/single_template.php:200
 msgid "Product Name 4"
 msgstr "محصول شماره ۴"
 
-#: src/single_template.php:213
+#: src/single_template.php:206
 msgid "Product Name 5"
 msgstr "محصول شماره ۵"
 
@@ -271,7 +271,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr "آرشیو کدهای ارسال"
 
-#: src/acf_helper.php:35
+#: src/acf_helper.php:33
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"
@@ -283,7 +283,7 @@ msgstr ""
 msgid "TIPAX"
 msgstr "ارسال با تیپاکس"
 
-#: src/single_template.php:178
+#: src/single_template.php:171
 msgid "Tipax Code"
 msgstr "کد تیپاکس"
 

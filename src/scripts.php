@@ -39,6 +39,28 @@ class scripts
 
         }
 
+
+        if( is_single() && get_post_type( get_the_ID() ) == 'orderbox_order' ){
+
+            wp_enqueue_style(
+                'oofu-lightbox-style',
+                WP_OOFU_PLUGIN_CSS_FOLDER_URL . 'lightbox.min.css',
+                [],
+                WP_OOFU_PLUGIN_VERSION
+            );
+
+
+            wp_enqueue_script(
+                'oofu-lightbox-script',
+                WP_OOFU_PLUGIN_JS_FOLDER_URL . 'lightbox-plus-jquery.js',
+                ['jquery'],
+                WP_OOFU_PLUGIN_VERSION,
+                array('in_footer' => true)
+            );
+
+
+        }
+
     }
 
 
@@ -51,6 +73,10 @@ class scripts
                 [],
                 WP_OOFU_PLUGIN_VERSION
             );
+
+
+
+
 
 
 

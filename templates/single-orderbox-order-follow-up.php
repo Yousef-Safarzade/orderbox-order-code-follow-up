@@ -2,9 +2,11 @@
 
 $report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post();
 
-\OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
+//\OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
 
 $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url();
+
+$sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_urls();
 
 ?>
 
@@ -14,7 +16,6 @@ $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url()
 
     <?php require_once (WP_OOFU_PLUGIN_FOLDER_PATH . "/templates/single-orderbox-order-follow-up-progress-bar.php"); ?>
 
-
     <div class="orderbox-order-follow-up-main-container">
 
         <?php if($image_url){ ?>
@@ -22,6 +23,16 @@ $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url()
             <div class="orderbox-order-follow-up-qr-code-container">
 
                 <img src="<?php echo esc_url($image_url); ?>">
+
+                <?php if(is_array($sticker_url) && !empty($sticker_url['full'] ) ){ ?>
+
+                    <a href="<?php echo $sticker_url['full'] ?>" data-lightbox="image-1">
+
+                        <img class="sticker-image" src="<?php echo $sticker_url['thumb'] ?>">
+
+                    </a>
+
+                <?php } ?>
 
             </div>
 

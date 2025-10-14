@@ -1,3 +1,21 @@
+.post-type-orderbox_order .acf-field-group .acf-fields {
+  border: none;
+  background: transparent;
+}
+.post-type-orderbox_order .acf-field-group .acf-fields .acf-field {
+  min-height: 60px;
+  background: transparent;
+  border-style: none !important;
+  margin-bottom: 0;
+}
+.post-type-orderbox_order .acf-field-group .acf-fields .acf-field .acf-input input[type=text] {
+  min-height: 30px;
+  line-height: 30px;
+  height: 30px;
+}
+.post-type-orderbox_order .acf-field-group .acf-fields .acf-field .acf-label {
+  min-width: 140px;
+}
 .post-type-orderbox_order .acf-postbox {
   direction: rtl;
   padding-right: 15px;

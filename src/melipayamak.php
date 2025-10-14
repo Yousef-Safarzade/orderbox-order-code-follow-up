@@ -7,7 +7,14 @@ class melipayamak
 
     public static function send_orderbox_order_follow_up_sms($values){
 
-        $curl = curl_init();
+
+        $config = self::get_required_configs();
+
+        if(empty($config['phone_number']) || empty($config['username']) || empty($config['password'])){
+
+            return false;
+
+        }
 
 
         $message = sprintf(
@@ -19,30 +26,48 @@ class melipayamak
         );
 
 
-
-        $phone_number = get_option("wp_oofu_melipayamak_phone_number");
-
-        $username = get_option("wp_oofu_melipayamak_username");
-
-        $password = get_option("wp_oofu_melipayamak_password");
-
-
-        if(empty($phone_number) || empty($username) || empty($password)){
-
-            return false;
-
-        }
-
         $options = array(
-            'username'  => $username ,
-            'password'  => $password,
-            'from'      => $phone_number,
+            'username'  => $config['username'] ,
+            'password'  => $config['password'],
+            'from'      => $config['phone_number'],
             'to'        => $values['customer_phone_number'],
             'isflash'   => false,
             'text'      => $message
-
         );
 
+
+
+        self::init_curl_request($options);
+
+        if ( !empty($values['customer_second_phone_number']) ){
+
+            $options['to'] = $values['customer_second_phone_number'];
+
+            self::init_curl_request($options);
+
+        }
+
+
+    }
+
+
+
+    public static function get_required_configs(){
+
+        return array(
+            'phone_number' => get_option("wp_oofu_melipayamak_phone_number"),
+            'username' => get_option("wp_oofu_melipayamak_username"),
+            'password' => get_option("wp_oofu_melipayamak_password")
+        );
+
+    }
+
+
+
+
+    public static function init_curl_request($options){
+
+        $curl = curl_init();
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'http://rest.payamak-panel.com/api/SendSMS/SendSMS',
@@ -60,12 +85,12 @@ class melipayamak
             ),
         ));
 
-        $response = curl_exec($curl);
-
-        var_dump($response);
+        curl_exec($curl);
 
         curl_close($curl);
 
-
     }
+
+
+
 }

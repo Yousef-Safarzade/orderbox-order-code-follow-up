@@ -1,17 +1,15 @@
 <?php
 
-$current_position = (int)$report_items['order_status']['value'];
+$status = $items = get_field('order_status');
 
 $labels = array(
-
-       1 =>  __('DUBAI / PACKING','orderbox-order-code-follow-up'),
-       2 =>  __('SHIPPED','orderbox-order-code-follow-up'),
-       3 =>  __('IRAN PORT','orderbox-order-code-follow-up'),
-       4 =>  __('SHIRAZ','orderbox-order-code-follow-up'),
-       5 =>  __('TIPAX','orderbox-order-code-follow-up'),
-       6 =>  __('DELIVERED','orderbox-order-code-follow-up'),
-
-
+        'order_received'        =>  __('ORDER RECEIVED','orderbox-order-code-follow-up'),
+        'received_in_dubai'     =>  __('DUBAI / PACKING','orderbox-order-code-follow-up'),
+        'send_to_iran'          =>  __('SHIPPED','orderbox-order-code-follow-up'),
+        'received_in_iran'      =>  __('IRAN PORT','orderbox-order-code-follow-up'),
+        'received_in_shiraz'    =>  __('SHIRAZ','orderbox-order-code-follow-up'),
+        'sent_by_tipax'         =>  __('TIPAX','orderbox-order-code-follow-up'),
+        'recieved_by_customer'  =>  __('DELIVERED','orderbox-order-code-follow-up'),
 );
 
 
@@ -21,10 +19,14 @@ $labels = array(
 
     <ul>
 
-        <?php foreach ($labels as $label_key => $label_value){ ?>
+        <?php foreach ($status as $status_item_name => $status_item_value ){
 
 
-            <li class="orderbox-order-follow-up-progress-bar-item <?php echo $label_key <= $current_position ? 'activated' : 'not-activated' ?>">
+
+            ?>
+
+
+            <li class="orderbox-order-follow-up-progress-bar-item <?php echo !empty($status_item_value) ? 'activated' : 'not-activated' ?>">
 
                 <div class="orderbox-order-follow-up-progress-bar-item-indicator">
 
@@ -36,7 +38,35 @@ $labels = array(
 
                 <div class="orderbox-order-follow-up-progress-bar-item-label">
 
-                    <?php echo $label_value ?>
+
+                    <span class="orderbox-order-follow-up-progress-bar-item-label-name">
+
+                        <?php echo $labels[ $status_item_name ] ?>
+
+                    </span>
+
+                    <div class="orderbox-order-follow-up-progress-bar-item-label-separator"></div>
+
+                    <span class="orderbox-order-follow-up-progress-bar-item-label-date">
+
+                        <?php
+
+
+                        if(!empty($status_item_value)){
+
+                            $date = DateTime::createFromFormat('d/m/Y', $status_item_value);
+
+                            $jDate = \Morilog\Jalali\Jalalian::fromDateTime($date);
+
+                            echo $jDate->format('j / F / Y');
+
+                        }
+
+
+
+                        ?>
+
+                    </span>
 
                 </div>
 

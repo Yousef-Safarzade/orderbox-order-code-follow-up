@@ -17,8 +17,6 @@ class acf_helper
 
         add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_sms')  );
 
-        add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_sms')  );
-
         add_filter('acf/prepare_field', array(__CLASS__ ,'generate_random_password')  );
 
     }
@@ -103,6 +101,13 @@ class acf_helper
 
 
     }
+
+
+
+
+
+
+
 
 
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-10 18:03+0000\n"
+"POT-Creation-Date: 2025-10-14 10:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:180
+#: src/single_template.php:173
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Customer Name"
 msgstr ""
 
-#: src/melipayamak.php:14
+#: src/melipayamak.php:21
 #, php-format
 msgid ""
 "Dear Customer : %s \n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:220
+#: src/single_template.php:213
 msgid "Description"
 msgstr ""
 
@@ -118,15 +118,15 @@ msgstr ""
 msgid "Order Code"
 msgstr ""
 
-#: src/single_template.php:148
-msgid "Order Date"
+#: templates/single-orderbox-order-follow-up-progress-bar.php:6
+msgid "ORDER RECEIVED"
 msgstr ""
 
-#: src/single_template.php:155
+#: src/single_template.php:148
 msgid "Order Status"
 msgstr ""
 
-#: src/single_template.php:161
+#: src/single_template.php:154
 msgid "Order Weight"
 msgstr ""
 
@@ -186,23 +186,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:189
+#: src/single_template.php:182
 msgid "Product Name 1"
 msgstr ""
 
-#: src/single_template.php:195
+#: src/single_template.php:188
 msgid "Product Name 2"
 msgstr ""
 
-#: src/single_template.php:201
+#: src/single_template.php:194
 msgid "Product Name 3"
 msgstr ""
 
-#: src/single_template.php:207
+#: src/single_template.php:200
 msgid "Product Name 4"
 msgstr ""
 
-#: src/single_template.php:213
+#: src/single_template.php:206
 msgid "Product Name 5"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgctxt ""
 msgid "Orderbox Orders archives"
 msgstr ""
 
-#: src/acf_helper.php:35
+#: src/acf_helper.php:33
 msgid ""
 "This Plugin Requires <strong>Advance Custom Field</strong> Plugin to Work "
 "With , Please Install That Plugin First"
@@ -266,7 +266,7 @@ msgstr ""
 msgid "TIPAX"
 msgstr ""
 
-#: src/single_template.php:178
+#: src/single_template.php:171
 msgid "Tipax Code"
 msgstr ""
 

@@ -1,6 +1,38 @@
 .post-type-orderbox_order{
 
+  .acf-field-group{
 
+    .acf-fields{
+
+      border: none;
+      background: transparent;
+
+      .acf-field {
+
+        min-height: 60px;
+        background: transparent;
+        border-style: none !important;
+        margin-bottom: 0;
+
+        .acf-input{
+
+          input[type=text]{
+            min-height: 30px;
+            line-height: 30px;
+            height: 30px;
+          }
+
+
+        }
+        .acf-label{
+          min-width: 140px;
+        }
+
+      }
+
+    }
+
+  }
 
 
 

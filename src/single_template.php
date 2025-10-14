@@ -144,13 +144,6 @@ class single_template
 
 
 
-        $result['order_date'] = array(
-            'label' =>  __('Order Date' , 'orderbox-order-code-follow-up')   ,
-            'value' =>  get_field('order_date' , $post_id)
-        );
-
-
-
         $result['order_status'] = array(
             'label'=>   __('Order Status' , 'orderbox-order-code-follow-up')   ,
             'value' =>  get_field('order_status' , $post_id)
@@ -236,6 +229,34 @@ class single_template
         return !empty( $url ) ? $url : false;
 
     }
+
+
+
+
+    public static function get_sticker_image_urls($post_id = ''){
+
+        $post_id = empty($post_id) ? get_the_ID() : $post_id;
+
+        $image_id = get_field('sticker_image' , $post_id);
+
+        if ( empty( $image_id ) ) {
+
+            return false;
+
+        } else {
+
+            return array(
+              'full' => wp_get_attachment_image_url( $image_id, 'full' ),
+              'thumb' =>   wp_get_attachment_image_url( $image_id, 'small' ),
+            );
+        }
+
+        return !empty( $url ) ? $url : false;
+
+    }
+
+
+
 
 
     public static function can_user_access_this_order_code_detail_page(){
