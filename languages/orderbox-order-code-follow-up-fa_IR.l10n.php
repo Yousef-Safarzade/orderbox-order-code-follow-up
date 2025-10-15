@@ -1,5 +1,5 @@
 <?php
-return ['project-id-version'=>'Orderbox Order Code Follow Up','report-msgid-bugs-to'=>'','pot-creation-date'=>'2025-10-04 08:19+0000','po-revision-date'=>'2025-10-14 21:57+0000','last-translator'=>'','language-team'=>'فارسی','language'=>'fa_IR','plural-forms'=>'nplurals=2; plural=n != 1;','mime-version'=>'1.0','content-type'=>'text/plain; charset=UTF-8','content-transfer-encoding'=>'8bit','x-generator'=>'Loco https://localise.biz/','x-loco-version'=>'2.8.0; wp-6.8.3; php-8.2.10','x-domain'=>'orderbox-order-code-follow-up','messages'=>['<a href="https://tipaxco.com/tracking" target="_blank">Check your Tipax Code</a>'=>'<a href="https://tipaxco.com/tracking" target="_blank">پیگیری کد</a>','Add New'=>'اضافه کردن کد ارسال','Add New on ToolbarOrderbox Orders'=>'کد ارسال','Add New Orderbox Orders'=>'اضافه کردن کد ارسال','Admin Menu textOrderbox Orders'=>'کد ارسال','All Orderbox Orders'=>'نمایش تمامی کدهای ارسال','Customer Name'=>'نام مشتری','Dear Customer : %s 
+return ['project-id-version'=>'Orderbox Order Code Follow Up','report-msgid-bugs-to'=>'','pot-creation-date'=>'2025-10-04 08:19+0000','po-revision-date'=>'2025-10-15 08:02+0000','last-translator'=>'','language-team'=>'فارسی','language'=>'fa_IR','plural-forms'=>'nplurals=2; plural=n != 1;','mime-version'=>'1.0','content-type'=>'text/plain; charset=UTF-8','content-transfer-encoding'=>'8bit','x-generator'=>'Loco https://localise.biz/','x-loco-version'=>'2.8.0; wp-6.8.3; php-8.2.10','x-domain'=>'orderbox-order-code-follow-up','messages'=>['<a href="https://tipaxco.com/tracking" target="_blank">Check your Tipax Code</a>'=>'<a href="https://tipaxco.com/tracking" target="_blank">پیگیری کد</a>','Add New'=>'اضافه کردن کد ارسال','Add New on ToolbarOrderbox Orders'=>'کد ارسال','Add New Orderbox Orders'=>'اضافه کردن کد ارسال','Admin Menu textOrderbox Orders'=>'کد ارسال','All Orderbox Orders'=>'نمایش تمامی کدهای ارسال','Customer Name'=>'نام مشتری','Dear Customer : %s 
 
 Your Order Follow Up Code Has Been Added to Orderbox Website 
 
@@ -11,7 +11,7 @@ Password : %s
 
 Please Visit Website For More Information 
 
-https://OrderBox.ae'=>'مشتری گرامی :‌ %s
+https://orderbox.ae/track-send-code'=>'مشتری گرامی :‌ %s
 
 کد پیگیری ارسال شما در وب سایت OrderBox ثبت گردید
 
@@ -23,7 +23,7 @@ https://OrderBox.ae'=>'مشتری گرامی :‌ %s
 
 برای مشاهده اطلاعات بیشتر به سایت OrderBox مراجعه بفرمایید
 
-https://OrderBox.ae','Dear Customer : %s 
+https://orderbox.ae/track-send-code','Dear Customer : %s 
 Your Order Follow Up Code Has Been Added to Orderbox Website 
 Date : %s 
 Code :  %s 

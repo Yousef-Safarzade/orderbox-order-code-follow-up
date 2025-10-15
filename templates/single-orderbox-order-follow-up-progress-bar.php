@@ -54,11 +54,7 @@ $labels = array(
 
                         if(!empty($status_item_value)){
 
-                            $date = DateTime::createFromFormat('d/m/Y', $status_item_value);
-
-                            $jDate = \Morilog\Jalali\Jalalian::fromDateTime($date);
-
-                            echo $jDate->format('j / F / Y');
+                            echo \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi($status_item_value);
 
                         }
 

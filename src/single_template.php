@@ -268,7 +268,7 @@ class single_template
             return true;
 
         }
-        
+
 
         $post_pass = get_field('order_password' , get_the_ID() );
 

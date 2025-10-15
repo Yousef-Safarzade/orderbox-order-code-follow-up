@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-14 21:56+0000\n"
+"POT-Creation-Date: 2025-10-15 08:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Customer Name"
 msgstr ""
 
-#: src/whatsappHelper.php:40
+#: src/whatsappHelper.php:41
 #, php-format
 msgid ""
 "Dear Customer : %s \n"
@@ -63,10 +63,10 @@ msgid ""
 "\n"
 "Please Visit Website For More Information \n"
 "\n"
-"https://OrderBox.ae"
+"https://orderbox.ae/track-send-code"
 msgstr ""
 
-#: src/melipayamak.php:21
+#: src/melipayamak.php:20
 #, php-format
 msgid ""
 "Dear Customer : %s \n"

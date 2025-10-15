@@ -17,7 +17,7 @@ class acf_helper
 
         add_action( 'acf/save_post', array(__CLASS__ ,'send_initial_notifications')  );
 
-        add_filter('acf/prepare_field', array(__CLASS__ ,'generate_random_password')  );
+        add_filter('acf/prepare_field', array('OrderboxOrderCodeFollowUp\helper' ,'generate_random_password')  );
 
     }
 
@@ -93,8 +93,6 @@ class acf_helper
             !empty($values['customer_phone_number'])
         ){
 
-
-
             melipayamak::send_orderbox_order_follow_up_sms($values);
 
             whatsappHelper::send_whatsapp_message($values);
@@ -103,58 +101,7 @@ class acf_helper
 
         }
 
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     * Auto-generates a secure random password for the 'order_password' field if empty.
-     *
-     * @param array $field The ACF field array.
-     * @return array The modified field array.
-     */
-    public static function generate_random_password( $field ){
-
-        if (
-            !is_array($field) ||
-            !isset($field['_name']) ||
-            $field['_name'] != 'order_password'
-        ) {
-
-            return $field;
-
-        }
-
-
-        if( empty($field['value']) ) {
-
-            $field['value'] = rand(10000,99999);
-
-        }
-
-        return $field;
-
-    }
-
-
-
-
-
-
-
-
-
 
 
 }

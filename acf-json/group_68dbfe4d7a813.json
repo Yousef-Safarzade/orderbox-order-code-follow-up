@@ -45,6 +45,35 @@
             "append": ""
         },
         {
+            "key": "field_68ef4ffc641b1",
+            "label": "کد کشور شماره تماس مشتری",
+            "name": "customer_phone_number_country_code",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "+98": "+98",
+                "+971": "+971"
+            },
+            "default_value": "+98",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_68edd73c443ca",
             "label": "شماره تماس دوم",
             "name": "customer_second_phone_number",
@@ -64,6 +93,85 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_68ef5085641b2",
+            "label": "کد کشور شماره تماس دوم",
+            "name": "customer_second_phone_number_country_code",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "+98": "+98",
+                "+971": "+971"
+            },
+            "default_value": "+98",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_68ef51a0d9518",
+            "label": "شماره تماس سوم",
+            "name": "customer_third_phone_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68ef51bad9519",
+            "label": "کد کشور شماره تماس سوم",
+            "name": "customer_third_phone_number_country_code",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "+98": "+98",
+                "+971": "+971"
+            },
+            "default_value": "+98",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_68dbfe70f6dd1",
@@ -548,5 +656,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760425032
+    "modified": 1760514595
 }

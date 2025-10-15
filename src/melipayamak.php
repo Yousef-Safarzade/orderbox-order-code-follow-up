@@ -7,7 +7,6 @@ class melipayamak
 
     public static function send_orderbox_order_follow_up_sms($values){
 
-
         $config = self::get_required_configs();
 
         if(empty($config['phone_number']) || empty($config['username']) || empty($config['password'])){
@@ -20,7 +19,7 @@ class melipayamak
         $message = sprintf(
             __("Dear Customer : %s \nYour Order Follow Up Code Has Been Added to Orderbox Website \nDate : %s \nCode :  %s \n Password : %s \nPlease Visit OrderBox Website For More Information" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
-            $values['order_status']['order_received'],
+            \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi($values['order_status']['order_received']),
             $values['order_code'],
             $values['order_password']
         );
@@ -42,6 +41,15 @@ class melipayamak
         if ( !empty($values['customer_second_phone_number']) ){
 
             $options['to'] = $values['customer_second_phone_number'];
+
+            self::init_curl_request($options);
+
+        }
+
+
+        if ( !empty($values['customer_third_phone_number']) ){
+
+            $options['to'] = $values['customer_third_phone_number'];
 
             self::init_curl_request($options);
 

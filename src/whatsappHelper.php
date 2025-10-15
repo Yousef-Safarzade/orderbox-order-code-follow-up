@@ -7,7 +7,6 @@ class whatsappHelper
 
 
 
-
     public static function format_whatsapp_number($number){
 
 
@@ -19,11 +18,13 @@ class whatsappHelper
 
         }
 
-        return "+98" . $number;
+        return $number;
 
 
 
     }
+
+
 
 
     public static function send_whatsapp_message($values){
@@ -37,17 +38,20 @@ class whatsappHelper
         }
 
         $message = sprintf(
-            __("Dear Customer : %s \n\nYour Order Follow Up Code Has Been Added to Orderbox Website \n\nDate : %s \n\nCode :  %s \n\nPassword : %s \n\nPlease Visit Website For More Information \n\nhttps://OrderBox.ae" , 'orderbox-order-code-follow-up') ,
+            __("Dear Customer : %s \n\nYour Order Follow Up Code Has Been Added to Orderbox Website \n\nDate : %s \n\nCode :  %s \n\nPassword : %s \n\nPlease Visit Website For More Information \n\nhttps://orderbox.ae/track-send-code" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
-            $values['order_status']['order_received'],
+            \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi($values['order_status']['order_received']) ,
             $values['order_code'],
             $values['order_password']
         );
 
 
+
+
+
         $options = array(
             'api_key' => $api_key,
-            'phonenumber' => self::format_whatsapp_number($values['customer_phone_number']),
+            'phonenumber' => $values['customer_phone_number_country_code'] . self::format_whatsapp_number($values['customer_phone_number']),
             'message' => $message,
         );
 
@@ -56,7 +60,17 @@ class whatsappHelper
 
         if ( !empty($values['customer_second_phone_number']) ){
 
-            $options['phonenumber'] = self::format_whatsapp_number($values['customer_second_phone_number']);
+            $options['phonenumber'] = $values['customer_second_phone_number_country_code'] . self::format_whatsapp_number($values['customer_second_phone_number']);
+
+            self::init_curl_request($options);
+
+        }
+
+
+
+        if ( !empty($values['customer_third_phone_number']) ){
+
+            $options['phonenumber'] = $values['customer_third_phone_number_country_code'] . self::format_whatsapp_number($values['customer_third_number']);
 
             self::init_curl_request($options);
 
