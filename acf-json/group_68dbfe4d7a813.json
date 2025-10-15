@@ -59,10 +59,10 @@
                 "id": ""
             },
             "choices": {
-                "+98": "+98",
-                "+971": "+971"
+                "98": "98",
+                "971": "971"
             },
-            "default_value": "+98",
+            "default_value": 98,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -109,10 +109,10 @@
                 "id": ""
             },
             "choices": {
-                "+98": "+98",
-                "+971": "+971"
+                "98": "98",
+                "971": "971"
             },
-            "default_value": "+98",
+            "default_value": 98,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -159,10 +159,10 @@
                 "id": ""
             },
             "choices": {
-                "+98": "+98",
-                "+971": "+971"
+                "98": "98",
+                "971": "971"
             },
-            "default_value": "+98",
+            "default_value": 98,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -656,5 +656,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760514595
+    "modified": 1760518347
 }

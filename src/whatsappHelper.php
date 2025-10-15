@@ -45,10 +45,6 @@ class whatsappHelper
             $values['order_password']
         );
 
-
-
-
-
         $options = array(
             'api_key' => $api_key,
             'phonenumber' => $values['customer_phone_number_country_code'] . self::format_whatsapp_number($values['customer_phone_number']),
@@ -62,6 +58,7 @@ class whatsappHelper
 
             $options['phonenumber'] = $values['customer_second_phone_number_country_code'] . self::format_whatsapp_number($values['customer_second_phone_number']);
 
+
             self::init_curl_request($options);
 
         }
@@ -72,9 +69,13 @@ class whatsappHelper
 
             $options['phonenumber'] = $values['customer_third_phone_number_country_code'] . self::format_whatsapp_number($values['customer_third_number']);
 
+
             self::init_curl_request($options);
 
         }
+
+
+
 
     }
 
@@ -101,6 +102,7 @@ class whatsappHelper
         ));
 
         $response = curl_exec($curl);
+
 
         curl_close($curl);
 
