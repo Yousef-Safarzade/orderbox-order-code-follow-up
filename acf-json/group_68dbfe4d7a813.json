@@ -283,6 +283,29 @@
             "append": ""
         },
         {
+            "key": "field_68f76f66a1374",
+            "label": "قیمت کالا ۱",
+            "name": "product_price_1",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68dbff0b4599c",
             "label": "نام کالا ۲",
             "name": "product_name_2",
@@ -300,6 +323,29 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68f76fc2a1375",
+            "label": "قیمت کالا ۲",
+            "name": "product_price_2",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -325,6 +371,29 @@
             "append": ""
         },
         {
+            "key": "field_68f76fd1a1376",
+            "label": "قیمت کالا ۳",
+            "name": "product_price_3",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68dbff0f4599e",
             "label": "نام کالا ۴",
             "name": "product_name_4",
@@ -342,6 +411,29 @@
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68f76fdda1377",
+            "label": "قیمت کالا ۴",
+            "name": "product_price_4",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -367,11 +459,11 @@
             "append": ""
         },
         {
-            "key": "field_68dbfeaef6dd4",
-            "label": "توضیحات",
-            "name": "description",
+            "key": "field_68f76fe6a1378",
+            "label": "قیمت کالا ۵",
+            "name": "product_price_5",
             "aria-label": "",
-            "type": "textarea",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -381,11 +473,13 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
-            "rows": "",
             "placeholder": "",
-            "new_lines": ""
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_68e0c7e6e9af2",
@@ -438,6 +532,27 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
+        },
+        {
+            "key": "field_68dbfeaef6dd4",
+            "label": "توضیحات",
+            "name": "description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         },
         {
             "key": "field_68e2339f0274f",
@@ -1008,5 +1123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760960318
+    "modified": 1761046529
 }

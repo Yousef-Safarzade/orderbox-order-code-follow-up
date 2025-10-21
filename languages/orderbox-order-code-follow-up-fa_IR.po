@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-10-21 06:56+0000\n"
+"PO-Revision-Date: 2025-10-21 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -22,7 +22,12 @@ msgid ""
 msgstr ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">پیگیری کد</a>"
 
-#: src/single_template.php:534
+#: src/single_template.php:459
+#, php-format
+msgid "<br/><br/>Product Price : %s"
+msgstr "<br/><br/>قیمت محصول :‌ %s"
+
+#: src/single_template.php:544
 msgid "Accept Document"
 msgstr "تایید مدارک ارسالی"
 
@@ -77,7 +82,7 @@ msgstr ""
 "به نام :  رامین عرب زاده\n"
 "<br /><br />"
 
-#: src/single_template.php:531
+#: src/single_template.php:541
 msgid "Click To Choose Documents"
 msgstr "برای انتخاب مدارک کلیک کنید"
 
@@ -163,7 +168,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:141 src/single_template.php:478
+#: src/single_template.php:141 src/single_template.php:488
 msgid "Description"
 msgstr "توضیحات"
 
@@ -316,7 +321,7 @@ msgstr "کد ارسالی مادر"
 msgid "Pasargad Bank Info"
 msgstr "اطلاعات پرداخت <br/> بانک پاسارگاد"
 
-#: src/single_template.php:555
+#: src/single_template.php:565
 msgid "Payment Document Preview"
 msgstr "تصویر مدرک <br/> پرداختی"
 
@@ -348,7 +353,7 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:455
+#: src/single_template.php:465
 #, php-format
 #| msgid "Product Name 1"
 msgid "Product Name %s"
@@ -361,7 +366,7 @@ msgid ""
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:533
+#: src/single_template.php:543
 msgid "Reset Form"
 msgstr "پاک کردن اطلاعات"
 
@@ -449,11 +454,11 @@ msgstr "مجموع هزینه<br/> ( تومان )"
 msgid "Transport Cost"
 msgstr "هزینه ارسال"
 
-#: src/single_template.php:532
+#: src/single_template.php:542
 msgid "Upload Payment"
 msgstr "شروع آپلود"
 
-#: src/single_template.php:509
+#: src/single_template.php:519
 msgid "Upload Payment <br />Document"
 msgstr "آپلود مدارک <br/> پرداخت"
 

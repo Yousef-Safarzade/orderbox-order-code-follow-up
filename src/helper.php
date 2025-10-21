@@ -14,6 +14,9 @@ class helper
 
         add_action('wp_ajax_accept_payment_document', array(__CLASS__,'accept_payment_document') );
 
+        add_action('wp_ajax_nopriv_accept_payment_document', array(__CLASS__,'accept_payment_document') );
+
+
     }
 
 

@@ -326,6 +326,28 @@ class single_template
         }
 
 
+
+        for($i = 1 ; $i <= 5 ; $i++){
+
+            $price = get_field('product_price_'.$i , $post->ID);
+
+            if(empty($price)){
+
+                continue;
+
+            }
+            
+            $total_additional_const += (int)helper::convert_persian_number_to_english($price);
+
+        }
+
+
+
+
+
+
+
+
         if( $total_additional_const > 0 ) {
 
             $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
@@ -451,6 +473,16 @@ class single_template
         for ($i = 1; $i < 6; $i++) {
 
             $value = get_field('product_name_' . $i, $post->ID);
+
+            $price = get_field('product_price_' . $i, $post->ID);
+
+            if($price != '' &&  !empty($price) ){
+
+                $price_string = sprintf( __('<br/><br/>Product Price : %s', 'orderbox-order-code-follow-up') , $price);
+
+                $value .= $price_string;
+
+            }
 
             $label = sprintf(__('Product Name %s', 'orderbox-order-code-follow-up'), $i);
 

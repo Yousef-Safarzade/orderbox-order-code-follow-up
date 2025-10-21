@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 06:54+0000\n"
+"POT-Creation-Date: 2025-10-21 11:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,7 +22,12 @@ msgid ""
 "Code</a>"
 msgstr ""
 
-#: src/single_template.php:534
+#: src/single_template.php:459
+#, php-format
+msgid "<br/><br/>Product Price : %s"
+msgstr ""
+
+#: src/single_template.php:544
 msgid "Accept Document"
 msgstr ""
 
@@ -65,7 +70,7 @@ msgid ""
 "<br/><br/>Ramin Arabzade"
 msgstr ""
 
-#: src/single_template.php:531
+#: src/single_template.php:541
 msgid "Click To Choose Documents"
 msgstr ""
 
@@ -106,7 +111,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:141 src/single_template.php:478
+#: src/single_template.php:141 src/single_template.php:488
 msgid "Description"
 msgstr ""
 
@@ -257,7 +262,7 @@ msgstr ""
 msgid "Pasargad Bank Info"
 msgstr ""
 
-#: src/single_template.php:555
+#: src/single_template.php:565
 msgid "Payment Document Preview"
 msgstr ""
 
@@ -289,7 +294,7 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:455
+#: src/single_template.php:465
 #, php-format
 msgid "Product Name %s"
 msgstr ""
@@ -301,7 +306,7 @@ msgid ""
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:533
+#: src/single_template.php:543
 msgid "Reset Form"
 msgstr ""
 
@@ -385,11 +390,11 @@ msgstr ""
 msgid "Transport Cost"
 msgstr ""
 
-#: src/single_template.php:532
+#: src/single_template.php:542
 msgid "Upload Payment"
 msgstr ""
 
-#: src/single_template.php:509
+#: src/single_template.php:519
 msgid "Upload Payment <br />Document"
 msgstr ""
 
