@@ -27,6 +27,15 @@
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value {
   line-height: 1.5em;
 }
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .orderbox-payment-document-preview {
+  margin-top: 20px;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value img.uploaded-document-preview {
+  width: 92%;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item a {
   text-decoration: none;
 }
@@ -177,6 +186,39 @@
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 50px;
   }
+}
+
+@media (max-width: 600px) {
+  #orderboxPaymentUploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+#orderboxPaymentUploadForm label#uploadFormLabel {
+  cursor: pointer;
+  min-width: 200px;
+  display: block;
+  margin-bottom: 20px;
+}
+#orderboxPaymentUploadForm input[type=submit], #orderboxPaymentUploadForm input[type=button], #orderboxPaymentUploadForm input[type=reset] {
+  min-width: 130px;
+  background: #1891d5;
+  width: 100px;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 7px;
+  border-style: none;
+}
+#orderboxPaymentUploadForm input[type=submit]:disabled, #orderboxPaymentUploadForm input[type=button]:disabled, #orderboxPaymentUploadForm input[type=reset]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+#orderboxPaymentUploadForm span.paymentDocumentFileName {
+  display: block;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=front-styles.css.map */

@@ -126,86 +126,14 @@ class single_template
 
         $result = array();
 
-        $weight_appendix = __("KG",'orderbox-order-code-follow-up');
 
 
 
 
-        $result['order_code'] = array(
-            'label' =>  __('Order Code' , 'orderbox-order-code-follow-up') ,
-            'value' =>  get_field('order_code' , $post_id)
-        );
-
-
-        $result['customer_name'] = array(
-            'label' =>  __('Customer Name' , 'orderbox-order-code-follow-up')  ,
-            'value' =>  get_field('customer_name' , $post_id)
-        );
-
-
-
-        $result['order_status'] = array(
-            'label'=>   __('Order Status' , 'orderbox-order-code-follow-up')   ,
-            'value' =>  get_field('order_status' , $post_id)
-        );
-
-
-        $result['order_weight'] = array(
-            'label' =>  __('Order Weight' , 'orderbox-order-code-follow-up')   ,
-            'value' =>  get_field('order_weight' , $post_id)
-        );
 
 
 
 
-        if( !empty( $result['order_weight']['value'] ) ) {
-
-            $result['order_weight']['value'] = $result['order_weight']['value'] . " " . $weight_appendix;
-
-        }
-
-
-
-
-        $result['tipax_code'] = array(
-            'label' =>  __('Tipax Code', 'orderbox-order-code-follow-up')   ,
-            'value' =>  get_field('tipax_code' , $post_id) ,
-            'description' => __(
-                '<a href="https://tipaxco.com/tracking" target="_blank">Check your Tipax Code</a>' ,
-                'orderbox-order-code-follow-up'
-            )
-        );
-
-
-
-        $result['product_name_1'] = array(
-            'label' =>  __('Product Name 1' , 'orderbox-order-code-follow-up')  ,
-            'value' =>  get_field('product_name_1' , $post_id)
-        );
-
-
-        $result['product_name_2'] = array(
-            'label' =>  __('Product Name 2' , 'orderbox-order-code-follow-up')  ,
-            'value' =>  get_field('product_name_2' , $post_id)
-        );
-
-
-        $result['product_name_3'] = array(
-            'label' =>  __('Product Name 3' , 'orderbox-order-code-follow-up')  ,
-            'value' => get_field('product_name_3' , $post_id)
-        );
-
-
-        $result['product_name_4'] = array(
-            'label' =>  __('Product Name 4' , 'orderbox-order-code-follow-up')  ,
-            'value' => get_field('product_name_4' , $post_id)
-        );
-
-
-        $result['product_name_5'] = array(
-            'label' =>  __('Product Name 5' , 'orderbox-order-code-follow-up')  ,
-            'value' => get_field('product_name_5' , $post_id)
-        );
 
 
 
@@ -213,6 +141,10 @@ class single_template
             'label' =>  __('Description' , 'orderbox-order-code-follow-up')  ,
             'value' =>  get_field('description' , $post_id)
         );
+
+
+
+
 
 
         return $result;
@@ -286,6 +218,352 @@ class single_template
 
 
     }
+
+
+
+
+
+    public static function generate_single_order_meta_data_seciton($fields){
+
+        $items = array(
+
+            'order_code' => array(
+                'label' =>  __('Order Code' , 'orderbox-order-code-follow-up') ,
+                'value' =>  $fields['order_code']
+            ),
+
+            'customer_name' => array(
+                'label' =>  __('Customer Name' , 'orderbox-order-code-follow-up')  ,
+                'value' =>  $fields['customer_name']
+            ),
+
+            'order_weight' => array(
+                'label' =>  __('Order Weight' , 'orderbox-order-code-follow-up')   ,
+                'value' =>  $fields['order_weight']
+            ),
+
+
+            'tipax_code' => array(
+                'label' =>  __('Tipax Code', 'orderbox-order-code-follow-up')   ,
+                'value' =>  $fields['tipax_code'] ,
+                'description' => __(
+                    '<a href="https://tipaxco.com/tracking" target="_blank">Check your Tipax Code</a>' ,
+                    'orderbox-order-code-follow-up'
+                )
+            ),
+
+        );
+
+
+
+        if( !empty( $items['order_weight']['value'] ) ) {
+
+            $items['order_weight']['value'] = $items['order_weight']['value'] . " " . __("KG",'orderbox-order-code-follow-up');
+
+        }
+
+
+
+        foreach ($items as $item_value) {
+
+            $value = $item_value['value'];
+
+            $description = !empty($item_value['description']) ? $item_value['description'] : '';
+
+            $label = $item_value['label'];
+
+            helper::generate_report_table_row( $label , $value , $description);
+
+        }
+
+
+
+    }
+
+
+
+
+
+    public static function generate_single_order_cost_seciton(){
+
+        global $post;
+
+        $total_additional_const = 0;
+
+        $transport_cost = get_field('transport_cost', $post->ID );
+
+        $weight = get_field('order_weight', $post->ID );
+
+        if( !empty($transport_cost) && !empty($weight) ){
+
+            $label = __('Transport Cost' , 'orderbox-order-code-follow-up');
+
+            $value = $transport_cost * $weight;
+
+            $total_additional_const = $value;
+
+            helper::generate_report_table_row( $label , $value);
+
+        }
+
+
+        for($i = 1 ; $i < 5 ; $i++){
+
+            $value = get_field('additional_cost_'.$i.'_value' , $post->ID);
+
+            $label = sprintf( __('Additional Cost %s', 'orderbox-order-code-follow-up'), $i );
+
+            if(empty($value)){
+
+                continue;
+
+            }
+
+            helper::generate_report_table_row(  $label , $value );
+
+            $total_additional_const += (int)helper::convert_persian_number_to_english($value);
+
+        }
+
+
+        if( $total_additional_const > 0 ) {
+
+            $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
+
+            $value = $total_additional_const;
+
+            helper::generate_report_table_row( $label , $value  );
+
+
+            $label = __('Total Additional Cost (Tooman)', 'orderbox-order-code-follow-up');
+
+            $value = helper::get_aed_to_tooman_value($value);
+
+            helper::generate_report_table_row( $label , $value  );
+
+
+        }
+
+
+        $label = __('Payment Status' , 'orderbox-order-code-follow-up');
+
+        $payment_status = get_field('payment_status' , $post->ID );
+
+        helper::generate_report_table_row( $label , $payment_status['label']  );
+
+        if( $payment_status['value'] == 'not_payed' ) {
+
+
+            if( get_field('show_pasargad_bank_payment_info' , $post->ID ) ){
+
+                self::show_pasargad_bank_table_row();
+
+            }
+
+            if( get_field('show_meli_bank_payment_info' , $post->ID ) ){
+
+                self::show_meli_bank_table_row();
+
+            }
+
+            if( get_field('show_emirate_bank_payment_info' , $post->ID ) ){
+
+                self::show_emirate_bank_table_row();
+
+            }
+
+
+
+            if( get_field('show_custom_bank_payment_info' , $post->ID ) ){
+
+                self::show_custom_bank_table_row();
+
+            }
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+    public static function show_pasargad_bank_table_row(){
+
+        $label = __('Pasargad Bank Info' , 'orderbox-order-code-follow-up');
+
+        $value = __("Card : 5022291317869681 <br /><br />SHABA Number : IR720570140380000653673001 <br/><br />Rezvan Arabzade", 'orderbox-order-code-follow-up');
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
+
+
+    public static function show_meli_bank_table_row(){
+
+        $label = __('Meli Bank Info' , 'orderbox-order-code-follow-up');
+
+        $value = __("Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 <br/><br/>Ramin Arabzade", 'orderbox-order-code-follow-up');
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
+
+    public static function show_emirate_bank_table_row(){
+
+        $label = __('Emirate Bank Info' , 'orderbox-order-code-follow-up');
+
+        $value = __("Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD", 'orderbox-order-code-follow-up');
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
+    public static function show_custom_bank_table_row(){
+
+        global $post;
+
+        $label = __('Other Payment Inro' , 'orderbox-order-code-follow-up');
+
+        $value = get_field('custom_bank_payment_info' , $post->ID );
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
+
+
+    public static function generate_single_order_product_list_section(){
+
+        global $post;
+
+        for ($i = 1; $i < 6; $i++) {
+
+            $value = get_field('product_name_' . $i, $post->ID);
+
+            $label = sprintf(__('Product Name %s', 'orderbox-order-code-follow-up'), $i);
+
+            if (empty($value)) {
+
+                continue;
+
+            }
+
+            helper::generate_report_table_row($label, $value);
+
+        }
+
+    }
+
+
+
+
+    public static function generate_single_order_description_section(){
+
+        global $post;
+
+        $value = get_field('description', $post->ID);
+
+        $label = __('Description', 'orderbox-order-code-follow-up');
+
+        if ( empty( $value ) ) {
+
+            return;
+
+        }
+
+        helper::generate_report_table_row( $label, $value );
+
+
+    }
+
+
+
+    public static function generate_upload_payment_document_form(){
+
+        global $post;
+
+        $payment_status = get_field('payment_status' , $post->ID );
+
+        $uploaded_document = get_field('payment_document', $post->ID);
+
+
+
+        if($payment_status['value'] != 'not_payed' || !empty($uploaded_document)) {
+
+            return;
+
+        }
+
+        $label = __('Upload Payment <br />Document' , 'orderbox-order-code-follow-up');
+
+        $value = sprintf('<form id="orderboxPaymentUploadForm" action="#" method="post" enctype="multipart/form-data">
+
+                        <label id="uploadFormLabel" for="paymentDocument">%s</label>
+                        
+                        <input type="file" id="paymentDocument" name="paymentDocument" accept="image/png, image/jpeg" style="display: none" />
+                        
+                        <span class="paymentDocumentFileName"> </span>
+                        
+                        <input id="submitButton" type="submit" value="%s" />
+                        
+                        <input id="resetButton" type="reset" value="%s" />
+                        
+                        <input id="paymentDocumentURL" name="paymentDocumentURL" type="hidden">
+                        
+                        <input id="acceptButton" type="button" value="%s" disabled/>
+
+                  </form>
+                  
+                  <div class="orderbox-payment-document-preview"></div>
+                  ',
+        __('Click To Choose Documents', 'orderbox-order-code-follow-up'),
+        __('Upload Payment' , 'orderbox-order-code-follow-up'),
+        __('Reset Form' , 'orderbox-order-code-follow-up'),
+        __('Accept Document' , 'orderbox-order-code-follow-up')
+        );
+
+        helper::generate_report_table_row( $label, $value );
+
+    }
+
+
+
+    public static function generate_payment_document_preview(){
+
+        global $post;
+
+        $uploaded_document = get_field('payment_document', $post->ID);
+
+        if( empty( $uploaded_document ) ) {
+
+            return false;
+
+        }
+
+        $label = __('Payment Document Preview' , 'orderbox-order-code-follow-up');
+
+        $value = sprintf("<img src='%s' class='uploaded-document-preview' />'" , $uploaded_document);
+
+        helper::generate_report_table_row( $label, $value );
+
+
+
+    }
+
+
+
 
 
 

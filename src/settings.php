@@ -34,6 +34,16 @@ class settings
             'wp_oofu_whatsiplus_api_key' // option name (stored in wp_options)
         );
 
+        register_setting(
+            'general',              // settings group (use 'general' for General Settings page)
+            'wp_oofu_accountant_whatsapp_number' // option name (stored in wp_options)
+        );
+
+        register_setting(
+            'general',              // settings group (use 'general' for General Settings page)
+            'wp_oofu_logistic_admin_whatsapp_number_key' // option name (stored in wp_options)
+        );
+
 
 
         add_settings_field(
@@ -65,6 +75,25 @@ class settings
             'wp_oofu_whatsiplus_api_key',                   // field ID
             __('whatsiplus API Key', 'orderbox-order-code-follow-up'),         // field title (label)
             array(__CLASS__,'render_wp_oofu_whatsiplus_api_key_plugin_field'),            // callback to render field HTML
+            'general'                                  // settings page slug (general page)
+        );
+
+
+
+
+
+        add_settings_field(
+            'wp_oofu_accountant_whatsapp_number',                   // field ID
+            __('Orderbox Accountant Whatsapp Number', 'orderbox-order-code-follow-up'),         // field title (label)
+            array(__CLASS__,'render_wp_oofu_accountant_whatsapp_number_plugin_field'),            // callback to render field HTML
+            'general'                                  // settings page slug (general page)
+        );
+
+
+        add_settings_field(
+            'wp_oofu_logistic_admin_whatsapp_number_key',                   // field ID
+            __('Orderbox Logistic Admin Whatsapp Number', 'orderbox-order-code-follow-up'),         // field title (label)
+            array(__CLASS__,'render_wp_oofu_logistic_admin_whatsapp_number_key_plugin_field'),            // callback to render field HTML
             'general'                                  // settings page slug (general page)
         );
 
@@ -134,5 +163,40 @@ class settings
 
     }
 
+
+
+
+    public static function render_wp_oofu_accountant_whatsapp_number_plugin_field(){
+
+
+        $value = get_option('wp_oofu_accountant_whatsapp_number', '');
+        ?>
+        <input type="text"
+               id="wp_oofu_accountant_whatsapp_number"
+               name="wp_oofu_accountant_whatsapp_number"
+               value="<?php echo esc_attr($value); ?>"
+               class="regular-text" />
+        <p class="description"></p>
+        <?php
+
+
+    }
+
+
+
+
+    public static function render_wp_oofu_logistic_admin_whatsapp_number_key_plugin_field(){
+
+        $value = get_option('wp_oofu_logistic_admin_whatsapp_number_key', '');
+        ?>
+        <input type="text"
+               id="wp_oofu_logistic_admin_whatsapp_number_key"
+               name="wp_oofu_logistic_admin_whatsapp_number_key"
+               value="<?php echo esc_attr($value); ?>"
+               class="regular-text" />
+        <p class="description"></p>
+        <?php
+
+    }
 
 }

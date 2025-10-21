@@ -1,5 +1,10 @@
 <?php
 
+global $post;
+
+$fields = get_fields($post->ID);
+
+
 $report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post();
 
 \OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
@@ -44,43 +49,23 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
             <div class="orderbox-order-follow-up-report-container">
 
-                <?php foreach ($report_items as $report_item_title => $report_item_value ) { ?>
 
-                    <?php if($report_item_title == 'order_status' || empty($report_item_value['value'])){
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_meta_data_seciton($fields); ?>
 
-                        continue;
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_product_list_section(); ?>
 
-                    } ?>
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_cost_seciton(); ?>
 
-                    <div class="orderbox-order-follow-up-report-item">
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_upload_payment_document_form(); ?>
 
-                        <div class="orderbox-order-follow-up-report-item-title">
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_payment_document_preview(); ?>
 
-                            <?php echo $report_item_value['label'] ?>
+                <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_description_section(); ?>
 
-                        </div>
 
-                        <div class="orderbox-order-follow-up-report-value">
 
-                            <?php echo $report_item_value['value'] ?>
 
-                            <?php if(!empty($report_item_value['description'])){ ?>
 
-                                <br />
-
-                                <span class="orderbox-order-follow-up-report-value-description">
-
-                                <?php echo $report_item_value['description'] ?>
-
-                            </span>
-
-                            <?php } ?>
-
-                        </div>
-
-                    </div>
-
-                <?php } ?>
             </div>
 
         </div>

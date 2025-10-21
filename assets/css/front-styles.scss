@@ -41,6 +41,21 @@
 
         line-height: 1.5em;
 
+
+        .orderbox-payment-document-preview {
+
+          margin-top: 20px;
+
+        }
+
+
+        img.uploaded-document-preview {
+          width: 92%;
+          height: auto;
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+
       }
 
       a{
@@ -294,5 +309,52 @@
     }
 
   }
+
+}
+
+
+
+#orderboxPaymentUploadForm{
+
+  @media(max-width: 600px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  label#uploadFormLabel {
+    cursor: pointer;
+    min-width: 200px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  input[type='submit'],input[type='button'],input[type='reset']{
+    min-width: 130px;
+    background: #1891d5;
+    width: 100px;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 7px;
+    border-style: none;
+    &:disabled{
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  span.paymentDocumentFileName {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+
+
 
 }

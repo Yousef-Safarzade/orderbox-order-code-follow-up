@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-15 08:02+0000\n"
+"POT-Creation-Date: 2025-10-21 06:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,10 +16,14 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:173
+#: src/single_template.php:249
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
+msgstr ""
+
+#: src/single_template.php:534
+msgid "Accept Document"
 msgstr ""
 
 #: src/custom_post_types.php:30
@@ -35,6 +39,11 @@ msgstr ""
 msgid "Add New Orderbox Orders"
 msgstr ""
 
+#: src/single_template.php:314
+#, php-format
+msgid "Additional Cost %s"
+msgstr ""
+
 #: src/custom_post_types.php:28
 msgctxt "Admin Menu text"
 msgid "Orderbox Orders"
@@ -44,7 +53,23 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:141
+#: src/single_template.php:400
+msgid ""
+"Card : 5022291317869681 <br /><br />SHABA Number : "
+"IR720570140380000653673001 <br/><br />Rezvan Arabzade"
+msgstr ""
+
+#: src/single_template.php:413
+msgid ""
+"Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
+"<br/><br/>Ramin Arabzade"
+msgstr ""
+
+#: src/single_template.php:531
+msgid "Click To Choose Documents"
+msgstr ""
+
+#: src/single_template.php:236
 msgid "Customer Name"
 msgstr ""
 
@@ -63,7 +88,7 @@ msgid ""
 "\n"
 "Please Visit Website For More Information \n"
 "\n"
-"https://orderbox.ae/track-send-code"
+"https://orderbox.ae/track-send-code?code=%s"
 msgstr ""
 
 #: src/melipayamak.php:20
@@ -81,8 +106,24 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:213
+#: src/single_template.php:141 src/single_template.php:478
 msgid "Description"
+msgstr ""
+
+#: src/scripts.php:76
+msgid "Document accepted not successfully , please try again"
+msgstr ""
+
+#: src/scripts.php:75
+msgid "Document accepted successfully."
+msgstr ""
+
+#: src/scripts.php:74
+msgid "Document uploaded Failed , Please Try Again."
+msgstr ""
+
+#: src/scripts.php:73
+msgid "Document uploaded successfully."
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:7
@@ -93,6 +134,10 @@ msgstr ""
 msgid "Edit Orderbox Orders"
 msgstr ""
 
+#: src/single_template.php:423
+msgid "Emirate Bank Info"
+msgstr ""
+
 #. Author URI of the plugin
 msgid "https://github.com/Yousef-Safarzade/"
 msgstr ""
@@ -101,22 +146,26 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr ""
 
-#: src/single_template.php:129
+#: src/single_template.php:261
 msgid "KG"
 msgstr ""
 
+#: src/single_template.php:411
+msgid "Meli Bank Info"
+msgstr ""
+
 #. field ID
-#: src/settings.php:57
+#: src/settings.php:67
 msgid "Melipayamak Password"
 msgstr ""
 
 #. field ID
-#: src/settings.php:41
+#: src/settings.php:51
 msgid "Melipayamak Phone Number"
 msgstr ""
 
 #. field ID
-#: src/settings.php:49
+#: src/settings.php:59
 msgid "Melipayamak Username"
 msgstr ""
 
@@ -132,7 +181,7 @@ msgstr ""
 msgid "No Orderbox Orders found."
 msgstr ""
 
-#: src/single_template.php:135
+#: src/single_template.php:231
 msgid "Order Code"
 msgstr ""
 
@@ -140,16 +189,26 @@ msgstr ""
 msgid "ORDER RECEIVED"
 msgstr ""
 
-#: src/single_template.php:148
-msgid "Order Status"
+#: src/single_template.php:241
+msgid "Order Weight"
 msgstr ""
 
-#: src/single_template.php:154
-msgid "Order Weight"
+#. field ID
+#: src/settings.php:87
+msgid "Orderbox Accountant Whatsapp Number"
+msgstr ""
+
+#. field ID
+#: src/settings.php:95
+msgid "Orderbox Logistic Admin Whatsapp Number"
 msgstr ""
 
 #. Name of the plugin
 msgid "Orderbox Order Code Follow Up"
+msgstr ""
+
+#: src/single_template.php:436
+msgid "Other Payment Inro"
 msgstr ""
 
 #: src/custom_post_types.php:40
@@ -194,6 +253,32 @@ msgstr ""
 msgid "Parent Orderbox Orders:"
 msgstr ""
 
+#: src/single_template.php:398
+msgid "Pasargad Bank Info"
+msgstr ""
+
+#: src/single_template.php:555
+msgid "Payment Document Preview"
+msgstr ""
+
+#: src/whatsappHelper.php:126
+#, php-format
+msgid ""
+"Payment Document Uploaded \n"
+"\n"
+"Customer : %s \n"
+"\n"
+"Date : %s \n"
+"\n"
+"Order Code : %s \n"
+"\n"
+"Please Check Website Admin Panel"
+msgstr ""
+
+#: src/single_template.php:348
+msgid "Payment Status"
+msgstr ""
+
 #: src/custom_post_types.php:26
 msgctxt "Post type general name"
 msgid "Orderbox Orders"
@@ -204,24 +289,20 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:182
-msgid "Product Name 1"
+#: src/single_template.php:455
+#, php-format
+msgid "Product Name %s"
 msgstr ""
 
-#: src/single_template.php:188
-msgid "Product Name 2"
+#: src/single_template.php:425
+msgid ""
+"Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
+"Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
+"EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:194
-msgid "Product Name 3"
-msgstr ""
-
-#: src/single_template.php:200
-msgid "Product Name 4"
-msgstr ""
-
-#: src/single_template.php:206
-msgid "Product Name 5"
+#: src/single_template.php:533
+msgid "Reset Form"
 msgstr ""
 
 #: src/custom_post_types.php:47
@@ -257,6 +338,10 @@ msgstr ""
 msgid "SHIRAZ"
 msgstr ""
 
+#: src/scripts.php:72
+msgid "Something Went Wrong Please Try Again."
+msgstr ""
+
 #: templates/single-orderbox-order-follow-up-not-found.php:14
 msgid "Sorry But Provided Code Is Not Available"
 msgstr ""
@@ -284,8 +369,28 @@ msgstr ""
 msgid "TIPAX"
 msgstr ""
 
-#: src/single_template.php:171
+#: src/single_template.php:247
 msgid "Tipax Code"
+msgstr ""
+
+#: src/single_template.php:331
+msgid "Total Additional Cost ( AED )"
+msgstr ""
+
+#: src/single_template.php:338
+msgid "Total Additional Cost (Tooman)"
+msgstr ""
+
+#: src/single_template.php:299
+msgid "Transport Cost"
+msgstr ""
+
+#: src/single_template.php:532
+msgid "Upload Payment"
+msgstr ""
+
+#: src/single_template.php:509
+msgid "Upload Payment <br />Document"
 msgstr ""
 
 #: src/custom_post_types.php:34
@@ -293,7 +398,7 @@ msgid "View Orderbox Orders"
 msgstr ""
 
 #. field ID
-#: src/settings.php:66
+#: src/settings.php:76
 msgid "whatsiplus API Key"
 msgstr ""
 

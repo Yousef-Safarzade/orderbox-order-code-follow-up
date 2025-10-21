@@ -93,7 +93,7 @@ class acf_helper
             !empty($values['customer_phone_number'])
         ){
 
-            melipayamak::send_orderbox_order_follow_up_sms($values);
+            //melipayamak::send_orderbox_order_follow_up_sms($values);
 
             whatsappHelper::send_whatsapp_message($values);
 

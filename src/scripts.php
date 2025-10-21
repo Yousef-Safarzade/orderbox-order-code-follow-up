@@ -59,6 +59,31 @@ class scripts
             );
 
 
+            wp_enqueue_script(
+                'oofu-front-script',
+                WP_OOFU_PLUGIN_JS_FOLDER_URL . 'front-scripts.js',
+                ['jquery'],
+                WP_OOFU_PLUGIN_VERSION,
+                array('in_footer' => true)
+            );
+
+
+            $messages = array(
+                'general_error' => __('Something Went Wrong Please Try Again.', 'orderbox-order-code-follow-up'),
+                'document_uploaded_success' => __('Document uploaded successfully.', 'orderbox-order-code-follow-up'),
+                'document_uploaded_failed' => __('Document uploaded Failed , Please Try Again.', 'orderbox-order-code-follow-up'),
+                'document_accepted_success' => __('Document accepted successfully.', 'orderbox-order-code-follow-up'),
+                'document_accepted_failed' => __('Document accepted not successfully , please try again', 'orderbox-order-code-follow-up'),
+            );
+
+            wp_localize_script('oofu-front-script', 'oofuAjaxData', [
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'nonce'    => wp_create_nonce('handle_upload_payment_document'),
+                'postID'  => get_the_ID(),
+                'messages' => $messages,
+            ]);
+
+
         }
 
     }

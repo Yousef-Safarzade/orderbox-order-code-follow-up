@@ -5,6 +5,121 @@ namespace OrderboxOrderCodeFollowUp;
 class helper
 {
 
+
+    public static function define_hooks(){
+
+        add_action('wp_ajax_handle_upload_payment_document', array(__CLASS__,'handle_upload_payment_document') );
+
+        add_action('wp_ajax_nopriv_handle_upload_payment_document', array(__CLASS__,'handle_upload_payment_document') );
+
+        add_action('wp_ajax_accept_payment_document', array(__CLASS__,'accept_payment_document') );
+
+    }
+
+
+
+
+
+    public static function accept_payment_document(){
+
+        if(empty($_POST['postID'])){
+
+            wp_send_json_error('No Post ID received.');
+
+        }
+
+
+        if (empty($_POST['paymentDocument'])) {
+
+            wp_send_json_error('No files received.');
+
+        }
+
+
+
+        if(!filter_var($_POST['paymentDocument'], FILTER_VALIDATE_URL)){
+
+            wp_send_json_error('Invalid URL Has Been Provided.');
+
+        }
+
+
+        update_post_meta($_POST['postID'], 'payment_document', $_POST['paymentDocument']);
+
+        update_post_meta($_POST['postID'], 'payment_status', 'waiting_for_approval');
+
+        $fields = get_fields($_POST['postID']);
+
+        $fields['payment_document'] = $_POST['paymentDocument'];
+
+        whatsappHelper::send_payment_data_updated_message($fields);
+
+        wp_send_json_success('Data Has Been Updated');
+
+
+
+
+    }
+
+
+    public static function handle_upload_payment_document(){
+
+
+        check_ajax_referer('handle_upload_payment_document', 'security');
+
+        if(empty($_POST['postID'])){
+
+            wp_send_json_error('No Post ID received.');
+
+        }
+
+        if (empty($_FILES['paymentDocument'])) {
+
+            wp_send_json_error('No files received.');
+
+        }
+
+        if (!function_exists('wp_handle_upload')) {
+
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
+
+        }
+
+
+        $uploaded_files = [];
+
+        $files = $_FILES['paymentDocument'];
+
+        $file = [
+            'name'     => $files['name'],
+            'type'     => $files['type'],
+            'tmp_name' => $files['tmp_name'],
+            'error'    => $files['error'],
+            'size'     => $files['size']
+        ];
+
+        $upload_overrides = ['test_form' => false];
+
+        $movefile = wp_handle_upload($file, $upload_overrides);
+
+        if ($movefile && !isset($movefile['error'])) {
+
+            $uploaded_files[] = [
+                'name' => $file['name'],
+                'url'  => $movefile['url']
+            ];
+
+        }
+
+
+        wp_send_json_success($uploaded_files);
+
+    }
+
+
+
+
+
     public static function convert_date_to_shamsi($date_string){
 
         $date = \DateTime::createFromFormat('d/m/Y', $date_string);
@@ -42,6 +157,132 @@ class helper
         }
 
         return $field;
+
+    }
+
+
+
+
+    public static function convert_persian_number_to_english($string) {
+
+        $persian = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+        $arabic = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+
+        $num = range(0, 9);
+
+        $convertedPersianNums = str_replace($persian, $num, $string);
+
+        $englishNumbersOnly = str_replace($arabic, $num, $convertedPersianNums);
+
+        return $englishNumbersOnly;
+    }
+
+
+
+
+    public static function generate_report_table_row($label,$value,$description = ''){
+
+        ob_start();
+
+        ?>
+
+        <div class="orderbox-order-follow-up-report-item">
+
+            <div class="orderbox-order-follow-up-report-item-title">
+
+                <?php echo $label ?? '' ?>
+
+            </div>
+
+            <div class="orderbox-order-follow-up-report-value">
+
+                <?php echo $value ?? '' ?>
+
+                <?php if(!empty($description) ){ ?>
+
+                    <br />
+
+                    <span class="orderbox-order-follow-up-report-value-description">
+
+                    <?php echo $description ?>
+
+                </span>
+
+                <?php } ?>
+
+            </div>
+
+        </div>
+
+        <?php
+
+        echo ob_get_clean();
+
+    }
+
+
+
+
+    public static function get_aed_to_tooman_value($value){
+
+        if ( $value <= 0 ){
+
+            return 0;
+
+        }
+
+        $api_url = 'https://orderbox.ae/wp-json/mnswmc/v1/currency/9f8e7adfcdb7c395d33d08fcd968ade8';
+
+        $response = wp_remote_get(
+
+                esc_url_raw( $api_url ),
+
+                array(
+
+                    'headers' => array('referer' => home_url())
+
+                )
+        );
+
+        try {
+
+            $json = json_decode( $response['body'] , true );
+
+            $aed_to_tooman_exchange_rate = $json[ '26619' ]['rate'];
+
+        } catch ( Exception $ex ) {
+
+            return 0;
+
+        }
+
+
+        return round((int)$value * $aed_to_tooman_exchange_rate);
+
+    }
+
+
+
+    public static function get_latest_update_date($fields){
+
+        $date = '';
+
+        foreach ($fields['order_status'] as $date_item){
+
+            if(!empty($date_item)){
+
+                $date = $date_item;
+
+            } else {
+
+                break;
+
+            }
+
+        }
+
+        return $date;
 
     }
 

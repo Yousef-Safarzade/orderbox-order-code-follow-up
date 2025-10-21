@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-10-15 08:02+0000\n"
+"PO-Revision-Date: 2025-10-21 06:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -15,12 +15,16 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:173
+#: src/single_template.php:249
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
 msgstr ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">پیگیری کد</a>"
+
+#: src/single_template.php:534
+msgid "Accept Document"
+msgstr "تایید مدارک ارسالی"
 
 #: src/custom_post_types.php:30
 msgid "Add New"
@@ -35,6 +39,11 @@ msgstr "کد ارسال"
 msgid "Add New Orderbox Orders"
 msgstr "اضافه کردن کد ارسال"
 
+#: src/single_template.php:314
+#, php-format
+msgid "Additional Cost %s"
+msgstr "هزینه جانبی %s"
+
 #: src/custom_post_types.php:28
 msgctxt "Admin Menu text"
 msgid "Orderbox Orders"
@@ -44,7 +53,35 @@ msgstr "کد ارسال"
 msgid "All Orderbox Orders"
 msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/single_template.php:141
+#: src/single_template.php:400
+msgid ""
+"Card : 5022291317869681 <br /><br />SHABA Number : "
+"IR720570140380000653673001 <br/><br />Rezvan Arabzade"
+msgstr ""
+"شماره کارت : 5022291317869681\n"
+"<br /><br />\n"
+"شماره شبا : IR720570140380000653673001\n"
+"<br /><br />\n"
+"به نام : رضوان عرب زاده\n"
+"<br /><br />"
+
+#: src/single_template.php:413
+msgid ""
+"Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
+"<br/><br/>Ramin Arabzade"
+msgstr ""
+"شماره کارت : 6037998139142383\n"
+"<br /><br />\n"
+"شماره شبا : IR880170000000226242298004\n"
+"<br /><br />\n"
+"به نام :  رامین عرب زاده\n"
+"<br /><br />"
+
+#: src/single_template.php:531
+msgid "Click To Choose Documents"
+msgstr "برای انتخاب مدارک کلیک کنید"
+
+#: src/single_template.php:236
 msgid "Customer Name"
 msgstr "نام مشتری"
 
@@ -63,7 +100,7 @@ msgstr "نام مشتری"
 #| "\n"
 #| "Please Visit Website For More Information \n"
 #| "\n"
-#| "https://orderbox.ae/track-send-code/"
+#| "https://orderbox.ae/track-send-code"
 msgid ""
 "Dear Customer : %s \n"
 "\n"
@@ -77,13 +114,13 @@ msgid ""
 "\n"
 "Please Visit Website For More Information \n"
 "\n"
-"https://orderbox.ae/track-send-code"
+"https://orderbox.ae/track-send-code?code=%s"
 msgstr ""
 "مشتری گرامی :‌ %s\n"
 "\n"
 "کد پیگیری ارسال شما در وب سایت OrderBox ثبت گردید\n"
 "\n"
-"تاریخ ثبت : %s\n"
+"تاریخ به روز رسانی : %s\n"
 "\n"
 "کد ارسال :‌ %s\n"
 "\n"
@@ -91,7 +128,7 @@ msgstr ""
 "\n"
 "برای مشاهده اطلاعات بیشتر به سایت OrderBox مراجعه بفرمایید\n"
 "\n"
-"https://orderbox.ae/track-send-code"
+"https://orderbox.ae/track-send-code?code=%s"
 
 #: src/melipayamak.php:20
 #, php-format
@@ -126,9 +163,27 @@ msgstr ""
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:213
+#: src/single_template.php:141 src/single_template.php:478
 msgid "Description"
 msgstr "توضیحات"
+
+#: src/scripts.php:76
+msgid "Document accepted not successfully , please try again"
+msgstr "مشکلی در ارسال مدارک برای بررسی پیش آمده لطفا دوباره تلاش بفرمایید."
+
+#: src/scripts.php:75
+msgid "Document accepted successfully."
+msgstr "مدارک شما با موفقیت برای بررسی ارسال شد."
+
+#: src/scripts.php:74
+msgid "Document uploaded Failed , Please Try Again."
+msgstr "مشکلی در بارگذاری مدارک پیش آمده لطفا دوباره تلاش کنید."
+
+#: src/scripts.php:73
+msgid "Document uploaded successfully."
+msgstr ""
+"مدارک شما با موفقیت بارگذاری شدند. لطفا در ادامه بر روی دکمه تایید مدارک "
+"ارسالی کلیک کنید."
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:7
 msgid "DUBAI / PACKING"
@@ -138,6 +193,10 @@ msgstr "دریافت در دفتر دوبی"
 msgid "Edit Orderbox Orders"
 msgstr "ویرایش کد ارسال"
 
+#: src/single_template.php:423
+msgid "Emirate Bank Info"
+msgstr "اطلاعات پرداخت<br/> امارات"
+
 #. Author URI of the plugin
 msgid "https://github.com/Yousef-Safarzade/"
 msgstr ""
@@ -146,22 +205,26 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr "دریافت در بندر ایران"
 
-#: src/single_template.php:129
+#: src/single_template.php:261
 msgid "KG"
 msgstr "کیلوگرم"
 
+#: src/single_template.php:411
+msgid "Meli Bank Info"
+msgstr "اطلاعات پرداخت <br/> بانک ملی"
+
 #. field ID
-#: src/settings.php:57
+#: src/settings.php:67
 msgid "Melipayamak Password"
 msgstr "رمز عبور در ملی پیامک"
 
 #. field ID
-#: src/settings.php:41
+#: src/settings.php:51
 msgid "Melipayamak Phone Number"
 msgstr "شماره ارسال پیام در ملی پیامک"
 
 #. field ID
-#: src/settings.php:49
+#: src/settings.php:59
 msgid "Melipayamak Username"
 msgstr "نام کاربری در ملی پیامک"
 
@@ -177,7 +240,7 @@ msgstr "کد ارسالی در سطل زباله یافت نشد"
 msgid "No Orderbox Orders found."
 msgstr "سفارشی با این کد یافت نشد"
 
-#: src/single_template.php:135
+#: src/single_template.php:231
 msgid "Order Code"
 msgstr "کد ارسال"
 
@@ -185,17 +248,27 @@ msgstr "کد ارسال"
 msgid "ORDER RECEIVED"
 msgstr "دریافت سفارش"
 
-#: src/single_template.php:148
-msgid "Order Status"
-msgstr "وضعیت ارسال"
-
-#: src/single_template.php:154
+#: src/single_template.php:241
 msgid "Order Weight"
 msgstr "وزن محصول"
+
+#. field ID
+#: src/settings.php:87
+msgid "Orderbox Accountant Whatsapp Number"
+msgstr ""
+
+#. field ID
+#: src/settings.php:95
+msgid "Orderbox Logistic Admin Whatsapp Number"
+msgstr ""
 
 #. Name of the plugin
 msgid "Orderbox Order Code Follow Up"
 msgstr "پیگیری کد ارسال"
+
+#: src/single_template.php:436
+msgid "Other Payment Inro"
+msgstr "سایر روش های <br/> واریزی"
 
 #: src/custom_post_types.php:40
 msgctxt ""
@@ -239,6 +312,32 @@ msgstr "استفاده از تصویر اصلی"
 msgid "Parent Orderbox Orders:"
 msgstr "کد ارسالی مادر"
 
+#: src/single_template.php:398
+msgid "Pasargad Bank Info"
+msgstr "اطلاعات پرداخت <br/> بانک پاسارگاد"
+
+#: src/single_template.php:555
+msgid "Payment Document Preview"
+msgstr "تصویر مدرک <br/> پرداختی"
+
+#: src/whatsappHelper.php:126
+#, php-format
+msgid ""
+"Payment Document Uploaded \n"
+"\n"
+"Customer : %s \n"
+"\n"
+"Date : %s \n"
+"\n"
+"Order Code : %s \n"
+"\n"
+"Please Check Website Admin Panel"
+msgstr ""
+
+#: src/single_template.php:348
+msgid "Payment Status"
+msgstr "وضعیت پرداخت"
+
 #: src/custom_post_types.php:26
 msgctxt "Post type general name"
 msgid "Orderbox Orders"
@@ -249,25 +348,22 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:182
-msgid "Product Name 1"
-msgstr "محصول شماره ۱"
+#: src/single_template.php:455
+#, php-format
+#| msgid "Product Name 1"
+msgid "Product Name %s"
+msgstr "محصول شماره %s"
 
-#: src/single_template.php:188
-msgid "Product Name 2"
-msgstr "محصول شماره ۲"
+#: src/single_template.php:425
+msgid ""
+"Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
+"Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
+"EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
+msgstr ""
 
-#: src/single_template.php:194
-msgid "Product Name 3"
-msgstr "محصول شماره ۳"
-
-#: src/single_template.php:200
-msgid "Product Name 4"
-msgstr "محصول شماره ۴"
-
-#: src/single_template.php:206
-msgid "Product Name 5"
-msgstr "محصول شماره ۵"
+#: src/single_template.php:533
+msgid "Reset Form"
+msgstr "پاک کردن اطلاعات"
 
 #: src/custom_post_types.php:47
 msgctxt ""
@@ -302,6 +398,10 @@ msgstr "ارسال به ایران"
 msgid "SHIRAZ"
 msgstr "دریافت در دفتر شیراز"
 
+#: src/scripts.php:72
+msgid "Something Went Wrong Please Try Again."
+msgstr ""
+
 #: templates/single-orderbox-order-follow-up-not-found.php:14
 msgid "Sorry But Provided Code Is Not Available"
 msgstr "متاسفانه کد مورد نظر شما یافت نشد"
@@ -333,16 +433,36 @@ msgstr ""
 msgid "TIPAX"
 msgstr "ارسال با تیپاکس"
 
-#: src/single_template.php:171
+#: src/single_template.php:247
 msgid "Tipax Code"
 msgstr "کد تیپاکس"
+
+#: src/single_template.php:331
+msgid "Total Additional Cost ( AED )"
+msgstr "مجموع هزینه<br/> ( درهم امارات )"
+
+#: src/single_template.php:338
+msgid "Total Additional Cost (Tooman)"
+msgstr "مجموع هزینه<br/> ( تومان )"
+
+#: src/single_template.php:299
+msgid "Transport Cost"
+msgstr "هزینه ارسال"
+
+#: src/single_template.php:532
+msgid "Upload Payment"
+msgstr "شروع آپلود"
+
+#: src/single_template.php:509
+msgid "Upload Payment <br />Document"
+msgstr "آپلود مدارک <br/> پرداخت"
 
 #: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
 msgstr "نمایش کد های ارسال"
 
 #. field ID
-#: src/settings.php:66
+#: src/settings.php:76
 msgid "whatsiplus API Key"
 msgstr "کد API سرویس واتسی پلاس"
 
