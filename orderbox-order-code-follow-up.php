@@ -4,7 +4,7 @@
  *
  * Plugin Name: Orderbox Order Code Follow Up
  * Description: Store users offline orders code and give the ability to follow the order status
- * Version:     1.2
+ * Version:     1.2.2
  * Author:      Yousef Safarzade
  * Author URI:  https://github.com/Yousef-Safarzade/
  * License:     GPLv2 or later
@@ -48,3 +48,5 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 \OrderboxOrderCodeFollowUp\settings::define_hooks();
 
 \OrderboxOrderCodeFollowUp\helper::define_hooks();
+
+\OrderboxOrderCodeFollowUp\woocommerce_dashboard::define_hooks();

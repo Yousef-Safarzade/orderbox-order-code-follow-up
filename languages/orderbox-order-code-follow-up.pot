@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-21 11:49+0000\n"
+"POT-Creation-Date: 2025-10-25 08:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,19 +16,44 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:249
+#: src/single_template.php:602
+msgid "1 - Choose"
+msgstr ""
+
+#: src/single_template.php:603
+msgid "2 - Upload"
+msgstr ""
+
+#: src/single_template.php:604
+msgid "3 - Accept"
+msgstr ""
+
+#: src/single_template.php:215
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
 msgstr ""
 
-#: src/single_template.php:459
+#: src/single_template.php:354 src/single_template.php:395
+#: src/single_template.php:514
+msgid ""
+"<br/><br/><span class=\"payment-status not-paid\">Payment Status : Not "
+"Paid</span>"
+msgstr ""
+
+#: src/single_template.php:353 src/single_template.php:394
+#: src/single_template.php:513
+msgid ""
+"<br/><br/><span class=\"payment-status paid\">Payment Status : Paid</span>"
+msgstr ""
+
+#: src/single_template.php:508
 #, php-format
 msgid "<br/><br/>Product Price : %s"
 msgstr ""
 
-#: src/single_template.php:544
-msgid "Accept Document"
+#: src/woocommerce_dashboard.php:78
+msgid "<h5>There is No Order Code With Your Phone Number</h5>"
 msgstr ""
 
 #: src/custom_post_types.php:30
@@ -44,7 +69,7 @@ msgstr ""
 msgid "Add New Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:314
+#: src/single_template.php:382
 #, php-format
 msgid "Additional Cost %s"
 msgstr ""
@@ -58,27 +83,23 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:400
+#: src/single_template.php:449
 msgid ""
 "Card : 5022291317869681 <br /><br />SHABA Number : "
 "IR720570140380000653673001 <br/><br />Rezvan Arabzade"
 msgstr ""
 
-#: src/single_template.php:413
+#: src/single_template.php:462
 msgid ""
 "Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
 "<br/><br/>Ramin Arabzade"
 msgstr ""
 
-#: src/single_template.php:541
-msgid "Click To Choose Documents"
-msgstr ""
-
-#: src/single_template.php:236
+#: src/single_template.php:205
 msgid "Customer Name"
 msgstr ""
 
-#: src/whatsappHelper.php:41
+#: src/whatsappHelper.php:34
 #, php-format
 msgid ""
 "Dear Customer : %s \n"
@@ -111,7 +132,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:141 src/single_template.php:488
+#: src/single_template.php:544
 msgid "Description"
 msgstr ""
 
@@ -139,7 +160,7 @@ msgstr ""
 msgid "Edit Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:423
+#: src/single_template.php:472
 msgid "Emirate Bank Info"
 msgstr ""
 
@@ -151,11 +172,11 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr ""
 
-#: src/single_template.php:261
+#: src/single_template.php:226
 msgid "KG"
 msgstr ""
 
-#: src/single_template.php:411
+#: src/single_template.php:460
 msgid "Meli Bank Info"
 msgstr ""
 
@@ -186,15 +207,23 @@ msgstr ""
 msgid "No Orderbox Orders found."
 msgstr ""
 
-#: src/single_template.php:231
+#: src/woocommerce_dashboard.php:117 src/single_template.php:201
 msgid "Order Code"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:37
+msgid "Order Codes Followup"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:123
+msgid "Order Date"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:6
 msgid "ORDER RECEIVED"
 msgstr ""
 
-#: src/single_template.php:241
+#: src/single_template.php:209
 msgid "Order Weight"
 msgstr ""
 
@@ -212,7 +241,7 @@ msgstr ""
 msgid "Orderbox Order Code Follow Up"
 msgstr ""
 
-#: src/single_template.php:436
+#: src/single_template.php:485
 msgid "Other Payment Inro"
 msgstr ""
 
@@ -258,15 +287,15 @@ msgstr ""
 msgid "Parent Orderbox Orders:"
 msgstr ""
 
-#: src/single_template.php:398
+#: src/single_template.php:447
 msgid "Pasargad Bank Info"
 msgstr ""
 
-#: src/single_template.php:565
+#: src/single_template.php:626 src/single_template.php:642
 msgid "Payment Document Preview"
 msgstr ""
 
-#: src/whatsappHelper.php:126
+#: src/whatsappHelper.php:116
 #, php-format
 msgid ""
 "Payment Document Uploaded \n"
@@ -280,7 +309,7 @@ msgid ""
 "Please Check Website Admin Panel"
 msgstr ""
 
-#: src/single_template.php:348
+#: src/woocommerce_dashboard.php:130 src/single_template.php:293
 msgid "Payment Status"
 msgstr ""
 
@@ -294,19 +323,19 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:465
+#: src/single_template.php:521
 #, php-format
 msgid "Product Name %s"
 msgstr ""
 
-#: src/single_template.php:425
+#: src/single_template.php:474
 msgid ""
 "Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
 "Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:543
+#: src/single_template.php:605
 msgid "Reset Form"
 msgstr ""
 
@@ -343,6 +372,14 @@ msgstr ""
 msgid "SHIRAZ"
 msgstr ""
 
+#: src/woocommerce_dashboard.php:138
+msgid "Show Details"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:74 src/woocommerce_dashboard.php:105
+msgid "Showing List of Your Order Followups"
+msgstr ""
+
 #: src/scripts.php:72
 msgid "Something Went Wrong Please Try Again."
 msgstr ""
@@ -374,27 +411,23 @@ msgstr ""
 msgid "TIPAX"
 msgstr ""
 
-#: src/single_template.php:247
+#: src/single_template.php:213
 msgid "Tipax Code"
 msgstr ""
 
-#: src/single_template.php:331
+#: src/single_template.php:265
 msgid "Total Additional Cost ( AED )"
 msgstr ""
 
-#: src/single_template.php:338
+#: src/single_template.php:271
 msgid "Total Additional Cost (Tooman)"
 msgstr ""
 
-#: src/single_template.php:299
+#: src/single_template.php:346
 msgid "Transport Cost"
 msgstr ""
 
-#: src/single_template.php:542
-msgid "Upload Payment"
-msgstr ""
-
-#: src/single_template.php:519
+#: src/single_template.php:572
 msgid "Upload Payment <br />Document"
 msgstr ""
 

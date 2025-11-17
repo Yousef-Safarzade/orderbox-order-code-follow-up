@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .single-orderbox_order .order-box-order-follow-up-container {
   width: 1000px;
   margin: 50px auto;
@@ -25,7 +26,28 @@
   min-width: 150px;
 }
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value {
+  position: relative;
   line-height: 1.5em;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .doing-ajax-overlay {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value.doing-ajax .doing-ajax-overlay {
+  display: flex;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value.doing-ajax form, .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value.doing-ajax .orderbox-payment-document-preview {
+  opacity: 0.2;
+  pointer-events: none;
 }
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .orderbox-payment-document-preview {
   margin-top: 20px;
@@ -36,8 +58,31 @@
   margin-right: 20px;
   margin-left: 20px;
 }
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .payment-status {
+  font-weight: bold;
+  font-size: 13px;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .payment-status.paid {
+  color: green;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .payment-status.paid:before {
+  content: " ✓ ";
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .payment-status.not-paid {
+  color: red;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-value .payment-status.not-paid:before {
+  content: " ⚠ ";
+}
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item a {
   text-decoration: none;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item.no-border-bottom {
+  border-bottom: none !important;
+}
+.single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item.large-text-value .orderbox-order-follow-up-report-value {
+  font-size: 20px;
+  font-weight: bold;
 }
 .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-qr-code-container {
   max-width: 250px;
@@ -78,6 +123,10 @@
   }
   .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-item-title {
     margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .single-orderbox_order .orderbox-order-follow-up-main-container .orderbox-order-follow-up-report-item .orderbox-order-follow-up-report-item-title br {
+    display: none;
   }
   .single-orderbox_order .orderbox-order-follow-up-report-item {
     flex-direction: column;
@@ -188,6 +237,14 @@
   }
 }
 
+#orderboxPaymentUploadForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+}
 @media (max-width: 600px) {
   #orderboxPaymentUploadForm {
     display: flex;
@@ -197,28 +254,42 @@
     gap: 10px;
   }
 }
-#orderboxPaymentUploadForm label#uploadFormLabel {
-  cursor: pointer;
-  min-width: 200px;
-  display: block;
-  margin-bottom: 20px;
-}
-#orderboxPaymentUploadForm input[type=submit], #orderboxPaymentUploadForm input[type=button], #orderboxPaymentUploadForm input[type=reset] {
-  min-width: 130px;
+#orderboxPaymentUploadForm input[type=submit], #orderboxPaymentUploadForm input[type=button], #orderboxPaymentUploadForm input[type=reset], #orderboxPaymentUploadForm label#uploadFormLabel {
+  min-width: 100px;
   background: #1891d5;
   width: 100px;
   color: #ffffff;
   padding: 5px;
   border-radius: 7px;
   border-style: none;
+  font-size: 13px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#orderboxPaymentUploadForm input[type=submit]:disabled, #orderboxPaymentUploadForm input[type=button]:disabled, #orderboxPaymentUploadForm input[type=reset]:disabled {
+#orderboxPaymentUploadForm input[type=submit]:disabled, #orderboxPaymentUploadForm input[type=button]:disabled, #orderboxPaymentUploadForm input[type=reset]:disabled, #orderboxPaymentUploadForm label#uploadFormLabel:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 #orderboxPaymentUploadForm span.paymentDocumentFileName {
-  display: block;
+  display: flex;
   margin-bottom: 20px;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.woocommerce-account .user-order-follow-ups-container h5 {
+  text-align: right;
+}
+.woocommerce-account .user-order-follow-ups-container .user-order-follow-ups {
+  list-style: none;
+  margin-right: 0;
+  padding-inline-start: 0;
+}
+.woocommerce-account .user-order-follow-ups-container .user-order-follow-ups li {
+  text-align: right;
+  line-height: 2em;
 }
 
 /*# sourceMappingURL=front-styles.css.map */

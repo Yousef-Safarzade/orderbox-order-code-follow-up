@@ -59,13 +59,17 @@ class scripts
             );
 
 
+
             wp_enqueue_script(
                 'oofu-front-script',
                 WP_OOFU_PLUGIN_JS_FOLDER_URL . 'front-scripts.js',
-                ['jquery'],
+                ['jquery','wp-i18n'],
                 WP_OOFU_PLUGIN_VERSION,
                 array('in_footer' => true)
             );
+
+
+            wp_set_script_translations( 'oofu-front-script', 'orderbox-order-code-follow-up' );
 
 
             $messages = array(
@@ -78,9 +82,7 @@ class scripts
 
             wp_localize_script('oofu-front-script', 'oofuAjaxData', [
                 'ajax_url' => admin_url('admin-ajax.php'),
-                'nonce'    => wp_create_nonce('handle_upload_payment_document'),
                 'postID'  => get_the_ID(),
-                'messages' => $messages,
             ]);
 
 

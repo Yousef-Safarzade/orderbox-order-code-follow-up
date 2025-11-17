@@ -39,7 +39,35 @@
 
       .orderbox-order-follow-up-report-value {
 
+        position: relative;
         line-height: 1.5em;
+
+        .doing-ajax-overlay {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          z-index: 10000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          display: none;
+        }
+
+        &.doing-ajax{
+
+          .doing-ajax-overlay{
+            display: flex;
+          }
+
+          form,.orderbox-payment-document-preview{
+            opacity: 0.2;
+            pointer-events: none;
+          }
+
+        }
 
 
         .orderbox-payment-document-preview {
@@ -56,12 +84,49 @@
           margin-left: 20px;
         }
 
+        .payment-status{
+
+          font-weight: bold;
+
+          font-size: 13px;
+
+          &.paid{
+            color: green;
+            &:before{
+              content: " ✓ ";
+            }
+          }
+
+          &.not-paid{
+            color:red;
+            &:before{
+              content: " ⚠ ";
+            }
+          }
+
+        }
+
       }
 
       a{
 
         text-decoration: none;
       }
+
+
+      &.no-border-bottom{
+        border-bottom: none !important;
+      }
+
+      &.large-text-value{
+
+        .orderbox-order-follow-up-report-value{
+
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
 
     }
 
@@ -115,6 +180,11 @@
         text-align: center;
         .orderbox-order-follow-up-report-item-title{
           margin-right: 0;
+          margin-bottom: 20px;
+          br{
+            display: none;
+
+          }
         }
       }
 
@@ -316,6 +386,13 @@
 
 #orderboxPaymentUploadForm{
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+
   @media(max-width: 600px){
     display: flex;
     flex-direction: column;
@@ -324,21 +401,21 @@
     gap: 10px;
   }
 
-  label#uploadFormLabel {
-    cursor: pointer;
-    min-width: 200px;
-    display: block;
-    margin-bottom: 20px;
-  }
 
-  input[type='submit'],input[type='button'],input[type='reset']{
-    min-width: 130px;
+  input[type='submit'],input[type='button'],input[type='reset'],label#uploadFormLabel {
+    min-width: 100px;
     background: #1891d5;
     width: 100px;
     color: #ffffff;
     padding: 5px;
     border-radius: 7px;
     border-style: none;
+    font-size: 13px;
+    height: 40px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
     &:disabled{
       opacity: 0.6;
       cursor: not-allowed;
@@ -346,15 +423,42 @@
   }
 
   span.paymentDocumentFileName {
-    display: block;
+    display: flex;
     margin-bottom: 20px;
+    flex:1;
+    margin-top: 20px;
   }
 
+}
 
 
 
 
 
+
+
+.woocommerce-account{
+
+  .user-order-follow-ups-container{
+
+    h5{
+      text-align: right;
+    }
+
+    .user-order-follow-ups{
+
+      list-style:none;
+      margin-right: 0;
+      padding-inline-start: 0;
+
+        li{
+          text-align: right;
+          line-height: 2em;
+        }
+
+      }
+
+    }
 
 
 }

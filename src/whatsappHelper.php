@@ -29,13 +29,6 @@ class whatsappHelper
 
     public static function send_whatsapp_message($values){
 
-        $api_key = get_option('wp_oofu_whatsiplus_api_key', '');
-
-        if( empty( $api_key ) ){
-
-            return false;
-
-        }
 
         $message = sprintf(
             __("Dear Customer : %s \n\nYour Order Follow Up Code Has Been Added to Orderbox Website \n\nDate : %s \n\nCode :  %s \n\nPassword : %s \n\nPlease Visit Website For More Information \n\nhttps://orderbox.ae/track-send-code?code=%s" , 'orderbox-order-code-follow-up') ,
@@ -52,25 +45,22 @@ class whatsappHelper
         );
 
 
-        self::init_curl_request($api_key,$options);
+        self::init_curl_request($options);
 
         if ( !empty($values['customer_second_phone_number']) ){
 
             $options['phonenumber'] = $values['customer_second_phone_number_country_code'] . self::format_whatsapp_number($values['customer_second_phone_number']);
 
-
-            self::init_curl_request($api_key,$options);
+            self::init_curl_request($options);
 
         }
-
 
 
         if ( !empty($values['customer_third_phone_number']) ){
 
             $options['phonenumber'] = $values['customer_third_phone_number_country_code'] . self::format_whatsapp_number($values['customer_third_phone_number']);
 
-
-            self::init_curl_request($api_key,$options);
+            self::init_curl_request($options);
 
         }
 
@@ -81,8 +71,15 @@ class whatsappHelper
 
 
 
-    public static function init_curl_request($api_key,$options){
+    public static function init_curl_request($options){
 
+        $api_key = get_option('wp_oofu_whatsiplus_api_key', '');
+
+        if( empty($api_key) ){
+
+            return false;
+
+        }
 
         $curl = curl_init();
 
@@ -114,13 +111,6 @@ class whatsappHelper
 
     public static function send_payment_data_updated_message($values){
 
-        $api_key = get_option('wp_oofu_whatsiplus_api_key', '');
-
-        if( empty( $api_key ) ){
-
-            return false;
-
-        }
 
         $message = sprintf(
             __("Payment Document Uploaded \n\nCustomer : %s \n\nDate : %s \n\nOrder Code : %s \n\nPlease Check Website Admin Panel" , 'orderbox-order-code-follow-up') ,
@@ -134,19 +124,15 @@ class whatsappHelper
             'link' => $values['payment_document'],
         );
 
-
-
         $accountant_phone_number = get_option('wp_oofu_accountant_whatsapp_number');
 
         if ( !empty($accountant_phone_number) ){
 
             $options['phonenumber'] = $accountant_phone_number;
 
-            self::init_curl_request($api_key,$options);
+            self::init_curl_request($options);
 
         }
-
-
 
         $logistic_phone_number = get_option('wp_oofu_logistic_admin_whatsapp_number_key');
 
@@ -154,10 +140,9 @@ class whatsappHelper
 
             $options['phonenumber'] = $logistic_phone_number;
 
-            self::init_curl_request($api_key,$options);
+            self::init_curl_request($options);
 
         }
-
 
     }
 

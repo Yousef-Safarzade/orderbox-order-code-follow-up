@@ -4,9 +4,6 @@ global $post;
 
 $fields = get_fields($post->ID);
 
-
-$report_items = \OrderboxOrderCodeFollowUp\single_template::get_report_items_of_post();
-
 \OrderboxOrderCodeFollowUp\single_template::can_user_access_this_order_code_detail_page();
 
 $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url();
@@ -41,30 +38,23 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
             </div>
 
-
         <?php } ?>
-
 
         <div class="orderbox-order-follow-up-report-container">
 
             <div class="orderbox-order-follow-up-report-container">
 
-
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_meta_data_seciton($fields); ?>
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_product_list_section(); ?>
 
-                <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_cost_seciton(); ?>
+                <?php \OrderboxOrderCodeFollowUp\single_template::maybe_generate_single_order_cost_seciton(); ?>
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_upload_payment_document_form(); ?>
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_payment_document_preview(); ?>
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_description_section(); ?>
-
-
-
-
 
             </div>
 

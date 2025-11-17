@@ -9,7 +9,7 @@ class constants
     public static function define_constants($parent_path)
     {
 
-        define('WP_OOFU_PLUGIN_VERSION', '1.2');
+        define('WP_OOFU_PLUGIN_VERSION', '1.2.2');
 
         define('WP_OOFU_PLUGIN_FOLDER_PATH', plugin_dir_path($parent_path));
 

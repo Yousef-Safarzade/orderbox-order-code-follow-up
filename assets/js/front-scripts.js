@@ -24,7 +24,8 @@ function handleUploadPaymentDocumentFormAcceptButtonClick(){
 
         if( typeof (fileURL) == 'undefined' || fileURL == '' ){
 
-            alert(oofuAjaxData.messages.general_error);
+
+            alert(wp.i18n.__('Something Went Wrong Please Try Again.', 'orderbox-order-code-follow-up'));
 
             return;
 
@@ -37,6 +38,12 @@ function handleUploadPaymentDocumentFormAcceptButtonClick(){
         formData.append("postID", oofuAjaxData.postID);
 
         formData.append("paymentDocument", fileURL);
+
+        formData.append("_wpnonce", $("#orderboxPaymentUploadForm #_wpnonce").val() );
+
+        formData.append("_wp_http_referer", $("#orderboxPaymentUploadForm input[name='_wp_http_referer']") );
+
+        $parent = $(this).parents('.orderbox-order-follow-up-report-value');
 
 
         $.ajax({
@@ -51,9 +58,16 @@ function handleUploadPaymentDocumentFormAcceptButtonClick(){
 
             contentType: false,
 
+            beforeSend:function(){
+
+                $parent.addClass('doing-ajax');
+            },
+
             success: function (response) {
 
-                alert(oofuAjaxData.messages.document_accepted_success);
+                $parent.removeClass('doing-ajax');
+
+                alert(wp.i18n.__('Document accepted successfully.', 'orderbox-order-code-follow-up'));
 
                 window.location.reload();
 
@@ -61,7 +75,9 @@ function handleUploadPaymentDocumentFormAcceptButtonClick(){
 
             error: function (xhr) {
 
-                alert(oofuAjaxData.messages.document_accepted_failed);
+                $parent.removeClass('doing-ajax');
+
+                alert(wp.i18n.__('Document accepted not successfully , please try again', 'orderbox-order-code-follow-up'));
 
 
             },
@@ -138,7 +154,7 @@ function handleUploadPaymentDocumentFormSubmit(){
 
         if ( file_data.length < 1 ){
 
-            alert(oofuAjaxData.messages.general_error);
+            alert(wp.i18n.__('Something Went Wrong Please Try Again.', 'orderbox-order-code-follow-up'));
 
             return;
 
@@ -151,11 +167,18 @@ function handleUploadPaymentDocumentFormSubmit(){
 
         formData.append("action", "handle_upload_payment_document");
 
-        formData.append("security", oofuAjaxData.nonce);
-
         formData.append("postID", oofuAjaxData.postID);
 
         formData.append("paymentDocument", file_data[0]);
+
+        formData.append("_wpnonce", $("#orderboxPaymentUploadForm #_wpnonce").val() );
+
+        formData.append("_wp_http_referer", $("#orderboxPaymentUploadForm input[name='_wp_http_referer']") );
+
+
+
+        $parent = $(this).parents('.orderbox-order-follow-up-report-value');
+
 
 
         $.ajax({
@@ -170,11 +193,20 @@ function handleUploadPaymentDocumentFormSubmit(){
 
             contentType: false,
 
+            beforeSend:function(){
+
+                $parent.addClass('doing-ajax');
+
+            },
+
             success: function (response) {
+
+                $parent.removeClass('doing-ajax');
+
 
                 if( typeof(response.data) != 'undefined' && response.data.length > 0 ){
 
-                    alert(oofuAjaxData.messages.document_uploaded_success);
+                    alert(wp.i18n.__('Document uploaded successfully.', 'orderbox-order-code-follow-up'));
 
                     let images = response.data;
 
@@ -199,7 +231,10 @@ function handleUploadPaymentDocumentFormSubmit(){
 
             error: function (xhr) {
 
-                alert(oofuAjaxData.messages.document_uploaded_failed);
+                $parent.removeClass('doing-ajax');
+
+
+                alert(wp.i18n.__('Document uploaded Failed , Please Try Again.', 'orderbox-order-code-follow-up'));
 
             },
 

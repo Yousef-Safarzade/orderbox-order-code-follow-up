@@ -120,36 +120,7 @@ class single_template
 
 
 
-    public static function get_report_items_of_post($post_id = ''){
 
-        $post_id = empty($post_id) ? get_the_ID() : $post_id;
-
-        $result = array();
-
-
-
-
-
-
-
-
-
-
-
-
-        $result['description'] = array(
-            'label' =>  __('Description' , 'orderbox-order-code-follow-up')  ,
-            'value' =>  get_field('description' , $post_id)
-        );
-
-
-
-
-
-
-        return $result;
-
-    }
 
 
     public static function get_qr_code_image_url($post_id = ''){
@@ -226,23 +197,18 @@ class single_template
     public static function generate_single_order_meta_data_seciton($fields){
 
         $items = array(
-
             'order_code' => array(
                 'label' =>  __('Order Code' , 'orderbox-order-code-follow-up') ,
                 'value' =>  $fields['order_code']
             ),
-
             'customer_name' => array(
                 'label' =>  __('Customer Name' , 'orderbox-order-code-follow-up')  ,
                 'value' =>  $fields['customer_name']
             ),
-
             'order_weight' => array(
                 'label' =>  __('Order Weight' , 'orderbox-order-code-follow-up')   ,
                 'value' =>  $fields['order_weight']
             ),
-
-
             'tipax_code' => array(
                 'label' =>  __('Tipax Code', 'orderbox-order-code-follow-up')   ,
                 'value' =>  $fields['tipax_code'] ,
@@ -251,7 +217,6 @@ class single_template
                     'orderbox-order-code-follow-up'
                 )
             ),
-
         );
 
 
@@ -284,88 +249,46 @@ class single_template
 
 
 
-    public static function generate_single_order_cost_seciton(){
-
-        global $post;
+    public static function maybe_generate_single_order_cost_seciton(){
 
         $total_additional_const = 0;
 
-        $transport_cost = get_field('transport_cost', $post->ID );
+        $total_additional_const += self::get_and_generate_total_cost_of_transport_costs();
 
-        $weight = get_field('order_weight', $post->ID );
+        $total_additional_const += self::get_and_generate_total_cost_of_order_additional_costs();
 
-        if( !empty($transport_cost) && !empty($weight) ){
-
-            $label = __('Transport Cost' , 'orderbox-order-code-follow-up');
-
-            $value = $transport_cost * $weight;
-
-            $total_additional_const = $value;
-
-            helper::generate_report_table_row( $label , $value);
-
-        }
-
-
-        for($i = 1 ; $i < 5 ; $i++){
-
-            $value = get_field('additional_cost_'.$i.'_value' , $post->ID);
-
-            $label = sprintf( __('Additional Cost %s', 'orderbox-order-code-follow-up'), $i );
-
-            if(empty($value)){
-
-                continue;
-
-            }
-
-            helper::generate_report_table_row(  $label , $value );
-
-            $total_additional_const += (int)helper::convert_persian_number_to_english($value);
-
-        }
-
-
-
-        for($i = 1 ; $i <= 5 ; $i++){
-
-            $price = get_field('product_price_'.$i , $post->ID);
-
-            if(empty($price)){
-
-                continue;
-
-            }
-            
-            $total_additional_const += (int)helper::convert_persian_number_to_english($price);
-
-        }
-
-
-
-
-
-
+        $total_additional_const += self::get_total_cost_of_order_products();
 
 
         if( $total_additional_const > 0 ) {
 
             $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
 
-            $value = $total_additional_const;
+            $value_formatted = number_format($total_additional_const);
 
-            helper::generate_report_table_row( $label , $value  );
-
+            helper::generate_report_table_row( $label , $value_formatted , '' , 'no-border-bottom large-text-value' );
 
             $label = __('Total Additional Cost (Tooman)', 'orderbox-order-code-follow-up');
 
-            $value = helper::get_aed_to_tooman_value($value);
+            $value = helper::get_aed_to_tooman_value($total_additional_const);
 
-            helper::generate_report_table_row( $label , $value  );
-
+            helper::generate_report_table_row( $label , $value , ''  , 'large-text-value' );
 
         }
 
+        self::maybe_generate_payment_section();
+
+    }
+
+
+
+
+
+
+
+    public static function maybe_generate_payment_section(){
+
+        global $post;
 
         $label = __('Payment Status' , 'orderbox-order-code-follow-up');
 
@@ -374,7 +297,6 @@ class single_template
         helper::generate_report_table_row( $label , $payment_status['label']  );
 
         if( $payment_status['value'] == 'not_payed' ) {
-
 
             if( get_field('show_pasargad_bank_payment_info' , $post->ID ) ){
 
@@ -394,8 +316,6 @@ class single_template
 
             }
 
-
-
             if( get_field('show_custom_bank_payment_info' , $post->ID ) ){
 
                 self::show_custom_bank_table_row();
@@ -404,6 +324,43 @@ class single_template
 
         }
 
+    }
+
+
+
+
+    public static function get_and_generate_total_cost_of_transport_costs(){
+
+            global $post;
+
+            $value = 0;
+
+            $transport_cost = get_field('transport_cost', $post->ID );
+
+            $weight = get_field('order_weight', $post->ID );
+
+            $paid_status = false;
+
+            if( !empty($transport_cost) && !empty($weight) ){
+
+                $label = __('Transport Cost' , 'orderbox-order-code-follow-up');
+
+                $value = $transport_cost * $weight;
+
+                $paid_status = get_field('transport_cost_is_paid' , $post->ID );
+
+                $paid_status_string = !empty( $paid_status ) && $paid_status == true ?
+                    __('<br/><br/><span class="payment-status paid">Payment Status : Paid</span>', 'orderbox-order-code-follow-up') :
+                    __('<br/><br/><span class="payment-status not-paid">Payment Status : Not Paid</span>', 'orderbox-order-code-follow-up') ;
+
+                $value .= $paid_status_string;
+
+                helper::generate_report_table_row( $label , $value);
+
+            }
+
+
+            return $paid_status ? 0 : (int)helper::convert_persian_number_to_english($value) ;
 
     }
 
@@ -412,6 +369,76 @@ class single_template
 
 
 
+    public static function get_and_generate_total_cost_of_order_additional_costs(){
+
+        global $post;
+
+        $result = 0;
+
+        for($i = 1 ; $i < 5 ; $i++){
+
+            $value = get_field('additional_cost_'.$i.'_value' , $post->ID);
+
+            $label = sprintf( __('Additional Cost %s', 'orderbox-order-code-follow-up'), $i );
+
+            if(empty($value)){
+
+                continue;
+
+            }
+
+
+            $paid_status = get_field('additional_cost_'.$i.'_is_paid' , $post->ID );
+
+            $paid_status_string = !empty( $paid_status ) && $paid_status == true ?
+                __('<br/><br/><span class="payment-status paid">Payment Status : Paid</span>', 'orderbox-order-code-follow-up') :
+                __('<br/><br/><span class="payment-status not-paid">Payment Status : Not Paid</span>', 'orderbox-order-code-follow-up') ;
+
+
+            $value .= $paid_status_string;
+
+            helper::generate_report_table_row(  $label , $value );
+
+            if ( !$paid_status ){
+
+                $result += (int)helper::convert_persian_number_to_english($value);
+
+            }
+
+
+        }
+
+        return $result;
+
+
+    }
+
+
+    public static function get_total_cost_of_order_products(){
+
+        global $post;
+
+        $result = 0;
+
+        for($i = 1 ; $i <= 5 ; $i++){
+
+            $price = get_field('product_price_'.$i , $post->ID);
+
+            $is_paid = get_field('product_price_'.$i.'_is_paid' , $post->ID ) == true;
+
+            if( empty($price) || $is_paid ){
+
+                continue;
+
+            }
+
+            $result += (int)helper::convert_persian_number_to_english($price);
+
+        }
+
+        return $result;
+
+    }
 
 
 
@@ -480,6 +507,13 @@ class single_template
 
                 $price_string = sprintf( __('<br/><br/>Product Price : %s', 'orderbox-order-code-follow-up') , $price);
 
+                $paid_status = get_field('product_price_'. $i .'_is_paid', $post->ID);
+
+                $price_string .= !empty($paid_status) && $paid_status == true ?
+                    __('<br/><br/><span class="payment-status paid">Payment Status : Paid</span>', 'orderbox-order-code-follow-up') :
+                    __('<br/><br/><span class="payment-status not-paid">Payment Status : Not Paid</span>', 'orderbox-order-code-follow-up') ;
+
+
                 $value .= $price_string;
 
             }
@@ -528,42 +562,45 @@ class single_template
 
         $payment_status = get_field('payment_status' , $post->ID );
 
-        $uploaded_document = get_field('payment_document', $post->ID);
-
-
-
-        if($payment_status['value'] != 'not_payed' || !empty($uploaded_document)) {
-
-            return;
-
-        }
-
         $label = __('Upload Payment <br />Document' , 'orderbox-order-code-follow-up');
 
-        $value = sprintf('<form id="orderboxPaymentUploadForm" action="#" method="post" enctype="multipart/form-data">
 
+        $nonce = wp_nonce_field( 'orderbox_payment_document_nonce' );
+
+        $value = sprintf('
+                    
+                    <div class="doing-ajax-overlay">
+                            <img src="%s">
+                    </div>
+
+                    <form id="orderboxPaymentUploadForm" action="#" method="post" enctype="multipart/form-data">
+                    
+                        %s
+                        
                         <label id="uploadFormLabel" for="paymentDocument">%s</label>
                         
                         <input type="file" id="paymentDocument" name="paymentDocument" accept="image/png, image/jpeg" style="display: none" />
-                        
-                        <span class="paymentDocumentFileName"> </span>
-                        
+                                                
                         <input id="submitButton" type="submit" value="%s" />
-                        
-                        <input id="resetButton" type="reset" value="%s" />
-                        
+                                                
                         <input id="paymentDocumentURL" name="paymentDocumentURL" type="hidden">
                         
                         <input id="acceptButton" type="button" value="%s" disabled/>
-
+                        
+                        <input id="resetButton" type="reset" value="%s" />
+                        
+                         <span class="paymentDocumentFileName"> </span>
+                        
                   </form>
-                  
+                 
                   <div class="orderbox-payment-document-preview"></div>
                   ',
-        __('Click To Choose Documents', 'orderbox-order-code-follow-up'),
-        __('Upload Payment' , 'orderbox-order-code-follow-up'),
-        __('Reset Form' , 'orderbox-order-code-follow-up'),
-        __('Accept Document' , 'orderbox-order-code-follow-up')
+            WP_OOFU_PLUGIN_MEDIA_FOLDER_URL . "/loading.gif",
+            $nonce,
+        __('1 - Choose', 'orderbox-order-code-follow-up'),
+        __('2 - Upload' , 'orderbox-order-code-follow-up'),
+        __('3 - Accept' , 'orderbox-order-code-follow-up'),
+        __('Reset Form' , 'orderbox-order-code-follow-up')
         );
 
         helper::generate_report_table_row( $label, $value );
@@ -589,6 +626,24 @@ class single_template
         $value = sprintf("<img src='%s' class='uploaded-document-preview' />'" , $uploaded_document);
 
         helper::generate_report_table_row( $label, $value );
+
+        for($i=2 ; $i < 5 ; $i++){
+
+            $uploaded_document = get_field('payment_document_' . $i, $post->ID);
+
+            if( empty( $uploaded_document ) ) {
+
+                continue;
+
+            }
+
+            $label = __('Payment Document Preview' , 'orderbox-order-code-follow-up');
+
+            $value = sprintf("<img src='%s' class='uploaded-document-preview' />'" , $uploaded_document);
+
+            helper::generate_report_table_row( $label, $value );
+
+        }
 
 
 

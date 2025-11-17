@@ -241,6 +241,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c4284e399",
+            "label": "پرداخت شده است ؟",
+            "name": "transport_cost_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68e0e9d6117fa",
             "label": "کد رهگیری تیپاکس",
             "name": "tipax_code",
@@ -306,6 +327,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c03645539",
+            "label": "پرداخت شده است ؟",
+            "name": "product_price_1_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68dbff0b4599c",
             "label": "نام کالا ۲",
             "name": "product_name_2",
@@ -348,6 +390,27 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_68f9c0834553a",
+            "label": "پرداخت شده است ؟",
+            "name": "product_price_2_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_68dbff0e4599d",
@@ -394,6 +457,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c0a24553b",
+            "label": "پرداخت شده است ؟",
+            "name": "product_price_3_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68dbff0f4599e",
             "label": "نام کالا ۴",
             "name": "product_name_4",
@@ -438,6 +522,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c0b64553c",
+            "label": "پرداخت شده است ؟",
+            "name": "product_price_4_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68dbff104599f",
             "label": "نام کالا ۵",
             "name": "product_name_5",
@@ -480,6 +585,27 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_68f9c0c94553d",
+            "label": "پرداخت شده است ؟",
+            "name": "product_price_5_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_68e0c7e6e9af2",
@@ -818,6 +944,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c7051397f",
+            "label": "پرداخت شده ؟",
+            "name": "additional_cost_1_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68f3ad3ea776a",
             "label": "عنوان هزینه جانبی دوم",
             "name": "additional_cost_2_title",
@@ -858,6 +1005,27 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_68f9c6ec1397e",
+            "label": "پرداخت شده ؟",
+            "name": "additional_cost_2_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_68f3adb7a776e",
@@ -902,6 +1070,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c74313980",
+            "label": "پرداخت شده ؟",
+            "name": "additional_cost_3_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68f3addba776f",
             "label": "عنوان هزینه جانبی چهارم",
             "name": "additional_cost_4_title",
@@ -944,6 +1133,27 @@
             "append": ""
         },
         {
+            "key": "field_68f9c74f13981",
+            "label": "پرداخت شده ؟",
+            "name": "additional_cost_4_is_paid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68f48a0d7ba3d",
             "label": "وضعیت واریزی",
             "name": "payment_status",
@@ -977,6 +1187,60 @@
             "key": "field_68f5d91e8da42",
             "label": "تصویر مدرک پرداخت",
             "name": "payment_document",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_68f9d7c07bb7d",
+            "label": "تصویر مدرک پرداخت ۲",
+            "name": "payment_document_2",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_68f9d7d17bb7e",
+            "label": "تصویر مدرک پرداخت ۳",
+            "name": "payment_document_3",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_68f9d7d97bb7f",
+            "label": "تصویر مدرک پرداخت ۴",
+            "name": "payment_document_4",
             "aria-label": "",
             "type": "url",
             "instructions": "",
@@ -1123,5 +1387,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761046529
+    "modified": 1761204191
 }

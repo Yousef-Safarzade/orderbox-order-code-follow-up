@@ -25,6 +25,8 @@ class helper
 
     public static function accept_payment_document(){
 
+        check_ajax_referer('orderbox_payment_document_nonce');
+
         if(empty($_POST['postID'])){
 
             wp_send_json_error('No Post ID received.');
@@ -47,7 +49,37 @@ class helper
         }
 
 
-        update_post_meta($_POST['postID'], 'payment_document', $_POST['paymentDocument']);
+        $current_payment = get_post_meta($_POST['postID'], 'payment_document',true);
+
+        if( empty($current_payment) ){
+
+            update_post_meta($_POST['postID'], 'payment_document', $_POST['paymentDocument']);
+
+        } else {
+
+            $updated = false;
+
+            for($i = 2 ; $i < 5; $i++){
+
+                if ( $updated ){
+
+                    break;
+
+                }
+
+                $current_payment = get_post_meta($_POST['postID'], 'payment_document_'.$i,true);
+
+                if( empty($current_payment) ){
+
+                    update_post_meta($_POST['postID'], 'payment_document_'.$i, $_POST['paymentDocument']);
+
+                    $updated = true;
+
+                }
+
+            }
+
+        }
 
         update_post_meta($_POST['postID'], 'payment_status', 'waiting_for_approval');
 
@@ -59,16 +91,12 @@ class helper
 
         wp_send_json_success('Data Has Been Updated');
 
-
-
-
     }
 
 
     public static function handle_upload_payment_document(){
 
-
-        check_ajax_referer('handle_upload_payment_document', 'security');
+        check_ajax_referer('orderbox_payment_document_nonce');
 
         if(empty($_POST['postID'])){
 
@@ -184,13 +212,13 @@ class helper
 
 
 
-    public static function generate_report_table_row($label,$value,$description = ''){
+    public static function generate_report_table_row($label,$value,$description = '',$extra_class=''){
 
         ob_start();
 
         ?>
 
-        <div class="orderbox-order-follow-up-report-item">
+        <div class="orderbox-order-follow-up-report-item <?php echo $extra_class ?>">
 
             <div class="orderbox-order-follow-up-report-item-title">
 
@@ -260,8 +288,11 @@ class helper
 
         }
 
+        $final_value = round((int)$value * $aed_to_tooman_exchange_rate);
 
-        return round((int)$value * $aed_to_tooman_exchange_rate);
+        $final_value = number_format( $final_value, 0);
+
+        return $final_value;
 
     }
 
@@ -286,6 +317,63 @@ class helper
         }
 
         return $date;
+
+    }
+
+
+
+
+    public static function get_user_all_order_follow_up_items($user_id){
+
+        if( empty($user_id) ){
+
+            return [];
+
+        }
+
+        $user = get_user($user_id);
+
+        if( $user == false ){
+
+            return [];
+
+        }
+
+        $user_phone = get_user_meta( $user_id, 'digits_phone_no', true );
+
+        if ( empty( $user_phone ) ) {
+
+            return [];
+
+        }
+
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type'      => 'orderbox_order',
+            'post_status'    => 'publish',
+            'fields'         => 'ids',
+            'meta_query' => array(
+                'relation' => 'OR',
+                array(
+                    'key' => 'customer_phone_number',
+                    'value' => $user_phone,
+                    'compare' => 'LIKE',
+                ),
+                array(
+                    'key' => 'customer_second_phone_number',
+                    'value' => $user_phone,
+                    'compare' => 'LIKE',
+                ),
+                array(
+                    'key' => 'customer_third_phone_number',
+                    'value' => $user_phone,
+                    'compare' => 'LIKE',
+                )
+
+            )
+        );
+
+        return get_posts($args);
 
     }
 
