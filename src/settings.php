@@ -44,6 +44,11 @@ class settings
             'wp_oofu_logistic_admin_whatsapp_number_key' // option name (stored in wp_options)
         );
 
+        register_setting(
+            'general',              // settings group (use 'general' for General Settings page)
+            'wp_oofu_master_password' // option name (stored in wp_options)
+        );
+
 
 
         add_settings_field(
@@ -94,6 +99,15 @@ class settings
             'wp_oofu_logistic_admin_whatsapp_number_key',                   // field ID
             __('Orderbox Logistic Admin Whatsapp Number', 'orderbox-order-code-follow-up'),         // field title (label)
             array(__CLASS__,'render_wp_oofu_logistic_admin_whatsapp_number_key_plugin_field'),            // callback to render field HTML
+            'general'                                  // settings page slug (general page)
+        );
+
+
+
+        add_settings_field(
+            'wp_oofu_master_password',                   // field ID
+            __('Orderbox Master Password', 'orderbox-order-code-follow-up'),         // field title (label)
+            array(__CLASS__,'render_wp_oofu_master_password_plugin_field'),            // callback to render field HTML
             'general'                                  // settings page slug (general page)
         );
 
@@ -196,6 +210,23 @@ class settings
                class="regular-text" />
         <p class="description"></p>
         <?php
+
+    }
+
+
+
+    public static function render_wp_oofu_master_password_plugin_field(){
+
+        $value = get_option('wp_oofu_master_password', '');
+        ?>
+        <input type="text"
+               id="wp_oofu_master_password"
+               name="wp_oofu_master_password"
+               value="<?php echo esc_attr($value); ?>"
+               class="regular-text" />
+        <p class="description"></p>
+        <?php
+
 
     }
 

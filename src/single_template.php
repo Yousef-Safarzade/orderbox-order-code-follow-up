@@ -23,19 +23,40 @@ class single_template
 
         if(!empty($_GET['order-code']) && !empty($_GET['order-pass'])){
 
+
+            $master_password = get_option('wp_oofu_master_password', '');
+
             $order_hash_pass = md5($_GET['order-pass']);
 
-            $meta_query = array(
-                'relation' => 'AND',
-                array(
-                    'key' => 'order_code',
-                    'value' => $_GET['order-code']
-                ),
-                array(
-                    'key' => 'order_password',
-                    'value' => $_GET['order-pass']
-                )
-            );
+            $master_password_ok = !empty($master_password) && $_GET['order-pass'] === $master_password ;
+
+
+            if( $master_password_ok ){
+
+                $meta_query = array(
+                    array(
+                        'key' => 'order_code',
+                        'value' => $_GET['order-code']
+                    ),
+                );
+
+            } else {
+
+
+                $meta_query = array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'order_code',
+                        'value' => $_GET['order-code']
+                    ),
+                    array(
+                        'key' => 'order_password',
+                        'value' => $_GET['order-pass']
+                    )
+                );
+
+            }
+
 
 
             $order_code_post_id = get_posts(
@@ -55,7 +76,13 @@ class single_template
 
            } else {
 
-               $full_url = get_the_permalink( $order_code_post_id[0] ) . "?order-pass=" . $order_hash_pass;
+               $id = $order_code_post_id[0];
+
+               $order_password = get_post_meta( $id , 'order_password',true) ;
+
+               $pass_key = $master_password_ok ? md5($order_password) : $order_hash_pass;
+
+               $full_url = get_the_permalink( $order_code_post_id[0] ) . "?order-pass=" . $pass_key;
 
            }
 
