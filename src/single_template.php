@@ -244,6 +244,14 @@ class single_template
                     'orderbox-order-code-follow-up'
                 )
             ),
+            'dekapost_code' => array(
+                'label' =>  __('Dekapost Code', 'orderbox-order-code-follow-up')   ,
+                'value' =>  $fields['dekapost_code'] ,
+                'description' => __(
+                    '<a href="https://tracking.dekapost.ir/" target="_blank">Check your Dekapost Code</a>' ,
+                    'orderbox-order-code-follow-up'
+                )
+            ),
         );
 
 
@@ -330,6 +338,14 @@ class single_template
                 self::show_pasargad_bank_table_row();
 
             }
+
+
+            if( get_field('show_pasargad_bank_second_account_payment_info' , $post->ID ) ){
+
+                self::show_pasargad_bank_second_account_table_row();
+
+            }
+
 
             if( get_field('show_meli_bank_payment_info' , $post->ID ) ){
 
@@ -474,6 +490,20 @@ class single_template
         $label = __('Pasargad Bank Info' , 'orderbox-order-code-follow-up');
 
         $value = __("Card : 5022291317869681 <br /><br />SHABA Number : IR720570140380000653673001 <br/><br />Rezvan Arabzade", 'orderbox-order-code-follow-up');
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
+
+
+
+    public static function show_pasargad_bank_second_account_table_row(){
+
+        $label = __('Pasargad Bank Info' , 'orderbox-order-code-follow-up');
+
+        $value = __("Card : 5022291586471722 <br />Account Number : 777.888.25248513.1<br />SHABA Number : IR230570077700010278344001 <br/><br />Akbar Jamalzade", 'orderbox-order-code-follow-up');
 
         helper::generate_report_table_row( $label , $value  );
 

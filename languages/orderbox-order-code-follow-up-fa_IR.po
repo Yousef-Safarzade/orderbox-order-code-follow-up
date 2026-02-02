@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2025-11-17 09:05+0000\n"
+"PO-Revision-Date: 2026-02-02 09:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: فارسی\n"
+"Language-Team: Persian\n"
 "Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -15,15 +15,15 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:627
+#: src/single_template.php:657
 msgid "1 - Choose"
 msgstr "۱ - انتخاب"
 
-#: src/single_template.php:628
+#: src/single_template.php:658
 msgid "2 - Upload"
 msgstr "۲ - بارگذاری"
 
-#: src/single_template.php:629
+#: src/single_template.php:659
 msgid "3 - Accept"
 msgstr "۳ - تایید"
 
@@ -34,8 +34,15 @@ msgid ""
 msgstr ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">پیگیری کد</a>"
 
-#: src/single_template.php:381 src/single_template.php:422
-#: src/single_template.php:541
+#: src/single_template.php:250
+msgid ""
+"<a href=\"https://tracking.dekapost.ir/\" target=\"_blank\">Check your "
+"Dekapost Code</a>"
+msgstr ""
+"<a href=\"https://tracking.dekapost.ir/\" target=\"_blank\">پیگیری کد</a>"
+
+#: src/single_template.php:397 src/single_template.php:438
+#: src/single_template.php:571
 msgid ""
 "<br/><br/><span class=\"payment-status not-paid\">Payment Status : Not "
 "Paid</span>"
@@ -43,15 +50,15 @@ msgstr ""
 "<br/><br/><span class=\"payment-status not-paid\">وضعیت پرداخت :‌ پرداخت "
 "نشده</span>"
 
-#: src/single_template.php:380 src/single_template.php:421
-#: src/single_template.php:540
+#: src/single_template.php:396 src/single_template.php:437
+#: src/single_template.php:570
 msgid ""
 "<br/><br/><span class=\"payment-status paid\">Payment Status : Paid</span>"
 msgstr ""
 "<br/><br/><span class=\"payment-status paid\">وضعیت پرداخت : پرداخت "
 "شده</span>"
 
-#: src/single_template.php:535
+#: src/single_template.php:565
 #, php-format
 msgid "<br/><br/>Product Price : %s"
 msgstr "<br/><br/>قیمت محصول :‌ %s"
@@ -73,7 +80,7 @@ msgstr "کد ارسال"
 msgid "Add New Orderbox Orders"
 msgstr "اضافه کردن کد ارسال"
 
-#: src/single_template.php:409
+#: src/single_template.php:425
 #, php-format
 msgid "Additional Cost %s"
 msgstr "هزینه جانبی %s"
@@ -87,7 +94,7 @@ msgstr "کد ارسال"
 msgid "All Orderbox Orders"
 msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/single_template.php:476
+#: src/single_template.php:492
 msgid ""
 "Card : 5022291317869681 <br /><br />SHABA Number : "
 "IR720570140380000653673001 <br/><br />Rezvan Arabzade"
@@ -99,7 +106,13 @@ msgstr ""
 "به نام : رضوان عرب زاده\n"
 "<br /><br />"
 
-#: src/single_template.php:489
+#: src/single_template.php:506
+msgid ""
+"Card : 5022291586471722 <br />Account Number : 777.888.25248513.1<br />SHABA "
+"Number : IR230570077700010278344001 <br/><br />Akbar Jamalzade"
+msgstr ""
+
+#: src/single_template.php:519
 msgid ""
 "Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
 "<br/><br/>Ramin Arabzade"
@@ -189,11 +202,15 @@ msgstr ""
 "\n"
 "برای مشاهده اطلاعات بیشتر به سایت OrderBox مراجعه بفرمایید"
 
+#: src/single_template.php:248
+msgid "Dekapost Code"
+msgstr "کد دکاپست"
+
 #: templates/single-orderbox-order-follow-up-progress-bar.php:12
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:571
+#: src/single_template.php:601
 msgid "Description"
 msgstr "توضیحات"
 
@@ -223,7 +240,7 @@ msgstr "دریافت در دفتر دوبی"
 msgid "Edit Orderbox Orders"
 msgstr "ویرایش کد ارسال"
 
-#: src/single_template.php:499
+#: src/single_template.php:529
 msgid "Emirate Bank Info"
 msgstr "اطلاعات پرداخت<br/> امارات"
 
@@ -235,28 +252,13 @@ msgstr ""
 msgid "IRAN PORT"
 msgstr "دریافت در بندر ایران"
 
-#: src/single_template.php:253
+#: src/single_template.php:261
 msgid "KG"
 msgstr "کیلوگرم"
 
-#: src/single_template.php:487
+#: src/single_template.php:517
 msgid "Meli Bank Info"
 msgstr "اطلاعات پرداخت <br/> بانک ملی"
-
-#. field ID
-#: src/settings.php:72
-msgid "Melipayamak Password"
-msgstr "رمز عبور در ملی پیامک"
-
-#. field ID
-#: src/settings.php:56
-msgid "Melipayamak Phone Number"
-msgstr "شماره ارسال پیام در ملی پیامک"
-
-#. field ID
-#: src/settings.php:64
-msgid "Melipayamak Username"
-msgstr "نام کاربری در ملی پیامک"
 
 #: src/custom_post_types.php:32
 msgid "New Orderbox Orders"
@@ -290,26 +292,11 @@ msgstr "دریافت سفارش"
 msgid "Order Weight"
 msgstr "وزن محصول"
 
-#. field ID
-#: src/settings.php:92
-msgid "Orderbox Accountant Whatsapp Number"
-msgstr ""
-
-#. field ID
-#: src/settings.php:100
-msgid "Orderbox Logistic Admin Whatsapp Number"
-msgstr ""
-
-#. field ID
-#: src/settings.php:109
-msgid "Orderbox Master Password"
-msgstr "پسورد اصلی"
-
 #. Name of the plugin
 msgid "Orderbox Order Code Follow Up"
 msgstr "پیگیری کد ارسال"
 
-#: src/single_template.php:512
+#: src/single_template.php:542
 msgid "Other Payment Inro"
 msgstr "سایر روش های <br/> واریزی"
 
@@ -355,11 +342,11 @@ msgstr "استفاده از تصویر اصلی"
 msgid "Parent Orderbox Orders:"
 msgstr "کد ارسالی مادر"
 
-#: src/single_template.php:474
+#: src/single_template.php:490 src/single_template.php:504
 msgid "Pasargad Bank Info"
 msgstr "اطلاعات پرداخت <br/> بانک پاسارگاد"
 
-#: src/single_template.php:651 src/single_template.php:667
+#: src/single_template.php:681 src/single_template.php:697
 msgid "Payment Document Preview"
 msgstr "تصویر مدرک <br/> پرداختی"
 
@@ -377,7 +364,7 @@ msgid ""
 "Please Check Website Admin Panel"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:131 src/single_template.php:320
+#: src/woocommerce_dashboard.php:131 src/single_template.php:328
 msgid "Payment Status"
 msgstr "وضعیت پرداخت"
 
@@ -391,20 +378,20 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:548
+#: src/single_template.php:578
 #, php-format
 #| msgid "Product Name 1"
 msgid "Product Name %s"
 msgstr "محصول شماره %s"
 
-#: src/single_template.php:501
+#: src/single_template.php:531
 msgid ""
 "Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
 "Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:630
+#: src/single_template.php:660
 msgid "Reset Form"
 msgstr "پاک کردن اطلاعات"
 
@@ -488,30 +475,25 @@ msgstr "ارسال با تیپاکس"
 msgid "Tipax Code"
 msgstr "کد تیپاکس"
 
-#: src/single_template.php:292
+#: src/single_template.php:300
 msgid "Total Additional Cost ( AED )"
 msgstr "مجموع هزینه<br/> ( درهم امارات )"
 
-#: src/single_template.php:298
+#: src/single_template.php:306
 msgid "Total Additional Cost (Tooman)"
 msgstr "مجموع هزینه<br/> ( تومان )"
 
-#: src/single_template.php:373
+#: src/single_template.php:389
 msgid "Transport Cost"
 msgstr "هزینه ارسال"
 
-#: src/single_template.php:592
+#: src/single_template.php:622
 msgid "Upload Payment <br />Document"
 msgstr "آپلود مدارک <br/> پرداخت"
 
 #: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
 msgstr "نمایش کد های ارسال"
-
-#. field ID
-#: src/settings.php:81
-msgid "whatsiplus API Key"
-msgstr "کد API سرویس واتسی پلاس"
 
 #. Author of the plugin
 msgid "Yousef Safarzade"

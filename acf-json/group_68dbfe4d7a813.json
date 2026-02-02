@@ -283,6 +283,27 @@
             "append": ""
         },
         {
+            "key": "field_6980662d127b3",
+            "label": "کد رهگیری دکاپست",
+            "name": "dekapost_code",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "tipax-code"
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_68dbfeefa4853",
             "label": "نام کالا ۱",
             "name": "product_name_1",
@@ -1277,6 +1298,27 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_693d4628f6219",
+            "label": "نمایش اطلاعات واریزی بانک پاسارگاد - حساب دوم",
+            "name": "show_pasargad_bank_second_account_payment_info",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68f4c1b92524c",
             "label": "نمایش اطلاعات واریزی بانک ملی",
             "name": "show_meli_bank_payment_info",
@@ -1387,5 +1429,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761204191
+    "display_title": "",
+    "modified": 1770022505
 }
