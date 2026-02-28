@@ -6,7 +6,6 @@ $labels = array(
         'order_received'        =>  __('ORDER RECEIVED','orderbox-order-code-follow-up'),
         'received_in_dubai'     =>  __('DUBAI / PACKING','orderbox-order-code-follow-up'),
         'send_to_iran'          =>  __('SHIPPED','orderbox-order-code-follow-up'),
-        'received_in_iran'      =>  __('IRAN PORT','orderbox-order-code-follow-up'),
         'received_in_shiraz'    =>  __('SHIRAZ','orderbox-order-code-follow-up'),
         'sent_by_tipax'         =>  __('TIPAX','orderbox-order-code-follow-up'),
         'recieved_by_customer'  =>  __('DELIVERED','orderbox-order-code-follow-up'),

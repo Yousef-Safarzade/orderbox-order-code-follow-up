@@ -422,6 +422,8 @@ class single_template
 
             $value = get_field('additional_cost_'.$i.'_value' , $post->ID);
 
+            $cost_title = get_field('additional_cost_'.$i.'_title' , $post->ID);
+
             $label = sprintf( __('Additional Cost %s', 'orderbox-order-code-follow-up'), $i );
 
             if(empty($value)){
@@ -432,6 +434,15 @@ class single_template
 
 
             $paid_status = get_field('additional_cost_'.$i.'_is_paid' , $post->ID );
+
+
+            if(!empty($cost_title)){
+
+                $value .=  sprintf(  __('<br/><br/><span class="payment-title">For : %s</span>', 'orderbox-order-code-follow-up') , $cost_title );
+
+            }
+
+
 
             $paid_status_string = !empty( $paid_status ) && $paid_status == true ?
                 __('<br/><br/><span class="payment-status paid">Payment Status : Paid</span>', 'orderbox-order-code-follow-up') :

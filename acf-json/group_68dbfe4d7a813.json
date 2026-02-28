@@ -199,7 +199,7 @@
             "label": "وزن محصول ( کیلوگرم )",
             "name": "order_weight",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -209,11 +209,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -222,7 +220,7 @@
             "label": "هزینه ارسال",
             "name": "transport_cost",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -232,11 +230,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -329,7 +325,7 @@
             "label": "قیمت کالا ۱",
             "name": "product_price_1",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -339,11 +335,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -394,7 +388,7 @@
             "label": "قیمت کالا ۲",
             "name": "product_price_2",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -404,11 +398,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -459,7 +451,7 @@
             "label": "قیمت کالا ۳",
             "name": "product_price_3",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -469,11 +461,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -524,7 +514,7 @@
             "label": "قیمت کالا ۴",
             "name": "product_price_4",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -534,11 +524,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -589,7 +577,7 @@
             "label": "قیمت کالا ۵",
             "name": "product_price_5",
             "aria-label": "",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -599,11 +587,9 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -824,26 +810,6 @@
                     "key": "field_68edf216c9794",
                     "label": "ارسال به ایران",
                     "name": "send_to_iran",
-                    "aria-label": "",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "d\/m\/Y",
-                    "first_day": 6,
-                    "default_to_current_date": 0,
-                    "allow_in_bindings": 0
-                },
-                {
-                    "key": "field_68edf23bc9795",
-                    "label": "دریافت در بندر ایران",
-                    "name": "received_in_iran",
                     "aria-label": "",
                     "type": "date_picker",
                     "instructions": "",
@@ -1430,5 +1396,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770022505
+    "modified": 1771848120
 }
