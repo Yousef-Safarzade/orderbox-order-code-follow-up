@@ -83,6 +83,7 @@ class scripts
             wp_localize_script('oofu-front-script', 'oofuAjaxData', [
                 'ajax_url' => admin_url('admin-ajax.php'),
                 'postID'  => get_the_ID(),
+                'messages' => $messages,
             ]);
 
 

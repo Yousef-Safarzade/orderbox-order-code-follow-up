@@ -144,6 +144,19 @@ class whatsappHelper
 
         }
 
+
+
+
+        $third_phone_number = get_option('wp_oofu_third_admin_whatsapp_number_key');
+
+        if ( !empty($third_phone_number) ){
+
+            $options['phonenumber'] = $third_phone_number;
+
+            self::init_curl_request($options);
+
+        }
+
     }
 
 

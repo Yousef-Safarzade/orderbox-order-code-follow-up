@@ -162,6 +162,36 @@ class single_template
 
 
 
+    public static function get_gallery_images($post_id = ''){
+
+        $post_id = empty($post_id) ? get_the_ID() : $post_id;
+
+        $images = [];
+
+
+        for($i = 1; $i <= 10; $i++){
+
+            $url = get_field('order_followup_image_' . $i , $post_id);
+
+            if(!empty($url)){
+
+                $images[] = $url;
+
+            } else {
+
+                break;
+
+            }
+
+        }
+
+        return $images;
+
+
+    }
+
+
+
 
     public static function get_sticker_image_urls($post_id = ''){
 

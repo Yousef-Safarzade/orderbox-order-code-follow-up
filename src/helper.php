@@ -25,7 +25,7 @@ class helper
 
     public static function accept_payment_document(){
 
-        check_ajax_referer('orderbox_payment_document_nonce');
+        //check_ajax_referer('orderbox_payment_document_nonce');
 
         if(empty($_POST['postID'])){
 
@@ -96,7 +96,7 @@ class helper
 
     public static function handle_upload_payment_document(){
 
-        check_ajax_referer('orderbox_payment_document_nonce');
+        //check_ajax_referer('orderbox_payment_document_nonce');
 
         if(empty($_POST['postID'])){
 
@@ -117,6 +117,7 @@ class helper
         }
 
 
+
         $uploaded_files = [];
 
         $files = $_FILES['paymentDocument'];
@@ -128,6 +129,8 @@ class helper
             'error'    => $files['error'],
             'size'     => $files['size']
         ];
+
+
 
         $upload_overrides = ['test_form' => false];
 
@@ -263,7 +266,10 @@ class helper
 
         }
 
-        $api_url = 'https://orderbox.ae/wp-json/mnswmc/v1/currency/9f8e7adfcdb7c395d33d08fcd968ade8';
+
+
+
+        /*$api_url = 'https://orderbox.ae/wp-json/mnswmc/v1/currency/9f8e7adfcdb7c395d33d08fcd968ade8';
 
         $response = wp_remote_get(
 
@@ -286,9 +292,12 @@ class helper
 
             return 0;
 
-        }
+        }*/
 
-        $final_value = round((int)$value * $aed_to_tooman_exchange_rate);
+
+        $aed_to_tooman_exchange_rate = self::get_cached_tgju_aed_price();
+
+        $final_value = round((int)$value * $aed_to_tooman_exchange_rate) * 100;
 
         $final_value = number_format( $final_value, 0);
 
@@ -375,6 +384,92 @@ class helper
 
         return get_posts($args);
 
+    }
+
+
+
+
+    public static function get_tgju_aed_price() {
+
+        $url = 'https://www.tgju.org/profile/price_aed';
+
+        $ch = curl_init();
+
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_USERAGENT => 'Mozilla/5.0',
+            CURLOPT_TIMEOUT => 15,
+        ]);
+
+        $html = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            curl_close($ch);
+            return false;
+        }
+
+        curl_close($ch);
+
+
+        if (!$html) {
+            return false;
+        }
+
+        libxml_use_internal_errors(true);
+
+        $dom = new \DOMDocument();
+        $dom->loadHTML($html);
+
+        $xpath = new \DOMXPath($dom);
+
+        $nodes = $xpath->query(
+            '//span[@data-col="info.last_trade.PDrCotVal"]'
+        );
+
+
+        if ($nodes->length === 0) {
+            return false;
+        }
+
+        return trim($nodes->item(0)->textContent);
+    }
+
+
+
+
+
+
+    public static function get_cached_tgju_aed_price() {
+
+        $transient_key = 'tgju_aed_price';
+
+        $cached_value = get_transient($transient_key);
+
+
+
+        // transient exists
+        if ($cached_value !== false) {
+            return (float)str_replace(',', '.', $cached_value);
+        }
+
+        // transient missing → fetch fresh value
+        $fresh_value = self::get_tgju_aed_price();
+
+        if ($fresh_value === false) {
+            return false;
+        }
+
+        // cache for 1 hour
+        set_transient(
+            $transient_key,
+            $fresh_value,
+            HOUR_IN_SECONDS
+        );
+
+        return  (float)str_replace(',', '.', $fresh_value);
     }
 
 }

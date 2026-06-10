@@ -132,13 +132,46 @@
 
 
 
-    .orderbox-order-follow-up-qr-code-container{
+    .orderbox-order-follow-up-sidebar-container{
 
       max-width: 250px;
+
+      @media (max-width: 480px){
+
+        width: 100%;
+
+        max-width: 100%;
+
+      }
+
       img{
         width: 100%;
         height: auto;
       }
+
+      a.gallery-image {
+        display: block;
+        max-height: 200px;
+        overflow: hidden;
+        margin: 5px 0;
+
+        @media (max-width: 480px){
+
+          max-height: 300px;
+
+
+        }
+
+      }
+
+      .clearfix::after {
+        content: " "; /* Older browser do not support empty content */
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
+
     }
 
 

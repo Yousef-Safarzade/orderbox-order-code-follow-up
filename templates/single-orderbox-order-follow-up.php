@@ -8,6 +8,8 @@ $fields = get_fields($post->ID);
 
 $image_url = \OrderboxOrderCodeFollowUp\single_template::get_qr_code_image_url();
 
+$gallery_image = \OrderboxOrderCodeFollowUp\single_template::get_gallery_images();
+
 $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_urls();
 
 ?>
@@ -20,11 +22,18 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
     <div class="orderbox-order-follow-up-main-container">
 
-        <?php if($image_url){ ?>
+        <?php if($image_url || !empty($gallery_image) ){ ?>
 
-            <div class="orderbox-order-follow-up-qr-code-container">
+            <div class="orderbox-order-follow-up-sidebar-container">
 
-                <img src="<?php echo esc_url($image_url); ?>">
+
+                <?php if(!empty($image_url)){ ?>
+
+                    <img src="<?php echo esc_url($image_url); ?>">
+
+                <?php } ?>
+
+
 
                 <?php if(is_array($sticker_url) && !empty($sticker_url['full'] ) ){ ?>
 
@@ -36,9 +45,38 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
                 <?php } ?>
 
+
+
+                <?php if(!empty($gallery_image)){ ?>
+
+
+                    <?php foreach($gallery_image as $image){ ?>
+
+                        <a class="gallery-image" href="<?php echo $image ?>" data-lightbox="image-1">
+
+                            <img src="<?php echo $image ?>">
+
+                        </a>
+
+                    <?php } ?>
+
+                    <div class="clearfix"></div>
+
+
+                <?php } ?>
+
             </div>
 
+
         <?php } ?>
+
+
+
+
+
+
+
+
 
         <div class="orderbox-order-follow-up-report-container">
 
