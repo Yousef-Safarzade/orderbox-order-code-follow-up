@@ -57,6 +57,8 @@ class settings
                     self::render_text_setting_input('wp_oofu_logistic_admin_whatsapp_number_key');
                 }
             ],
+
+
             'wp_oofu_third_admin_whatsapp_number_key' => [
                 'label'    => 'Orderbox Third Admin Whatsapp Number',
                 'sanitize' => 'sanitize_text_field',
@@ -64,6 +66,18 @@ class settings
                     self::render_text_setting_input('wp_oofu_third_admin_whatsapp_number_key');
                 }
             ],
+
+
+            'wp_oofu_fourth_admin_whatsapp_number_key' => [
+                    'label'    => 'Orderbox Fourth Admin Whatsapp Number',
+                    'sanitize' => 'sanitize_text_field',
+                    'callback' => function(){
+                        self::render_text_setting_input('wp_oofu_fourth_admin_whatsapp_number_key');
+                    }
+            ],
+
+
+
             'wp_oofu_master_password' => [
                 'label'    => 'Orderbox Master Password',
                 'sanitize' => 'sanitize_text_field',

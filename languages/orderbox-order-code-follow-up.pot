@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 10:18+0000\n"
+"POT-Creation-Date: 2026-08-10 05:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid " ( %s Images ) "
 msgstr ""
 
-#: src/single_template.php:698
+#: src/single_template.php:703
 msgid "1 - Choose"
 msgstr ""
 
-#: src/single_template.php:699
+#: src/single_template.php:704
 msgid "2 - Upload"
 msgstr ""
 
-#: src/single_template.php:700
+#: src/single_template.php:705
 msgid "3 - Accept"
 msgstr ""
 
@@ -45,25 +45,25 @@ msgid ""
 "Dekapost Code</a>"
 msgstr ""
 
-#: src/single_template.php:427 src/single_template.php:479
-#: src/single_template.php:612
+#: src/single_template.php:432 src/single_template.php:484
+#: src/single_template.php:617
 msgid ""
 "<br/><br/><span class=\"payment-status not-paid\">Payment Status : Not "
 "Paid</span>"
 msgstr ""
 
-#: src/single_template.php:426 src/single_template.php:478
-#: src/single_template.php:611
+#: src/single_template.php:431 src/single_template.php:483
+#: src/single_template.php:616
 msgid ""
 "<br/><br/><span class=\"payment-status paid\">Payment Status : Paid</span>"
 msgstr ""
 
-#: src/single_template.php:471
+#: src/single_template.php:476
 #, php-format
 msgid "<br/><br/><span class=\"payment-title\">For : %s</span>"
 msgstr ""
 
-#: src/single_template.php:606
+#: src/single_template.php:611
 #, php-format
 msgid "<br/><br/>Product Price : %s"
 msgstr ""
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Add New Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:457
+#: src/single_template.php:462
 #, php-format
 msgid "Additional Cost %s"
 msgstr ""
@@ -98,6 +98,10 @@ msgstr ""
 #: src/custom_post_types.php:28
 msgctxt "Admin Menu text"
 msgid "Orderbox Orders"
+msgstr ""
+
+#: src/single_template.php:337
+msgid "AED Rating (Tooman)"
 msgstr ""
 
 #: src/custom_post_types.php:35
@@ -108,19 +112,19 @@ msgstr ""
 msgid "All Statuses"
 msgstr ""
 
-#: src/single_template.php:533
+#: src/single_template.php:538
 msgid ""
 "Card : 5022291317869681 <br /><br />SHABA Number : "
 "IR720570140380000653673001 <br/><br />Rezvan Arabzade"
 msgstr ""
 
-#: src/single_template.php:547
+#: src/single_template.php:552
 msgid ""
 "Card : 5022291586471722 <br />Account Number : 777.888.25248513.1<br />SHABA "
 "Number : IR230570077700010278344001 <br/><br />Akbar Jamalzade"
 msgstr ""
 
-#: src/single_template.php:560
+#: src/single_template.php:565
 msgid ""
 "Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
 "<br/><br/>Ramin Arabzade"
@@ -167,7 +171,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:642
+#: src/single_template.php:647
 msgid "Description"
 msgstr ""
 
@@ -195,7 +199,7 @@ msgstr ""
 msgid "Edit Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:570
+#: src/single_template.php:575
 msgid "Emirate Bank Info"
 msgstr ""
 
@@ -207,7 +211,7 @@ msgstr ""
 msgid "KG"
 msgstr ""
 
-#: src/single_template.php:558
+#: src/single_template.php:563
 msgid "Meli Bank Info"
 msgstr ""
 
@@ -251,7 +255,7 @@ msgstr ""
 msgid "Orderbox Order Code Follow Up"
 msgstr ""
 
-#: src/single_template.php:583
+#: src/single_template.php:588
 msgid "Other Payment Inro"
 msgstr ""
 
@@ -301,11 +305,11 @@ msgstr ""
 msgid "Parent Orderbox Orders:"
 msgstr ""
 
-#: src/single_template.php:531 src/single_template.php:545
+#: src/single_template.php:536 src/single_template.php:550
 msgid "Pasargad Bank Info"
 msgstr ""
 
-#: src/single_template.php:722 src/single_template.php:738
+#: src/single_template.php:727 src/single_template.php:743
 msgid "Payment Document Preview"
 msgstr ""
 
@@ -323,7 +327,7 @@ msgid ""
 "Please Check Website Admin Panel"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:143 src/single_template.php:358
+#: src/woocommerce_dashboard.php:143 src/single_template.php:363
 msgid "Payment Status"
 msgstr ""
 
@@ -337,23 +341,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:619
+#: src/single_template.php:624
 #, php-format
 msgid "Product Name %s"
 msgstr ""
 
-#: src/single_template.php:572
+#: src/single_template.php:577
 msgid ""
 "Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
 "Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:788
+#: src/single_template.php:807
 msgid "Related Purchase Codes"
 msgstr ""
 
-#: src/single_template.php:701
+#: src/single_template.php:706
 msgid "Reset Form"
 msgstr ""
 
@@ -449,19 +453,19 @@ msgstr ""
 msgid "Tipax Code"
 msgstr ""
 
-#: src/single_template.php:330
+#: src/single_template.php:331
 msgid "Total Additional Cost ( AED )"
 msgstr ""
 
-#: src/single_template.php:336
+#: src/single_template.php:341
 msgid "Total Additional Cost (Tooman)"
 msgstr ""
 
-#: src/single_template.php:419
+#: src/single_template.php:424
 msgid "Transport Cost"
 msgstr ""
 
-#: src/single_template.php:663
+#: src/single_template.php:668
 msgid "Upload Payment <br />Document"
 msgstr ""
 
