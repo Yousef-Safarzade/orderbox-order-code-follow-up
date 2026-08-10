@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-10 05:29+0000\n"
+"POT-Creation-Date: 2026-08-10 06:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -475,6 +475,18 @@ msgstr ""
 
 #: src/helper.php:573
 msgid "Waiting For Approval"
+msgstr ""
+
+#: src/whatsappHelper.php:162
+#, php-format
+msgid ""
+"Your Payment Document Has Been Submitted \n"
+"\n"
+"Customer : %s\n"
+"\n"
+"Date : %s \n"
+"\n"
+"Order Code : %s"
 msgstr ""
 
 #. Author of the plugin
