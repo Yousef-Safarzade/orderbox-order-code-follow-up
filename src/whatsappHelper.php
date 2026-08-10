@@ -156,6 +156,24 @@ class whatsappHelper
 
         }
 
+
+
+        $message = sprintf(
+            __("Your Payment Document Has Been Submitted \n\nCustomer : %s\n\nDate : %s \n\nOrder Code : %s" , 'orderbox-order-code-follow-up') ,
+            $values['customer_name'],
+            \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi( date("d / m / Y") ) ,
+            $values['order_code']
+        );
+
+        $options = array(
+            'message' => $message,
+            'link' => $values['payment_document'],
+        );
+
+        $options['phonenumber'] =  $values['customer_phone_number_country_code'] . self::format_whatsapp_number($values['customer_phone_number']);
+
+        self::init_curl_request($options);
+
     }
 
 
