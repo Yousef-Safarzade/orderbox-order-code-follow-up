@@ -62,7 +62,6 @@ class woocommerce_dashboard
 
     public static function user_order_followup_dashboard_content(){
 
-
         $user_id = apply_filters( 'determine_current_user', false) ;
 
         $order_follow_up_items = helper::get_user_all_order_follow_up_items($user_id);
@@ -71,18 +70,31 @@ class woocommerce_dashboard
 
             <div class="user-order-follow-ups-container">
 
-                <h5><?php _e('Showing List of Your Order Followups','orderbox-order-code-follow-up'); ?></h5>
+                <?php require_once(WP_OOFU_PLUGIN_FOLDER_PATH . '/templates/dashboard-panel-header.php'); ?>
 
                 <hr />  <br />
 
-                <?php _e('<h5>There is No Order Code With Your Phone Number</h5>' , 'orderbox-order-code-follow-up'); ?>
+                <?php if(empty($_GET['key'])){ ?>
+
+                    <?php _e('<h5>There is No Order Code With Your Phone Number</h5>' , 'orderbox-order-code-follow-up'); ?>
+
+                <?php } else { ?>
+
+                    <?php _e('<h5>There is No Order Code With Your Phone Number And Provided Code</h5>' , 'orderbox-order-code-follow-up'); ?>
+
+                    <?php
+
+                    $label = __('Show All Codes','orderbox-order-code-follow-up');
+
+                    printf("<a class='reset-search-result' href='%s'>%s</a>",helper::get_current_page_url(),$label);
+
+                    ?>
+
+                <?php }?>
 
             </div>
 
         <?php } else {
-
-
-
 
             $order_follow_up_items_formatted = array();
 
@@ -103,7 +115,7 @@ class woocommerce_dashboard
 
             <div class="user-order-follow-ups-container">
 
-                <h5><?php _e('Showing List of Your Order Followups','orderbox-order-code-follow-up'); ?></h5>
+                <?php require_once(WP_OOFU_PLUGIN_FOLDER_PATH . '/templates/dashboard-panel-header.php'); ?>
 
                 <hr />
 
@@ -147,7 +159,6 @@ class woocommerce_dashboard
                         </li>
 
                     <?php } ?>
-
 
                 </ul>
 

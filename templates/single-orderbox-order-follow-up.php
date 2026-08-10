@@ -12,6 +12,14 @@ $gallery_image = \OrderboxOrderCodeFollowUp\single_template::get_gallery_images(
 
 $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_urls();
 
+$image_count = count($gallery_image);
+
+$button_title = empty($gallery_image) ? '' : __('Show Images' , 'orderbox-order-code-follow-up'  ) ;
+
+$button_subtitle = $button_text = empty($gallery_image) ? '' : sprintf ( __( ' ( %s Images ) ' , 'orderbox-order-code-follow-up'  ) , $image_count);
+
+
+
 ?>
 
 <?php load_template(WP_OOFU_ACTIVE_THEME_DIRECTORY_PATH . '/header.php'); ?>
@@ -22,53 +30,47 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
     <div class="orderbox-order-follow-up-main-container">
 
-        <?php if($image_url || !empty($gallery_image) ){ ?>
+
 
             <div class="orderbox-order-follow-up-sidebar-container">
-
-
-                <?php if(!empty($image_url)){ ?>
-
-                    <img src="<?php echo esc_url($image_url); ?>">
-
-                <?php } ?>
-
 
 
                 <?php if(is_array($sticker_url) && !empty($sticker_url['full'] ) ){ ?>
 
                     <a href="<?php echo $sticker_url['full'] ?>" data-lightbox="image-1">
 
-                        <img class="sticker-image" src="<?php echo $sticker_url['thumb'] ?>">
+                        <img src="<?php echo $sticker_url['thumb'] ?>">
 
                     </a>
 
                 <?php } ?>
 
 
-
                 <?php if(!empty($gallery_image)){ ?>
 
+                    <div class="toggle-gallery-button">
 
-                    <?php foreach($gallery_image as $image){ ?>
+                        <span class="button-icon">
 
-                        <a class="gallery-image" href="<?php echo $image ?>" data-lightbox="image-1">
+                            <img src="<?php echo WP_OOFU_PLUGIN_MEDIA_FOLDER_URL . "iconw.png"; ?>" >
 
-                            <img src="<?php echo $image ?>">
+                        </span>
 
-                        </a>
+                        <span class="button-texts">
 
-                    <?php } ?>
+                             <span class="button-title"><?php echo $button_title . $button_subtitle  ?></span>
 
-                    <div class="clearfix"></div>
+                            <span class="button-order-code"> <?php echo $fields['order_code'] ?></span>
 
+                        </span>
+
+                    </div>
 
                 <?php } ?>
 
             </div>
 
 
-        <?php } ?>
 
 
 
@@ -84,6 +86,8 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_meta_data_seciton($fields); ?>
 
+                <?php \OrderboxOrderCodeFollowUp\single_template::maybe_generate_order_purchase_codes_list(); ?>
+
                 <?php \OrderboxOrderCodeFollowUp\single_template::generate_single_order_product_list_section(); ?>
 
                 <?php \OrderboxOrderCodeFollowUp\single_template::maybe_generate_single_order_cost_seciton(); ?>
@@ -97,6 +101,31 @@ $sticker_url = \OrderboxOrderCodeFollowUp\single_template::get_sticker_image_url
             </div>
 
         </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="order-follow-up-image-gallery-popup hidden">
+
+    <div class="popup-close-icon">X</div>
+
+    <div class="image-gallery-popup-overlay"></div>
+
+    <div class="gallery-image-main-container">
+
+        <?php foreach($gallery_image as $image){ ?>
+
+            <a class="gallery-image" href="<?php echo $image ?>" data-lightbox="image-1">
+
+                <img src="<?php echo $image ?>">
+
+            </a>
+
+        <?php } ?>
 
     </div>
 

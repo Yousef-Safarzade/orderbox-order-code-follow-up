@@ -324,14 +324,19 @@ class single_template
 
         $total_additional_const += self::get_total_cost_of_order_products();
 
-
         if( $total_additional_const > 0 ) {
+
+            $current_aed_rate = (int)helper::get_cached_tgju_aed_price();
 
             $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
 
             $value_formatted = number_format($total_additional_const);
 
             helper::generate_report_table_row( $label , $value_formatted , '' , 'no-border-bottom large-text-value' );
+
+            $label = __('AED Rating (Tooman)', 'orderbox-order-code-follow-up');
+
+            helper::generate_report_table_row(  $label , $current_aed_rate , '' , 'no-border-bottom large-text-value' );
 
             $label = __('Total Additional Cost (Tooman)', 'orderbox-order-code-follow-up');
 
@@ -749,6 +754,61 @@ class single_template
 
 
 
+
+
+    public static function maybe_generate_order_purchase_codes_list(){
+
+        global $post;
+
+        $value = [];
+
+        for ($i = 1; $i <= 5; $i++) {
+
+            $purchase_code = get_field( 'purchase_code_'.$i , $post->ID);
+
+            $show_products = get_field('purchase_code_'.$i.'_show_products');
+
+            if( !empty($purchase_code) ) {
+
+                $purchase_code_customer_password = get_field('customer_password',$purchase_code);
+
+                if( !empty($purchase_code_customer_password) ) {
+
+                    $hashed_purchase_code = md5($purchase_code_customer_password);
+
+                    $title = get_field('purchase_code',$purchase_code);
+
+                    $link = get_the_permalink($purchase_code);
+
+                    $final_link = $link . "?hashed-password=$hashed_purchase_code";
+
+                    if ( !empty($show_products) ) {
+
+                        $final_link .= "&showProducts=" . implode(',', $show_products);
+
+                    }
+
+                    $order_date = get_field('submit_date',$purchase_code);
+
+                    $order_date_shamsi =  \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi($order_date);
+
+                    $svg_icon = file_get_contents(WP_OOFU_PLUGIN_FOLDER_PATH . "/assets/media/external-svgrepo-com.svg");
+
+                    $value[] = sprintf("<a class='purchase-code-link' target='_blank' href='%s'>%s %s ( %s ) </a>" , $final_link , $svg_icon , $title, $order_date_shamsi );
+
+                }
+
+            }
+
+        }
+
+        if( !empty($value) ) {
+
+            helper::generate_report_table_row( __('Related Purchase Codes' , 'orderbox-order-code-follow-up'), implode( $value) );
+
+        }
+
+    }
 
 
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2026-02-28 05:15+0000\n"
+"PO-Revision-Date: 2026-07-15 10:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -15,34 +15,39 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:668
+#: templates/single-orderbox-order-follow-up.php:19
+#, php-format
+msgid " ( %s Images ) "
+msgstr " ( %s تصویر ) "
+
+#: src/single_template.php:698
 msgid "1 - Choose"
 msgstr "۱ - انتخاب"
 
-#: src/single_template.php:669
+#: src/single_template.php:699
 msgid "2 - Upload"
 msgstr "۲ - بارگذاری"
 
-#: src/single_template.php:670
+#: src/single_template.php:700
 msgid "3 - Accept"
 msgstr "۳ - تایید"
 
-#: src/single_template.php:242
+#: src/single_template.php:272
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
 msgstr ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">پیگیری کد</a>"
 
-#: src/single_template.php:250
+#: src/single_template.php:280
 msgid ""
 "<a href=\"https://tracking.dekapost.ir/\" target=\"_blank\">Check your "
 "Dekapost Code</a>"
 msgstr ""
 "<a href=\"https://tracking.dekapost.ir/\" target=\"_blank\">پیگیری کد</a>"
 
-#: src/single_template.php:397 src/single_template.php:449
-#: src/single_template.php:582
+#: src/single_template.php:427 src/single_template.php:479
+#: src/single_template.php:612
 msgid ""
 "<br/><br/><span class=\"payment-status not-paid\">Payment Status : Not "
 "Paid</span>"
@@ -50,25 +55,31 @@ msgstr ""
 "<br/><br/><span class=\"payment-status not-paid\">وضعیت پرداخت :‌ پرداخت "
 "نشده</span>"
 
-#: src/single_template.php:396 src/single_template.php:448
-#: src/single_template.php:581
+#: src/single_template.php:426 src/single_template.php:478
+#: src/single_template.php:611
 msgid ""
 "<br/><br/><span class=\"payment-status paid\">Payment Status : Paid</span>"
 msgstr ""
 "<br/><br/><span class=\"payment-status paid\">وضعیت پرداخت : پرداخت "
 "شده</span>"
 
-#: src/single_template.php:441
+#: src/single_template.php:471
 #, php-format
 msgid "<br/><br/><span class=\"payment-title\">For : %s</span>"
 msgstr "<br/><br/><span class=\"payment-title\">بابت : %s</span>"
 
-#: src/single_template.php:576
+#: src/single_template.php:606
 #, php-format
 msgid "<br/><br/>Product Price : %s"
 msgstr "<br/><br/>قیمت محصول :‌ %s"
 
-#: src/woocommerce_dashboard.php:78
+#: src/woocommerce_dashboard.php:83
+msgid ""
+"<h5>There is No Order Code With Your Phone Number And Provided Code</h5>"
+msgstr ""
+"<h5>متاسفانه کدی با شماره تلفن شما و مورد جست جو شده موجود نمی باشد</h5>"
+
+#: src/woocommerce_dashboard.php:79
 msgid "<h5>There is No Order Code With Your Phone Number</h5>"
 msgstr "کد رهگیری با شماره تلفن شما ثبت نشده است."
 
@@ -85,7 +96,7 @@ msgstr "کد ارسال"
 msgid "Add New Orderbox Orders"
 msgstr "اضافه کردن کد ارسال"
 
-#: src/single_template.php:427
+#: src/single_template.php:457
 #, php-format
 msgid "Additional Cost %s"
 msgstr "هزینه جانبی %s"
@@ -99,7 +110,11 @@ msgstr "کد ارسال"
 msgid "All Orderbox Orders"
 msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/single_template.php:503
+#: src/helper.php:562
+msgid "All Statuses"
+msgstr "تمامی حالت های پرداخت"
+
+#: src/single_template.php:533
 msgid ""
 "Card : 5022291317869681 <br /><br />SHABA Number : "
 "IR720570140380000653673001 <br/><br />Rezvan Arabzade"
@@ -111,13 +126,13 @@ msgstr ""
 "به نام : رضوان عرب زاده\n"
 "<br /><br />"
 
-#: src/single_template.php:517
+#: src/single_template.php:547
 msgid ""
 "Card : 5022291586471722 <br />Account Number : 777.888.25248513.1<br />SHABA "
 "Number : IR230570077700010278344001 <br/><br />Akbar Jamalzade"
 msgstr ""
 
-#: src/single_template.php:530
+#: src/single_template.php:560
 msgid ""
 "Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
 "<br/><br/>Ramin Arabzade"
@@ -129,7 +144,7 @@ msgstr ""
 "به نام :  رامین عرب زاده\n"
 "<br /><br />"
 
-#: src/single_template.php:232
+#: src/single_template.php:262
 msgid "Customer Name"
 msgstr "نام مشتری"
 
@@ -207,7 +222,7 @@ msgstr ""
 "\n"
 "برای مشاهده اطلاعات بیشتر به سایت OrderBox مراجعه بفرمایید"
 
-#: src/single_template.php:248
+#: src/single_template.php:278
 msgid "Dekapost Code"
 msgstr "کد دکاپست"
 
@@ -215,7 +230,7 @@ msgstr "کد دکاپست"
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
-#: src/single_template.php:612
+#: src/single_template.php:642
 msgid "Description"
 msgstr "توضیحات"
 
@@ -245,7 +260,7 @@ msgstr "دریافت در دفتر دوبی"
 msgid "Edit Orderbox Orders"
 msgstr "ویرایش کد ارسال"
 
-#: src/single_template.php:540
+#: src/single_template.php:570
 msgid "Emirate Bank Info"
 msgstr "اطلاعات پرداخت<br/> امارات"
 
@@ -253,11 +268,11 @@ msgstr "اطلاعات پرداخت<br/> امارات"
 msgid "https://github.com/Yousef-Safarzade/"
 msgstr ""
 
-#: src/single_template.php:261
+#: src/single_template.php:291
 msgid "KG"
 msgstr "کیلوگرم"
 
-#: src/single_template.php:528
+#: src/single_template.php:558
 msgid "Meli Bank Info"
 msgstr "اطلاعات پرداخت <br/> بانک ملی"
 
@@ -273,7 +288,11 @@ msgstr "کد ارسالی در سطل زباله یافت نشد"
 msgid "No Orderbox Orders found."
 msgstr "سفارشی با این کد یافت نشد"
 
-#: src/woocommerce_dashboard.php:118 src/single_template.php:228
+#: src/helper.php:569
+msgid "Not Paid"
+msgstr "پرداخت نشده"
+
+#: src/woocommerce_dashboard.php:130 src/single_template.php:258
 msgid "Order Code"
 msgstr "کد ارسال"
 
@@ -281,7 +300,7 @@ msgstr "کد ارسال"
 msgid "Order Codes Followup"
 msgstr "کدهای رهگیری"
 
-#: src/woocommerce_dashboard.php:124
+#: src/woocommerce_dashboard.php:136
 msgid "Order Date"
 msgstr "تاریخ ثبت"
 
@@ -289,7 +308,7 @@ msgstr "تاریخ ثبت"
 msgid "ORDER RECEIVED"
 msgstr "دریافت سفارش"
 
-#: src/single_template.php:236
+#: src/single_template.php:266
 msgid "Order Weight"
 msgstr "وزن محصول"
 
@@ -297,7 +316,7 @@ msgstr "وزن محصول"
 msgid "Orderbox Order Code Follow Up"
 msgstr "پیگیری کد ارسال"
 
-#: src/single_template.php:553
+#: src/single_template.php:583
 msgid "Other Payment Inro"
 msgstr "سایر روش های <br/> واریزی"
 
@@ -339,15 +358,19 @@ msgctxt ""
 msgid "Use as cover image"
 msgstr "استفاده از تصویر اصلی"
 
+#: src/helper.php:565
+msgid "Paid"
+msgstr "پرداخت شده"
+
 #: src/custom_post_types.php:37
 msgid "Parent Orderbox Orders:"
 msgstr "کد ارسالی مادر"
 
-#: src/single_template.php:501 src/single_template.php:515
+#: src/single_template.php:531 src/single_template.php:545
 msgid "Pasargad Bank Info"
 msgstr "اطلاعات پرداخت <br/> بانک پاسارگاد"
 
-#: src/single_template.php:692 src/single_template.php:708
+#: src/single_template.php:722 src/single_template.php:738
 msgid "Payment Document Preview"
 msgstr "تصویر مدرک <br/> پرداختی"
 
@@ -365,7 +388,7 @@ msgid ""
 "Please Check Website Admin Panel"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:131 src/single_template.php:328
+#: src/woocommerce_dashboard.php:143 src/single_template.php:358
 msgid "Payment Status"
 msgstr "وضعیت پرداخت"
 
@@ -379,20 +402,24 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr "کد ارسال"
 
-#: src/single_template.php:589
+#: src/single_template.php:619
 #, php-format
 #| msgid "Product Name 1"
 msgid "Product Name %s"
 msgstr "محصول شماره %s"
 
-#: src/single_template.php:542
+#: src/single_template.php:572
 msgid ""
 "Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
 "Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:671
+#: src/single_template.php:788
+msgid "Related Purchase Codes"
+msgstr "کدهای خرید"
+
+#: src/single_template.php:701
 msgid "Reset Form"
 msgstr "پاک کردن اطلاعات"
 
@@ -417,6 +444,14 @@ msgctxt ""
 msgid "Orderbox Orders list navigation"
 msgstr ""
 
+#: templates/dashboard-panel-header.php:23
+msgid "Search"
+msgstr "جست جو"
+
+#: templates/dashboard-panel-header.php:11
+msgid "Search Code"
+msgstr "کد مورد نظر"
+
 #: src/custom_post_types.php:36
 msgid "Search Orderbox Orders"
 msgstr "جست و جو کد ارسال"
@@ -429,11 +464,19 @@ msgstr "ارسال به ایران"
 msgid "SHIRAZ"
 msgstr "دریافت در دفتر شیراز"
 
-#: src/woocommerce_dashboard.php:139
+#: src/woocommerce_dashboard.php:87
+msgid "Show All Codes"
+msgstr "نمایش همه موارد"
+
+#: src/woocommerce_dashboard.php:151
 msgid "Show Details"
 msgstr "مشاهده اطلاعات"
 
-#: src/woocommerce_dashboard.php:74 src/woocommerce_dashboard.php:106
+#: templates/single-orderbox-order-follow-up.php:17
+msgid "Show Images"
+msgstr "نمایش تصاویر"
+
+#: templates/dashboard-panel-header.php:3
 msgid "Showing List of Your Order Followups"
 msgstr "لیست کدهای رهگیری شما"
 
@@ -472,29 +515,33 @@ msgstr ""
 msgid "TIPAX"
 msgstr "ارسال با تیپاکس"
 
-#: src/single_template.php:240
+#: src/single_template.php:270
 msgid "Tipax Code"
 msgstr "کد تیپاکس"
 
-#: src/single_template.php:300
+#: src/single_template.php:330
 msgid "Total Additional Cost ( AED )"
 msgstr "مجموع هزینه<br/> ( درهم امارات )"
 
-#: src/single_template.php:306
+#: src/single_template.php:336
 msgid "Total Additional Cost (Tooman)"
 msgstr "مجموع هزینه<br/> ( تومان )"
 
-#: src/single_template.php:389
+#: src/single_template.php:419
 msgid "Transport Cost"
 msgstr "هزینه ارسال"
 
-#: src/single_template.php:633
+#: src/single_template.php:663
 msgid "Upload Payment <br />Document"
 msgstr "آپلود مدارک <br/> پرداخت"
 
 #: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
 msgstr "نمایش کد های ارسال"
+
+#: src/helper.php:573
+msgid "Waiting For Approval"
+msgstr "در انتظار تایید"
 
 #. Author of the plugin
 msgid "Yousef Safarzade"

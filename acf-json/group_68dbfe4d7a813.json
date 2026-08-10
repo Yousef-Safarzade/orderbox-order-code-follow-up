@@ -195,6 +195,326 @@
             "append": ""
         },
         {
+            "key": "field_6a5757045aa7c",
+            "label": "کد خرید اول",
+            "name": "purchase_code_1",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ob_order_detail"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a62a3b0ae32d",
+            "label": "انتخاب محصولات این کد خرید",
+            "name": "purchase_code_1_show_products",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "محصول اول",
+                "2": "محصول دوم",
+                "3": "محصول سوم",
+                "4": "محصول چهار",
+                "5": "محصول پنجم",
+                "6": "محصول ششم",
+                "7": "محصول هفتم",
+                "8": "محصول هشتم",
+                "9": "محصول نهم",
+                "10": "محصول دهم"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6a57571c5aa7d",
+            "label": "کد خرید دوم",
+            "name": "purchase_code_2",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ob_order_detail"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a62a510de610",
+            "label": "انتخاب محصولات این کد خرید",
+            "name": "purchase_code_2_show_products",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "محصول اول",
+                "2": "محصول دوم",
+                "3": "محصول سوم",
+                "4": "محصول چهار",
+                "5": "محصول پنجم",
+                "6": "محصول ششم",
+                "7": "محصول هفتم",
+                "8": "محصول هشتم",
+                "9": "محصول نهم",
+                "10": "محصول دهم"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6a57572b5aa7e",
+            "label": "کد خرید سوم",
+            "name": "purchase_code_3",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ob_order_detail"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a62a526de611",
+            "label": "انتخاب محصولات این کد خرید",
+            "name": "purchase_code_3_show_products",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "محصول اول",
+                "2": "محصول دوم",
+                "3": "محصول سوم",
+                "4": "محصول چهار",
+                "5": "محصول پنجم",
+                "6": "محصول ششم",
+                "7": "محصول هفتم",
+                "8": "محصول هشتم",
+                "9": "محصول نهم",
+                "10": "محصول دهم"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6a5757315aa7f",
+            "label": "کد خرید چهارم",
+            "name": "purchase_code_4",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ob_order_detail"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a62a539de612",
+            "label": "انتخاب محصولات این کد خرید",
+            "name": "purchase_code_4_show_products",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "محصول اول",
+                "2": "محصول دوم",
+                "3": "محصول سوم",
+                "4": "محصول چهار",
+                "5": "محصول پنجم",
+                "6": "محصول ششم",
+                "7": "محصول هفتم",
+                "8": "محصول هشتم",
+                "9": "محصول نهم",
+                "10": "محصول دهم"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_6a57573e5aa80",
+            "label": "کد خرید پنجم",
+            "name": "purchase_code_5",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ob_order_detail"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6a62a54cde613",
+            "label": "انتخاب محصولات این کد خرید",
+            "name": "purchase_code_5_show_products",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "محصول اول",
+                "2": "محصول دوم",
+                "3": "محصول سوم",
+                "4": "محصول چهار",
+                "5": "محصول پنجم",
+                "6": "محصول ششم",
+                "7": "محصول هفتم",
+                "8": "محصول هشتم",
+                "9": "محصول نهم",
+                "10": "محصول دهم"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_68e0c868b7c2f",
             "label": "وزن محصول ( کیلوگرم )",
             "name": "order_weight",
@@ -1630,5 +1950,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1781077151
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1784850009
 }

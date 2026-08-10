@@ -17,6 +17,12 @@ class helper
         add_action('wp_ajax_nopriv_accept_payment_document', array(__CLASS__,'accept_payment_document') );
 
 
+        add_action('restrict_manage_posts', array(__CLASS__,'add_payment_status_filter_in_admin_panel_list') );
+        add_action('pre_get_posts', array(__CLASS__,'filter_admin_panel_list_by_payment_status') );
+
+
+
+
     }
 
 
@@ -219,6 +225,12 @@ class helper
 
         ob_start();
 
+        if( empty($value) ){
+
+            return;
+
+        }
+
         ?>
 
         <div class="orderbox-order-follow-up-report-item <?php echo $extra_class ?>">
@@ -356,31 +368,77 @@ class helper
 
         }
 
+        if(!empty($_GET['key'])){
+
+            $meta_query = array(
+                    'relation' => 'AND',
+
+                // Ensure order_code is 123
+                    array(
+                            'key'     => 'order_code',
+                            'value'   => $_GET['key'],
+                            'compare' => '=',
+                    ),
+
+                // Match any of the phone number fields
+                    array(
+                            'relation' => 'OR',
+                            array(
+                                    'key'     => 'customer_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                            array(
+                                    'key'     => 'customer_second_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                            array(
+                                    'key'     => 'customer_third_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                    ),
+            );
+
+        } else {
+
+            $meta_query = array(
+
+                    array(
+                            'relation' => 'OR',
+                            array(
+                                    'key'     => 'customer_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                            array(
+                                    'key'     => 'customer_second_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                            array(
+                                    'key'     => 'customer_third_phone_number',
+                                    'value'   => $user_phone,
+                                    'compare' => 'LIKE',
+                            ),
+                    ),
+            );
+
+
+
+
+        }
+
+
         $args = array(
             'posts_per_page' => -1,
             'post_type'      => 'orderbox_order',
             'post_status'    => 'publish',
             'fields'         => 'ids',
-            'meta_query' => array(
-                'relation' => 'OR',
-                array(
-                    'key' => 'customer_phone_number',
-                    'value' => $user_phone,
-                    'compare' => 'LIKE',
-                ),
-                array(
-                    'key' => 'customer_second_phone_number',
-                    'value' => $user_phone,
-                    'compare' => 'LIKE',
-                ),
-                array(
-                    'key' => 'customer_third_phone_number',
-                    'value' => $user_phone,
-                    'compare' => 'LIKE',
-                )
-
-            )
+            'meta_query' => $meta_query
         );
+
 
         return get_posts($args);
 
@@ -471,5 +529,90 @@ class helper
 
         return  (float)str_replace(',', '.', $fresh_value);
     }
+
+
+
+
+    public static function get_current_page_url(): string
+    {
+        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+                ? 'https'
+                : 'http';
+
+        $host = $_SERVER['HTTP_HOST'];
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        return "{$scheme}://{$host}{$path}";
+    }
+
+
+    public static function add_payment_status_filter_in_admin_panel_list(){
+
+        global $typenow;
+
+        // Only show on your desired post type
+        if ($typenow !== 'orderbox_order') {
+            return;
+        }
+
+        $selected = $_GET['payment_status'] ?? '';
+
+        ?>
+        <select name="payment_status">
+            <option value=""> <?php _e('All Statuses', 'orderbox-order-code-follow-up'); ?></option>
+
+            <option value="payed" <?php selected($selected, 'payed'); ?>>
+                <?php _e('Paid', 'orderbox-order-code-follow-up'); ?>
+            </option>
+
+            <option value="not_payed" <?php selected($selected, 'not_payed'); ?>>
+                <?php _e('Not Paid', 'orderbox-order-code-follow-up'); ?>
+            </option>
+
+            <option value="waiting_for_approval" <?php selected($selected, 'waiting_for_approval'); ?>>
+                <?php _e('Waiting For Approval', 'orderbox-order-code-follow-up'); ?>
+            </option>
+        </select>
+        <?php
+
+    }
+
+
+
+    public static function filter_admin_panel_list_by_payment_status($query){
+
+        global $pagenow;
+
+        if (
+                !is_admin() ||
+                $pagenow !== 'edit.php' ||
+                !$query->is_main_query()
+        ) {
+            return;
+        }
+
+        // Only for Posts
+        if (($query->get('post_type') ?: 'orderbox_order') !== 'orderbox_order') {
+            return;
+        }
+
+
+        if (!empty($_GET['payment_status'])) {
+
+            $query->set('meta_query', [
+                    "relation" => "OR",
+                    [
+                            'key'     => 'payment_status',
+                            'value'   => $_GET['payment_status'],
+                            'compare' => '='
+                    ]
+            ]);
+
+        }
+
+    }
+
+
+
 
 }

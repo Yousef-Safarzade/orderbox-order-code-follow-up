@@ -4,6 +4,8 @@ jQuery(document).ready(function(){
     handleFileSelectedEvent();
     handleUploadPaymentDocumentFormReset();
     handleUploadPaymentDocumentFormAcceptButtonClick();
+    handleShowImageGalleryButtonClick();
+    handleClosePopupButtonClick();
 
 });
 
@@ -113,6 +115,8 @@ function handleUploadPaymentDocumentFormReset(){
     })
 
 }
+
+
 
 
 function handleFileSelectedEvent(){
@@ -242,5 +246,50 @@ function handleUploadPaymentDocumentFormSubmit(){
 
 
     });
+
+}
+
+
+
+function handleShowImageGalleryButtonClick(){
+
+    if( $(".toggle-gallery-button").length < 1){
+
+        return false;
+
+    }
+
+    $(".toggle-gallery-button").on("click",function(){
+
+        $(".order-follow-up-image-gallery-popup").removeClass('hidden');
+
+        $("body,html").addClass('no-scroll');
+
+
+
+    });
+
+
+}
+
+
+
+function handleClosePopupButtonClick(){
+
+    if( $(".popup-close-icon").length < 1){
+
+        return false;
+
+    }
+
+    $(".popup-close-icon").on("click",function(){
+
+        $(".order-follow-up-image-gallery-popup").addClass('hidden');
+
+        $("body,html").removeClass('no-scroll');
+
+    });
+
+
 
 }

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-28 05:14+0000\n"
+"POT-Creation-Date: 2026-07-15 10:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,54 +16,64 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
-#: src/single_template.php:668
+#: templates/single-orderbox-order-follow-up.php:19
+#, php-format
+msgid " ( %s Images ) "
+msgstr ""
+
+#: src/single_template.php:698
 msgid "1 - Choose"
 msgstr ""
 
-#: src/single_template.php:669
+#: src/single_template.php:699
 msgid "2 - Upload"
 msgstr ""
 
-#: src/single_template.php:670
+#: src/single_template.php:700
 msgid "3 - Accept"
 msgstr ""
 
-#: src/single_template.php:242
+#: src/single_template.php:272
 msgid ""
 "<a href=\"https://tipaxco.com/tracking\" target=\"_blank\">Check your Tipax "
 "Code</a>"
 msgstr ""
 
-#: src/single_template.php:250
+#: src/single_template.php:280
 msgid ""
 "<a href=\"https://tracking.dekapost.ir/\" target=\"_blank\">Check your "
 "Dekapost Code</a>"
 msgstr ""
 
-#: src/single_template.php:397 src/single_template.php:449
-#: src/single_template.php:582
+#: src/single_template.php:427 src/single_template.php:479
+#: src/single_template.php:612
 msgid ""
 "<br/><br/><span class=\"payment-status not-paid\">Payment Status : Not "
 "Paid</span>"
 msgstr ""
 
-#: src/single_template.php:396 src/single_template.php:448
-#: src/single_template.php:581
+#: src/single_template.php:426 src/single_template.php:478
+#: src/single_template.php:611
 msgid ""
 "<br/><br/><span class=\"payment-status paid\">Payment Status : Paid</span>"
 msgstr ""
 
-#: src/single_template.php:441
+#: src/single_template.php:471
 #, php-format
 msgid "<br/><br/><span class=\"payment-title\">For : %s</span>"
 msgstr ""
 
-#: src/single_template.php:576
+#: src/single_template.php:606
 #, php-format
 msgid "<br/><br/>Product Price : %s"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:78
+#: src/woocommerce_dashboard.php:83
+msgid ""
+"<h5>There is No Order Code With Your Phone Number And Provided Code</h5>"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:79
 msgid "<h5>There is No Order Code With Your Phone Number</h5>"
 msgstr ""
 
@@ -80,7 +90,7 @@ msgstr ""
 msgid "Add New Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:427
+#: src/single_template.php:457
 #, php-format
 msgid "Additional Cost %s"
 msgstr ""
@@ -94,25 +104,29 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:503
+#: src/helper.php:562
+msgid "All Statuses"
+msgstr ""
+
+#: src/single_template.php:533
 msgid ""
 "Card : 5022291317869681 <br /><br />SHABA Number : "
 "IR720570140380000653673001 <br/><br />Rezvan Arabzade"
 msgstr ""
 
-#: src/single_template.php:517
+#: src/single_template.php:547
 msgid ""
 "Card : 5022291586471722 <br />Account Number : 777.888.25248513.1<br />SHABA "
 "Number : IR230570077700010278344001 <br/><br />Akbar Jamalzade"
 msgstr ""
 
-#: src/single_template.php:530
+#: src/single_template.php:560
 msgid ""
 "Card : 6037998139142383<br/><br/>SHABA Number : IR880170000000226242298004 "
 "<br/><br/>Ramin Arabzade"
 msgstr ""
 
-#: src/single_template.php:232
+#: src/single_template.php:262
 msgid "Customer Name"
 msgstr ""
 
@@ -145,7 +159,7 @@ msgid ""
 "Please Visit OrderBox Website For More Information"
 msgstr ""
 
-#: src/single_template.php:248
+#: src/single_template.php:278
 msgid "Dekapost Code"
 msgstr ""
 
@@ -153,7 +167,7 @@ msgstr ""
 msgid "DELIVERED"
 msgstr ""
 
-#: src/single_template.php:612
+#: src/single_template.php:642
 msgid "Description"
 msgstr ""
 
@@ -181,7 +195,7 @@ msgstr ""
 msgid "Edit Orderbox Orders"
 msgstr ""
 
-#: src/single_template.php:540
+#: src/single_template.php:570
 msgid "Emirate Bank Info"
 msgstr ""
 
@@ -189,11 +203,11 @@ msgstr ""
 msgid "https://github.com/Yousef-Safarzade/"
 msgstr ""
 
-#: src/single_template.php:261
+#: src/single_template.php:291
 msgid "KG"
 msgstr ""
 
-#: src/single_template.php:528
+#: src/single_template.php:558
 msgid "Meli Bank Info"
 msgstr ""
 
@@ -209,7 +223,11 @@ msgstr ""
 msgid "No Orderbox Orders found."
 msgstr ""
 
-#: src/woocommerce_dashboard.php:118 src/single_template.php:228
+#: src/helper.php:569
+msgid "Not Paid"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:130 src/single_template.php:258
 msgid "Order Code"
 msgstr ""
 
@@ -217,7 +235,7 @@ msgstr ""
 msgid "Order Codes Followup"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:124
+#: src/woocommerce_dashboard.php:136
 msgid "Order Date"
 msgstr ""
 
@@ -225,7 +243,7 @@ msgstr ""
 msgid "ORDER RECEIVED"
 msgstr ""
 
-#: src/single_template.php:236
+#: src/single_template.php:266
 msgid "Order Weight"
 msgstr ""
 
@@ -233,7 +251,7 @@ msgstr ""
 msgid "Orderbox Order Code Follow Up"
 msgstr ""
 
-#: src/single_template.php:553
+#: src/single_template.php:583
 msgid "Other Payment Inro"
 msgstr ""
 
@@ -275,15 +293,19 @@ msgctxt ""
 msgid "Use as cover image"
 msgstr ""
 
+#: src/helper.php:565
+msgid "Paid"
+msgstr ""
+
 #: src/custom_post_types.php:37
 msgid "Parent Orderbox Orders:"
 msgstr ""
 
-#: src/single_template.php:501 src/single_template.php:515
+#: src/single_template.php:531 src/single_template.php:545
 msgid "Pasargad Bank Info"
 msgstr ""
 
-#: src/single_template.php:692 src/single_template.php:708
+#: src/single_template.php:722 src/single_template.php:738
 msgid "Payment Document Preview"
 msgstr ""
 
@@ -301,7 +323,7 @@ msgid ""
 "Please Check Website Admin Panel"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:131 src/single_template.php:328
+#: src/woocommerce_dashboard.php:143 src/single_template.php:358
 msgid "Payment Status"
 msgstr ""
 
@@ -315,19 +337,23 @@ msgctxt "Post type singular name"
 msgid "Orderbox Order"
 msgstr ""
 
-#: src/single_template.php:589
+#: src/single_template.php:619
 #, php-format
 msgid "Product Name %s"
 msgstr ""
 
-#: src/single_template.php:542
+#: src/single_template.php:572
 msgid ""
 "Ramin Arabzadeh <br/><br/>IBAN: AE53 0260 0002 1578 0959 501 <br/><br/>"
 "Account number: 0215780959501 <br/><br/>Currency: AED <br/><br/>Swift code: "
 "EBILAEAD <br/><br/>Routing number: 302620122 <br/><br/>NBD"
 msgstr ""
 
-#: src/single_template.php:671
+#: src/single_template.php:788
+msgid "Related Purchase Codes"
+msgstr ""
+
+#: src/single_template.php:701
 msgid "Reset Form"
 msgstr ""
 
@@ -352,6 +378,14 @@ msgctxt ""
 msgid "Orderbox Orders list navigation"
 msgstr ""
 
+#: templates/dashboard-panel-header.php:23
+msgid "Search"
+msgstr ""
+
+#: templates/dashboard-panel-header.php:11
+msgid "Search Code"
+msgstr ""
+
 #: src/custom_post_types.php:36
 msgid "Search Orderbox Orders"
 msgstr ""
@@ -364,11 +398,19 @@ msgstr ""
 msgid "SHIRAZ"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:139
+#: src/woocommerce_dashboard.php:87
+msgid "Show All Codes"
+msgstr ""
+
+#: src/woocommerce_dashboard.php:151
 msgid "Show Details"
 msgstr ""
 
-#: src/woocommerce_dashboard.php:74 src/woocommerce_dashboard.php:106
+#: templates/single-orderbox-order-follow-up.php:17
+msgid "Show Images"
+msgstr ""
+
+#: templates/dashboard-panel-header.php:3
 msgid "Showing List of Your Order Followups"
 msgstr ""
 
@@ -403,28 +445,32 @@ msgstr ""
 msgid "TIPAX"
 msgstr ""
 
-#: src/single_template.php:240
+#: src/single_template.php:270
 msgid "Tipax Code"
 msgstr ""
 
-#: src/single_template.php:300
+#: src/single_template.php:330
 msgid "Total Additional Cost ( AED )"
 msgstr ""
 
-#: src/single_template.php:306
+#: src/single_template.php:336
 msgid "Total Additional Cost (Tooman)"
 msgstr ""
 
-#: src/single_template.php:389
+#: src/single_template.php:419
 msgid "Transport Cost"
 msgstr ""
 
-#: src/single_template.php:633
+#: src/single_template.php:663
 msgid "Upload Payment <br />Document"
 msgstr ""
 
 #: src/custom_post_types.php:34
 msgid "View Orderbox Orders"
+msgstr ""
+
+#: src/helper.php:573
+msgid "Waiting For Approval"
 msgstr ""
 
 #. Author of the plugin

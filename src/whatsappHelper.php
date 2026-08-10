@@ -121,7 +121,6 @@ class whatsappHelper
 
         $options = array(
             'message' => $message,
-            'link' => $values['payment_document'],
         );
 
         $accountant_phone_number = get_option('wp_oofu_accountant_whatsapp_number');

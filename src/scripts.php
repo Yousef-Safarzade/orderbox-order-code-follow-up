@@ -103,12 +103,13 @@ class scripts
             );
 
 
-
-
-
-
-
-
+            wp_enqueue_script(
+                'oofu-admin-script',
+                WP_OOFU_PLUGIN_JS_FOLDER_URL . 'admin-scripts.js',
+                ['jquery'],
+                WP_OOFU_PLUGIN_VERSION,
+                array('in_footer' => true)
+            );
 
 
     }
