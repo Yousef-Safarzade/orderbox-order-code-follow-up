@@ -507,11 +507,12 @@ class helper
         $cached_value = get_transient($transient_key);
 
 
-
         // transient exists
-        if ($cached_value !== false) {
+        if ( $cached_value !== false) {
             return (float)str_replace(',', '.', $cached_value);
         }
+
+
 
         // transient missing → fetch fresh value
         $fresh_value = self::get_tgju_aed_price();
@@ -612,6 +613,25 @@ class helper
 
     }
 
+
+
+    public static function rialToToman(string $rial) {
+
+        // Remove commas and convert to integer
+
+        $rial = (int) str_replace(',', '', $rial);
+
+
+        // Convert Rial to Toman
+
+        $toman = $rial / 10;
+
+
+        // Format with commas
+
+        return number_format($toman);
+
+    }
 
 
 

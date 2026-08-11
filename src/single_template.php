@@ -326,7 +326,13 @@ class single_template
 
         if( $total_additional_const > 0 ) {
 
-            $current_aed_rate = (int)helper::get_cached_tgju_aed_price();
+            $current_aed_rate = get_transient('tgju_aed_price');
+
+            if( !empty($current_aed_rate) ) {
+
+                $current_aed_rate = helper::rialToToman($current_aed_rate);
+
+            }
 
             $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
 

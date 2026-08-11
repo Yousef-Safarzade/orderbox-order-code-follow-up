@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2026-08-10 06:56+0000\n"
+"PO-Revision-Date: 2026-08-10 07:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.10\n"
+"X-Loco-Version: 2.8.5; wp-7.0.1; php-8.2.10\n"
 "X-Domain: orderbox-order-code-follow-up"
 
 #: templates/single-orderbox-order-follow-up.php:19
@@ -109,6 +109,8 @@ msgstr "کد ارسال"
 #: src/single_template.php:337
 msgid "AED Rating (Tooman)"
 msgstr ""
+"نرخ درهم\n"
+"( تومان )"
 
 #: src/custom_post_types.php:35
 msgid "All Orderbox Orders"
