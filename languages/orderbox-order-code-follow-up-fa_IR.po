@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-04 08:19+0000\n"
-"PO-Revision-Date: 2026-08-10 07:08+0000\n"
+"PO-Revision-Date: 2026-08-18 08:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr "نمایش تمامی کدهای ارسال"
 
-#: src/helper.php:562
+#: src/helper.php:453
 msgid "All Statuses"
 msgstr "تمامی حالت های پرداخت"
 
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Customer Name"
 msgstr "نام مشتری"
 
-#: src/whatsappHelper.php:34
+#: src/whatsappHelper.php:57
 #, php-format
 #| msgid ""
 #| "Dear Customer : %s \n"
@@ -169,11 +169,13 @@ msgstr "نام مشتری"
 #| "\n"
 #| "Please Visit Website For More Information \n"
 #| "\n"
-#| "https://orderbox.ae/track-send-code"
+#| "https://orderbox.ae/track-send-code?code=%s"
 msgid ""
 "Dear Customer : %s \n"
 "\n"
 "Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+"\n"
+"Status : %s\n"
 "\n"
 "Date : %s \n"
 "\n"
@@ -187,7 +189,9 @@ msgid ""
 msgstr ""
 "مشتری گرامی :‌ %s\n"
 "\n"
-"کد پیگیری ارسال شما در وب سایت OrderBox ثبت گردید\n"
+"کد پیگیری ارسال شما در وب سایت OrderBox به روز رسانی گردید\n"
+"\n"
+"وضعیت :‌ %s\n"
 "\n"
 "تاریخ به روز رسانی : %s\n"
 "\n"
@@ -233,6 +237,7 @@ msgid "Dekapost Code"
 msgstr "کد دکاپست"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:11
+#: src/whatsappHelper.php:40
 msgid "DELIVERED"
 msgstr "دریافت توسط مشتری"
 
@@ -259,6 +264,7 @@ msgstr ""
 "ارسالی کلیک کنید."
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:7
+#: src/whatsappHelper.php:36
 msgid "DUBAI / PACKING"
 msgstr "دریافت در دفتر دوبی"
 
@@ -294,7 +300,7 @@ msgstr "کد ارسالی در سطل زباله یافت نشد"
 msgid "No Orderbox Orders found."
 msgstr "سفارشی با این کد یافت نشد"
 
-#: src/helper.php:569
+#: src/helper.php:460
 msgid "Not Paid"
 msgstr "پرداخت نشده"
 
@@ -311,6 +317,7 @@ msgid "Order Date"
 msgstr "تاریخ ثبت"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:6
+#: src/whatsappHelper.php:35
 msgid "ORDER RECEIVED"
 msgstr "دریافت سفارش"
 
@@ -364,7 +371,7 @@ msgctxt ""
 msgid "Use as cover image"
 msgstr "استفاده از تصویر اصلی"
 
-#: src/helper.php:565
+#: src/helper.php:456
 msgid "Paid"
 msgstr "پرداخت شده"
 
@@ -380,7 +387,7 @@ msgstr "اطلاعات پرداخت <br/> بانک پاسارگاد"
 msgid "Payment Document Preview"
 msgstr "تصویر مدرک <br/> پرداختی"
 
-#: src/whatsappHelper.php:116
+#: src/whatsappHelper.php:147
 #, php-format
 msgid ""
 "Payment Document Uploaded \n"
@@ -470,10 +477,12 @@ msgid "Search Orderbox Orders"
 msgstr "جست و جو کد ارسال"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:8
+#: src/whatsappHelper.php:37
 msgid "SHIPPED"
 msgstr "ارسال به ایران"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:9
+#: src/whatsappHelper.php:38
 msgid "SHIRAZ"
 msgstr "دریافت در دفتر شیراز"
 
@@ -525,6 +534,7 @@ msgstr ""
 "باشد"
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:10
+#: src/whatsappHelper.php:39
 msgid "TIPAX"
 msgstr "ارسال با تیپاکس"
 
@@ -552,11 +562,11 @@ msgstr "آپلود مدارک <br/> پرداخت"
 msgid "View Orderbox Orders"
 msgstr "نمایش کد های ارسال"
 
-#: src/helper.php:573
+#: src/helper.php:464
 msgid "Waiting For Approval"
 msgstr "در انتظار تایید"
 
-#: src/whatsappHelper.php:162
+#: src/whatsappHelper.php:193
 #, php-format
 msgid ""
 "Your Payment Document Has Been Submitted \n"

@@ -279,37 +279,9 @@ class helper
         }
 
 
+        $aed_to_tooman_exchange_rate = self::get_cached_alanchand_aed_price();
 
-
-        /*$api_url = 'https://orderbox.ae/wp-json/mnswmc/v1/currency/9f8e7adfcdb7c395d33d08fcd968ade8';
-
-        $response = wp_remote_get(
-
-                esc_url_raw( $api_url ),
-
-                array(
-
-                    'headers' => array('referer' => home_url())
-
-                )
-        );
-
-        try {
-
-            $json = json_decode( $response['body'] , true );
-
-            $aed_to_tooman_exchange_rate = $json[ '26619' ]['rate'];
-
-        } catch ( Exception $ex ) {
-
-            return 0;
-
-        }*/
-
-
-        $aed_to_tooman_exchange_rate = self::get_cached_tgju_aed_price();
-
-        $final_value = round((int)$value * $aed_to_tooman_exchange_rate) * 100;
+        $final_value = round((int)$value * $aed_to_tooman_exchange_rate);
 
         $final_value = number_format( $final_value, 0);
 
@@ -447,89 +419,7 @@ class helper
 
 
 
-    public static function get_tgju_aed_price() {
 
-        $url = 'https://www.tgju.org/profile/price_aed';
-
-        $ch = curl_init();
-
-        curl_setopt_array($ch, [
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_USERAGENT => 'Mozilla/5.0',
-            CURLOPT_TIMEOUT => 15,
-        ]);
-
-        $html = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            curl_close($ch);
-            return false;
-        }
-
-        curl_close($ch);
-
-
-        if (!$html) {
-            return false;
-        }
-
-        libxml_use_internal_errors(true);
-
-        $dom = new \DOMDocument();
-        $dom->loadHTML($html);
-
-        $xpath = new \DOMXPath($dom);
-
-        $nodes = $xpath->query(
-            '//span[@data-col="info.last_trade.PDrCotVal"]'
-        );
-
-
-        if ($nodes->length === 0) {
-            return false;
-        }
-
-        return trim($nodes->item(0)->textContent);
-    }
-
-
-
-
-
-
-    public static function get_cached_tgju_aed_price() {
-
-        $transient_key = 'tgju_aed_price';
-
-        $cached_value = get_transient($transient_key);
-
-
-        // transient exists
-        if ( $cached_value !== false) {
-            return (float)str_replace(',', '.', $cached_value);
-        }
-
-
-
-        // transient missing → fetch fresh value
-        $fresh_value = self::get_tgju_aed_price();
-
-        if ($fresh_value === false) {
-            return false;
-        }
-
-        // cache for 1 hour
-        set_transient(
-            $transient_key,
-            $fresh_value,
-            HOUR_IN_SECONDS
-        );
-
-        return  (float)str_replace(',', '.', $fresh_value);
-    }
 
 
 
@@ -632,6 +522,109 @@ class helper
         return number_format($toman);
 
     }
+
+
+
+
+
+
+    public static function get_aed_rating_from_alanchand_website(){
+
+
+        $url = 'https://alanchand.com/currencies-price/aed';
+
+        $context = stream_context_create([
+                'http' => [
+                        'method'  => 'GET',
+                        'header'  => "User-Agent: Mozilla/5.0\r\n",
+                        'timeout' => 15,
+                ],
+        ]);
+
+
+
+        $html = file_get_contents($url, false, $context);
+
+        if ($html === false) {
+
+            throw new Exception('Failed to fetch the URL.');
+
+        }
+
+
+        $dom = new \DOMDocument();
+
+        libxml_use_internal_errors(true);
+
+        $dom->loadHTML($html);
+
+        libxml_clear_errors();
+
+        $xpath = new \DOMXPath($dom);
+
+
+        $elements = $xpath->query(
+                '//*[contains(concat(" ", normalize-space(@class), " "), " fw-bold ")
+      and contains(concat(" ", normalize-space(@class), " "), " text-success ")
+      and contains(concat(" ", normalize-space(@class), " "), " fs-5 ")]'
+        );
+
+
+
+        if ($elements->length > 0) {
+
+            $value = trim($elements->item(0)->textContent);
+
+            $value = \OrderboxOrderPanel\helper::persianToEnglishNumber($value);
+
+            $value = (int) str_replace(',', '', $value);
+
+            return $value;
+
+        } else {
+
+            return false;
+
+        }
+
+
+    }
+
+
+
+
+
+    public static function get_cached_alanchand_aed_price() {
+
+        $transient_key = 'alanchand_aed_price';
+
+        $cached_value = get_transient($transient_key);
+
+        if ($cached_value !== false) {
+
+            return  $cached_value;
+
+        }
+
+        $fresh_value = self::get_aed_rating_from_alanchand_website();
+
+        if ($fresh_value === false) {
+
+            return false;
+
+        }
+
+
+        set_transient(
+                $transient_key,
+                $fresh_value,
+                HOUR_IN_SECONDS
+        );
+
+        return  (float)str_replace(',', '.', $fresh_value);
+    }
+
+
 
 
 

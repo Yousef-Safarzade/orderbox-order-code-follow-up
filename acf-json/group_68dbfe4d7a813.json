@@ -1626,6 +1626,27 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_6ae9682a044cb",
+            "label": "نمایش اطلاعات واریزی بانک پارسیان",
+            "name": "show_parsian_bank_payment_info",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_68f4c1dd2524d",
             "label": "نمایش اطلاعات واریزی امارات",
             "name": "show_emirate_bank_payment_info",
@@ -1952,5 +1973,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784850009
+    "modified": 1793681472
 }

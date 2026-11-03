@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orderbox Order Code Follow Up\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-10 06:54+0000\n"
+"POT-Creation-Date: 2026-08-18 07:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -108,7 +108,7 @@ msgstr ""
 msgid "All Orderbox Orders"
 msgstr ""
 
-#: src/helper.php:562
+#: src/helper.php:453
 msgid "All Statuses"
 msgstr ""
 
@@ -134,12 +134,14 @@ msgstr ""
 msgid "Customer Name"
 msgstr ""
 
-#: src/whatsappHelper.php:34
+#: src/whatsappHelper.php:57
 #, php-format
 msgid ""
 "Dear Customer : %s \n"
 "\n"
 "Your Order Follow Up Code Has Been Added to Orderbox Website \n"
+"\n"
+"Status : %s\n"
 "\n"
 "Date : %s \n"
 "\n"
@@ -168,6 +170,7 @@ msgid "Dekapost Code"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:11
+#: src/whatsappHelper.php:40
 msgid "DELIVERED"
 msgstr ""
 
@@ -192,6 +195,7 @@ msgid "Document uploaded successfully."
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:7
+#: src/whatsappHelper.php:36
 msgid "DUBAI / PACKING"
 msgstr ""
 
@@ -227,7 +231,7 @@ msgstr ""
 msgid "No Orderbox Orders found."
 msgstr ""
 
-#: src/helper.php:569
+#: src/helper.php:460
 msgid "Not Paid"
 msgstr ""
 
@@ -244,6 +248,7 @@ msgid "Order Date"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:6
+#: src/whatsappHelper.php:35
 msgid "ORDER RECEIVED"
 msgstr ""
 
@@ -297,7 +302,7 @@ msgctxt ""
 msgid "Use as cover image"
 msgstr ""
 
-#: src/helper.php:565
+#: src/helper.php:456
 msgid "Paid"
 msgstr ""
 
@@ -313,7 +318,7 @@ msgstr ""
 msgid "Payment Document Preview"
 msgstr ""
 
-#: src/whatsappHelper.php:116
+#: src/whatsappHelper.php:147
 #, php-format
 msgid ""
 "Payment Document Uploaded \n"
@@ -395,10 +400,12 @@ msgid "Search Orderbox Orders"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:8
+#: src/whatsappHelper.php:37
 msgid "SHIPPED"
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:9
+#: src/whatsappHelper.php:38
 msgid "SHIRAZ"
 msgstr ""
 
@@ -446,6 +453,7 @@ msgid ""
 msgstr ""
 
 #: templates/single-orderbox-order-follow-up-progress-bar.php:10
+#: src/whatsappHelper.php:39
 msgid "TIPAX"
 msgstr ""
 
@@ -473,11 +481,11 @@ msgstr ""
 msgid "View Orderbox Orders"
 msgstr ""
 
-#: src/helper.php:573
+#: src/helper.php:464
 msgid "Waiting For Approval"
 msgstr ""
 
-#: src/whatsappHelper.php:162
+#: src/whatsappHelper.php:193
 #, php-format
 msgid ""
 "Your Payment Document Has Been Submitted \n"

@@ -326,13 +326,7 @@ class single_template
 
         if( $total_additional_const > 0 ) {
 
-            $current_aed_rate = get_transient('tgju_aed_price');
-
-            if( !empty($current_aed_rate) ) {
-
-                $current_aed_rate = helper::rialToToman($current_aed_rate);
-
-            }
+            $current_aed_rate = helper::get_cached_alanchand_aed_price();
 
             $label = __('Total Additional Cost ( AED )', 'orderbox-order-code-follow-up');
 
@@ -393,6 +387,14 @@ class single_template
                 self::show_meli_bank_table_row();
 
             }
+
+
+            if( get_field('show_parsian_bank_payment_info' , $post->ID ) ){
+
+                self::show_parsian_bank_table_row();
+
+            }
+
 
             if( get_field('show_emirate_bank_payment_info' , $post->ID ) ){
 
@@ -573,6 +575,19 @@ class single_template
         helper::generate_report_table_row( $label , $value  );
 
     }
+
+
+    public static function show_parsian_bank_table_row(){
+
+        $label = __('Parsian Bank Info' , 'orderbox-order-panel');
+
+        $value = __("Card : 6221061260713575 <br /><br />SHABA Number : 850540203647002074432608 <br/><br />Mohamad Ali Jamalzade", 'orderbox-order-panel');
+
+        helper::generate_report_table_row( $label , $value  );
+
+    }
+
+
 
 
 

@@ -87,6 +87,9 @@ class acf_helper
 
         $values = get_fields( $post_id );
 
+
+
+
         if(
             $values['send_first_sms'] === true &&
             $values['first_sms_sent'] === false &&

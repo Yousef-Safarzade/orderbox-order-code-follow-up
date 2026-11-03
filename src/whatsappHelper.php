@@ -29,15 +29,40 @@ class whatsappHelper
 
     public static function send_whatsapp_message($values){
 
+        $status_value = 'order_received';
+
+        $labels = array(
+            'order_received'        =>  __('ORDER RECEIVED','orderbox-order-code-follow-up'),
+            'received_in_dubai'     =>  __('DUBAI / PACKING','orderbox-order-code-follow-up'),
+            'send_to_iran'          =>  __('SHIPPED','orderbox-order-code-follow-up'),
+            'received_in_shiraz'    =>  __('SHIRAZ','orderbox-order-code-follow-up'),
+            'sent_by_tipax'         =>  __('TIPAX','orderbox-order-code-follow-up'),
+            'recieved_by_customer'  =>  __('DELIVERED','orderbox-order-code-follow-up'),
+        );
+
+        foreach ($values['order_status'] as $key => $value ) {
+
+            if ( empty( $value ) ) {
+
+                continue;
+
+            }
+
+            $status_value = $labels[$key];
+
+        }
+
 
         $message = sprintf(
-            __("Dear Customer : %s \n\nYour Order Follow Up Code Has Been Added to Orderbox Website \n\nDate : %s \n\nCode :  %s \n\nPassword : %s \n\nPlease Visit Website For More Information \n\nhttps://orderbox.ae/track-send-code?code=%s" , 'orderbox-order-code-follow-up') ,
+            __("Dear Customer : %s \n\nYour Order Follow Up Code Has Been Added to Orderbox Website \n\nStatus : %s\n\nDate : %s \n\nCode :  %s \n\nPassword : %s \n\nPlease Visit Website For More Information \n\nhttps://orderbox.ae/track-send-code?code=%s" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
+            $status_value,
             \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi( \OrderboxOrderCodeFollowUp\helper::get_latest_update_date($values) ) ,
             $values['order_code'],
             $values['order_password'],
             $values['order_code']
         );
+
 
         $options = array(
             'phonenumber' => $values['customer_phone_number_country_code'] . self::format_whatsapp_number($values['customer_phone_number']),
@@ -111,11 +136,12 @@ class whatsappHelper
 
     public static function send_payment_data_updated_message($values){
 
+        $date = \Morilog\Jalali\Jalalian::now();
 
         $message = sprintf(
             __("Payment Document Uploaded \n\nCustomer : %s \n\nDate : %s \n\nOrder Code : %s \n\nPlease Check Website Admin Panel" , 'orderbox-order-code-follow-up') ,
             $values['customer_name'],
-            \OrderboxOrderCodeFollowUp\helper::convert_date_to_shamsi(date("d / m / Y")) ,
+            $date->format("d / m / Y") ,
             $values['order_code']
         );
 
